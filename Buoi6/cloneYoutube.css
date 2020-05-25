@@ -1,0 +1,52 @@
+body {
+    background-color: #181818;
+}
+
+.navbar {
+    background-color: rgba(33, 33, 33, 0.98);
+    height: 56px;
+    padding: 0px 16px 0px 16px;
+    position: relative;
+}
+
+.iconMenu {
+    position: absolute;
+    padding: 8px 8px 8px 8px;
+    margin-right: 16px;
+}
+
+.logoYT {
+    position: absolute;
+    left: 73px;
+}
+
+.search {
+    position: absolute;
+    left: 336px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 908px;
+}
+
+.title {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 36px;
+    text-indent: 240px;
+    margin-left: 24px;
+}
+
+.video {
+    margin-left: 248px;
+    margin-top: 16px;
+    color: white;
+}
+
+.col-md-3 {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 40px;
+}

@@ -1,0 +1,15 @@
+.anhBia, .gioiThieu{
+    display: flex;
+    justify-content: center;
+}
+.canChu{
+    display: flex;
+    justify-content: center;
+}
+.kichCo{
+    width: 700px;
+}
+/* .gioiThieu{
+    width: 600px; 
+    justify-content: center;
+} */
