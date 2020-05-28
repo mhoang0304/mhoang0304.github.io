@@ -6,7 +6,9 @@ body {
     background-color: rgba(33, 33, 33, 0.98);
     height: 56px;
     padding: 0px 16px 0px 16px;
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    z-index: 2;
 }
 
 .menuButton {
@@ -48,6 +50,7 @@ body {
     color: white;
     font-weight: 400;
     text-indent: 72px;
+    z-index: 1;
 }
 
 .registration {
