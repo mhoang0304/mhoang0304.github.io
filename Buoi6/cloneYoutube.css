@@ -9,15 +9,15 @@ body {
     position: relative;
 }
 
-.iconMenu {
+.menuButton {
     position: absolute;
-    padding: 8px 8px 8px 8px;
-    margin-right: 16px;
+    left: 16px;
 }
 
 .logoYT {
     position: absolute;
-    left: 73px;
+    left: 60px;
+    top: 1px;
 }
 
 .search {
@@ -25,9 +25,23 @@ body {
     left: 336px;
 }
 
-.searchIcon {
+.searchButton {
     position: absolute;
-    left: 908px;
+    left: 906px;
+}
+
+.iconButton {
+    position: absolute;
+    left: 1124px;
+}
+
+.avatar {
+    position: absolute;
+    left: 1287px;
+}
+
+.avatarIcon {
+    border-radius: 50%;
 }
 
 .title {
