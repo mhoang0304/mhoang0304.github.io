@@ -62,7 +62,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.title {
+.suggest {
     color: white;
     font-weight: 500;
     font-size: 20px;
@@ -75,10 +75,34 @@ body {
     margin-left: 248px;
     margin-top: 16px;
     color: white;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.dot::after {
+    content: "•";
+    margin-left: 4px;
 }
 
 .col-md-3 {
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 40px;
+    margin: 0px 8px 40px 8px;
+    padding: 0px;
+}
+
+#img {
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+#meta {
+    padding-right: 24px;
+    overflow: hidden;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.channel {
+    margin: 0px;
 }
