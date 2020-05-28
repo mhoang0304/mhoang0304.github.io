@@ -103,6 +103,11 @@ h3 {
     font-size: 14px;
 }
 
-.channel {
+#channel {
     margin: 0px;
+}
+
+.channel {
+    font-size: 14px;
+    color: #AAAAAA;
 }
