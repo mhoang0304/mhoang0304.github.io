@@ -44,6 +44,20 @@ body {
     border-radius: 50%;
 }
 
+.sidebar {
+    color: white;
+    font-weight: 400;
+    text-indent: 72px;
+}
+
+.registration {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.liked {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .title {
     color: white;
     font-weight: 500;

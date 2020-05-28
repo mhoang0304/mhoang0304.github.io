@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="text-center">Tạo Bootstrap Collapsible Sidebar Left và Right</h1>
+    <div class="container-fluid">
+        <div class="row" id="row-main">
+            <div class="col-md-3 sidebar" id="sidebar-left">
+                <h3>
+                    <p><code>#sidebar-left</code>
+                    </p>
+                    <p><code>.col-md-3</code>
+                    </p>
+                </h3>
+                <p>Nội dung cột trái.</p>
+            </div>
+            <div class="col-md-6" id="content">
+                <h3><code>#content</code> <code class="width-6">.col-md-6</code> <code class="width-9">.col-md-9</code> <code class="width-12">.col-md-12</code>
+                </h3>
+                <div class="btn-group" role="group" aria-label="Controls">
+                    <button type="button" class="btn btn-default toggle-sidebar-left">Đóng/Mở cột trái</button>
+                    <button type="button" class="btn btn-default toggle-sidebar-right">Đóng/Mở cột phải</button>
+                </div>
+                <p>Nội dung chính</p>
+            </div>
+            <div class="col-md-3 sidebar" id="sidebar-right">
+                <h3>
+                    <p><code>#sidebar-right</code>
+                    </p>
+                    <p><code>.col-md-3</code>
+                    </p>
+                </h3>
+                <p>Nội dung cột phải.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

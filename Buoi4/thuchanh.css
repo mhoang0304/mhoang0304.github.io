@@ -211,3 +211,7 @@
     .meat4:hover.newtext {
         display: block;
     }
+    
+    .menu5:hover .menu5::after {
+        content: "abcddddddddddddddddddddddddddd";
+    }
