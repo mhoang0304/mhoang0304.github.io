@@ -172,3 +172,11 @@ h3 {
     font-size: 14px;
     color: #AAAAAA;
 }
+
+.align {
+    float: left;
+}
+
+.channel {
+    clear: both;
+}
