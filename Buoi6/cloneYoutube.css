@@ -117,3 +117,8 @@ h3 {
     font-size: 14px;
     color: #AAAAAA;
 }
+
+.col-md-4,
+.col-md-8 {
+    padding: 0px;
+}
