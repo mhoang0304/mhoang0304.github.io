@@ -1,0 +1,16 @@
+.navbar {
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    margin: 0px 87px 0px 87px;
+    position: relative;
+}
+
+#lotus-logo {
+    width: 33px;
+    height: 30px;
+    fill: #cd0f32;
+    stroke: transparent;
+}
