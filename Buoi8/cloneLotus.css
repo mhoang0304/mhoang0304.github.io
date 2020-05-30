@@ -1,11 +1,26 @@
 .navbar {
+    background-color: rgb(255, 255, 255);
+    border-bottom: thin solid rgb(225, 225, 225);
     height: 60px;
     top: 0px;
     left: 0px;
     right: 0px;
     position: fixed;
+    box-sizing: border-box;
+}
+
+.navbar-inside {
+    padding: 16px 0px 16px 0px;
     margin: 0px 87px 0px 87px;
-    position: relative;
+    height: 60px;
+    width: 1192px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.left {
+    display: flex;
+    align-items: center;
 }
 
 #lotus-logo {
@@ -13,4 +28,59 @@
     height: 30px;
     fill: #cd0f32;
     stroke: transparent;
+    margin-right: 6px;
+}
+
+#lotus-text {
+    width: 68px;
+    height: 22px;
+    fill: #002d64;
+    stroke: transparent;
+    position: relative;
+    top: -4px
+}
+
+.version-info {
+    margin-left: 16px;
+    background: #efeff4;
+    border-radius: 20px;
+    padding: 4px 8px;
+    position: relative;
+    top: -5px;
+}
+
+.version-info-text {
+    font: normal 15px/19px SF;
+    color: #111;
+    position: relative;
+    top: -1px;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0px
+}
+
+.right {
+    display: flex;
+    margin-top: -3px;
+}
+
+.login {
+    width: 149px;
+    height: 28px;
+    border: 2px solid #1f9ffc;
+    border-radius: 100px 100px 100px 100px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px 16px 0px 16px;
+    justify-content: flex-end;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #1f9ffc;
+    margin-right: 5px;
 }
