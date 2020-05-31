@@ -64,6 +64,8 @@ h1 {
 .right {
     display: flex;
     margin-top: -3px;
+    justify-content: flex-end;
+    width: 751px;
 }
 
 .login {
@@ -71,10 +73,8 @@ h1 {
     height: 28px;
     border: 2px solid #1f9ffc;
     border-radius: 100px 100px 100px 100px;
-    display: flex;
     box-sizing: border-box;
     padding: 0px 16px 0px 16px;
-    justify-content: flex-end;
 }
 
 .icon {
@@ -105,4 +105,65 @@ h1 {
 
 body {
     background-color: rgb(249, 249, 249);
+}
+
+.sidebar-menu {
+    position: relative;
+    top: 116px;
+    left: 78px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+}
+
+#text {
+    display: inline;
+}
+
+.icon.menu-home {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+    stroke: transparent;
+}
+
+.icon.menu-trending-news {
+    width: 16px;
+    height: 16px;
+    fill: #aaa;
+    stroke: transparent;
+}
+
+.icon.menu-trending-group {
+    width: 16px;
+    height: 16px;
+    fill: #aaa;
+    stroke: transparent;
+}
+
+.icon.menu-giai-tri {
+    width: 20px;
+    height: 20px;
+    fill: #aaa;
+    stroke: transparent;
+}
+
+.icon.icon-external-link {
+    width: 10px;
+    height: 10px;
+    fill: #aaa;
+    stroke: transparent;
+}
+
+.icon.icon-infor {
+    width: 18px;
+    height: 18px;
+    fill: #aaa;
+    stroke: transparent;
+}
+
+.icon.icon-apple {
+    width: 16px;
+    height: 18px;
+    fill: #888;
+    stroke: transparent;
 }
