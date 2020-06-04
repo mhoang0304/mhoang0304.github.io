@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+
+span {
+    display: inline-block;
+}
+
+body {
+    font-family: "Roboto";
+    background-color: #f2f2f2;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+    margin: auto;
+}
+
+.card {
+    width: 304px;
+    background-color: #fff;
+    padding: 16px;
+    margin: 10px
+}
+
+.card-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.card-icon span {
+    color: #bfc5d1;
+}
+
+.card-icon span:hover {
+    color: #fa55f7;
+}
+
+.card-thumbnail img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-size: 18px;
+    color: #1b2437;
+    margin: 16px 0px;
+    font-weight: 500;
+}
+
+.email {
+    font-size: 14px;
+    color: #98a0a6;
+    font-weight: 500;
+}
+
+.card-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.card-btn button {
+    flex-basis: 48%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 12px 0;
+    border-radius: 100px;
+}
+
+.card-btn button:hover {
+    background-color: #507bfc;
+}
+
+.btn-icon {
+    color: #bfc5d1;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.btn-name {
+    color: #98a0a6;
+    font-size: 14px;
+}
+
+.card-btn button:hover .btn-icon,
+.card-btn button:hover .btn-name {
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.bnt-left {
+    height: 16px;
+    width: 16px;
+    border: none;
+}
+
+.icon-heart {
+    background: #507BFC;
+    box-shadow: 0px 10px 20px rgba(80, 123, 252, 0.5);
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.icon-heart i {
+    color: #fff;
+}
