@@ -1,6 +1,12 @@
+* {
+    border: 0px;
+    margin: 0px;
+}
+
 .navbar {
     background-color: rgb(255, 255, 255);
     border-bottom: thin solid rgb(225, 225, 225);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
     height: 60px;
     top: 0px;
     left: 0px;
@@ -8,20 +14,27 @@
     position: fixed;
     box-sizing: border-box;
     z-index: 10;
+    width: 100vw;
 }
 
 .navbar-inside {
-    padding: 16px 0px 16px 0px;
-    margin: 0px 87px 0px 87px;
+    padding: 16px 0px;
     height: 60px;
     width: 1192px;
     box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: auto;
 }
 
 .left {
     display: flex;
     align-items: center;
+}
+
+.right {
+    display: flex;
 }
 
 #lotus-logo {
@@ -46,8 +59,6 @@
     background: #efeff4;
     border-radius: 20px;
     padding: 4px 8px;
-    position: relative;
-    top: -5px;
 }
 
 .version-info-text {
@@ -57,33 +68,42 @@
     top: -1px;
 }
 
-h1 {
-    display: inline-block;
-    margin: 0px
-}
-
-.right {
-    display: flex;
-    margin-top: -3px;
-    justify-content: flex-end;
-    width: 751px;
-}
-
 .login {
-    width: 149px;
+    width: 157px;
     height: 28px;
     border: 2px solid #1f9ffc;
     border-radius: 100px 100px 100px 100px;
     box-sizing: border-box;
-    padding: 0px 16px 0px 16px;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
 }
 
-.icon {
+#icon-token {
     width: 16px;
     height: 16px;
     fill: none;
     stroke: #1f9ffc;
     margin-right: 5px;
+}
+
+.login span {
+    color: #1f9ffc;
+}
+
+.login-left {
+    margin-right: 10px;
+    font-size: 15px;
+    border-right: 2px solid #eee;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    padding-right: 5px;
+}
+
+#text-resgister {
+    font-size: 15px;
 }
 
 .register {
@@ -106,6 +126,7 @@ h1 {
 
 body {
     background-color: rgb(249, 249, 249);
+    font-family: 'Roboto', sans-serif;
 }
 
 .sidebar-menu {
@@ -114,63 +135,132 @@ body {
     left: 78px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, .05);
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
-#text {
-    display: inline;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.icon.menu-home {
+li {
+    display: block;
+}
+
+.list-menu {
+    margin-bottom: 30px;
+    padding-top: 15px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 309px;
+}
+
+.home {
     width: 20px;
     height: 20px;
     fill: #333;
     stroke: transparent;
 }
 
-.icon.menu-trending-news {
+.menu-trending-news {
     width: 16px;
     height: 16px;
     fill: #aaa;
     stroke: transparent;
 }
 
-.icon.menu-trending-group {
+.menu-trending-group {
     width: 16px;
     height: 16px;
     fill: #aaa;
     stroke: transparent;
 }
 
-.icon.menu-giai-tri {
+.giai-tri {
     width: 20px;
     height: 20px;
     fill: #aaa;
     stroke: transparent;
 }
 
-.icon.icon-external-link {
-    width: 10px;
-    height: 10px;
-    fill: #aaa;
-    stroke: transparent;
-}
-
-.icon.icon-infor {
+.icon-infor {
     width: 18px;
     height: 18px;
     fill: #aaa;
     stroke: transparent;
 }
 
-.icon.icon-apple {
+#icon-external-link {
+    width: 13px;
+    height: 13px;
+    fill: #aaa;
+    margin-left: 4px;
+}
+
+#icon-apple {
     width: 16px;
     height: 18px;
     fill: #888;
     stroke: transparent;
+    margin-right: 8px;
 }
 
+#icon-playstore {
+    width: 16px;
+    height: 18px;
+    fill: #888;
+    stroke: transparent;
+    margin: 0px 8px 0px 16px;
+}
+
+.list-menu li {
+    padding: 0px 18.8px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#tittle-top {
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+#space {
+    padding-right: 18px;
+}
+
+#text {
+    font: normal 15px/20px SF;
+    color: #aaa;
+}
+
+#text .effect span:hover {
+    cursor: pointer;
+    background-color: #cd0f32;
+    color: aqua;
+}
+
+b {
+    font-size: 13px;
+    color: #555;
+}
+
+.menu-bottom {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.copyr {
+    font: normal 13px/17px SF;
+    color: #8a8a8f;
+}
+
+
+/* den day */
+
 .container {
-    padding-right: 97px;
+    padding-right: 79px;
     width: 945px;
     right: 0px;
     top: 0px;
@@ -178,6 +268,7 @@ body {
     position: fixed;
     background-color: rosybrown;
     position: absolute;
+    left: 325px;
 }
 
 .newsfeed {
@@ -215,6 +306,7 @@ body {
     font-family: inherit;
     min-height: 74px;
     font-size: 15px;
+    outline: none;
 }
 
 .button {
@@ -231,10 +323,20 @@ body {
     display: flex;
 }
 
-.lotus-post-from .icon-photo {
-    width: 24px;
-    height: 22px;
+.icon-photo {
+    width: 36px;
+    height: 29px;
     background-position: -12px -7px;
+    background: url(https://statics.lotuscdn.vn/embed/prod/1590209648913/images/58ed5caf7e45482f97057466fd89512f.png) no-repeat;
+    display: inline-block;
+}
+
+.icon-video {
+    width: 28px;
+    height: 22px;
+    background-position: -56px -7px;
+    background: url(https://statics.lotuscdn.vn/embed/prod/1590209648913/images/58ed5caf7e45482f97057466fd89512f.png) no-repeat;
+    display: inline-block;
 }
 
 .create-button {

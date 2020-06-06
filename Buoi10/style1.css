@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    margin: auto
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid black;
+    transition: all .5s;
+}
+
+.img {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+.container:hover {
+    box-shadow: inset 0px 0px 30px 2px #000000;
+}
+
+
+/* button {
+    font-size: 1em;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    border: none;
+    background-color: #3f444d;
+    color: #fff;
+    transition: all 2s;
+}
+
+button:hover {
+    background-color: red;
+    width: 400px;
+} */

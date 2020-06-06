@@ -1,0 +1,67 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin-top: 11px;
+    color: #73462D;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.image {
+    overflow: hidden;
+}
+
+.image img {
+    opacity: 0.8;
+    transition: all 1.5s;
+}
+
+img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.col-md-4 {
+    margin: 25px 0px;
+}
+
+.card {
+    width: 90%;
+    border: 2px solid #D9CBC7;
+    border-radius: 6%;
+}
+
+.card a {
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.card:hover {
+    box-shadow: 0px 14px 20px 1px #A68572;
+}
+
+#name {
+    text-align: center;
+    font-size: 24px;
+    margin: 8px 0px;
+}
+
+.info {
+    margin: 21px 0px 10px;
+    text-align: center;
+}
+
+.info p {
+    margin: 0px;
+}
