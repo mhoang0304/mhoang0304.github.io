@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #D9CBC7;
 }
 
 .title {
@@ -20,6 +21,7 @@ img {
 
 .image {
     overflow: hidden;
+    height: 210px;
 }
 
 .image img {
@@ -48,7 +50,7 @@ img:hover {
 }
 
 .card:hover {
-    box-shadow: 0px 14px 20px 1px #A68572;
+    box-shadow: 0px 14px 15px 1px #A68572;
 }
 
 #name {
