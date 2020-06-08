@@ -44,6 +44,8 @@ img:hover {
     border: 2px solid #D9CBC7;
     border-radius: 6%;
     transition: all 1s;
+    position: relative;
+    left: 18px;
 }
 
 .card a {
@@ -53,6 +55,31 @@ img:hover {
 
 .card:hover {
     box-shadow: 0px 14px 15px 1px #A68572;
+}
+
+a {
+    color: #73462D;
+}
+
+.btn {
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+
+.btn button:hover a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+button {
+    border-radius: 100px;
+    font-size: 18px;
+    padding: 7px 25px;
+    border: none;
+}
+
+button:hover {
+    background-color: #507bfc;
 }
 
 #name {
