@@ -53,6 +53,12 @@
                 c.fillText(this.score, canvas.width / 20, canvas.height - 15);
                 c.closePath();
             }
+            drawYouWin() {
+                c.beginPath();
+                c.fillStyle = "white";
+                c.font = "40px sans-serif";
+                c.fillText("You Win!", (canvas.width / 2) - 80, canvas.height / 2);
+            }
             move() {
                 if (this.x > canvas.width - this.radius) {
                     boss.dx = -5;
@@ -80,6 +86,7 @@
         var boss = new Boss(25, 25, 25, "yellow", 0);
         var arrayPoint = [];
         var N = 60;
+        var gameWin = false;
 
         addEventListener('keydown', function (event) {
             if (event.keyCode == 40) { // down
@@ -114,14 +121,34 @@
             })
         }
 
+        function gameOver() {
+            if (boss.score >= N) {
+                gameWin = true;
+            }
+        }
+
+        function handleGameOver() {
+            if (gameWin) {
+                console.log("You Win");
+                boss.dx = 0;
+                boss.dy = 0;
+            }
+        }
+
         function animate() {
-            c.clearRect(0, 0, canvas.width, canvas.height);
-            boss.drawBoss();
-            boss.drawScore();
-            arrayPoint.forEach((x) => x.draw());
-            boss.move();
-            update();
-            requestAnimationFrame(animate);
+            if (!gameWin) {
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                boss.drawBoss();
+                boss.drawScore();
+                arrayPoint.forEach((x) => x.draw());
+                gameOver();
+                boss.move();
+                update();
+                requestAnimationFrame(animate);
+            } else {
+                handleGameOver();
+                boss.drawYouWin();
+            }
         }
         animate();
 
