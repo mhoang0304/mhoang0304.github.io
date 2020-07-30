@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Point Game</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -50,7 +50,8 @@
                 c.beginPath();
                 c.fillStyle = "white";
                 c.font = "30px sans-serif";
-                c.fillText(this.score, canvas.width / 20, canvas.height - 15);
+                c.fillText("Score:", (canvas.width / 20) - 30, canvas.height - 15 );
+                c.fillText(this.score, canvas.width / 9, canvas.height - 15);
                 c.closePath();
             }
             drawYouWin() {
