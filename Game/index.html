@@ -128,14 +128,6 @@
             }
         }
 
-        function handleGameOver() {
-            if (gameWin) {
-                console.log("You Win");
-                boss.dx = 0;
-                boss.dy = 0;
-            }
-        }
-
         function animate() {
             if (!gameWin) {
                 c.clearRect(0, 0, canvas.width, canvas.height);
@@ -147,10 +139,12 @@
                 update();
                 requestAnimationFrame(animate);
             } else {
-                handleGameOver();
                 boss.drawYouWin();
+                boss.dx = 0;
+                boss.dy = 0;
             }
         }
+        
         animate();
 
         function randomPosition(min, max) {
