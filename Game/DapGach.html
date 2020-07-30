@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game Đập Gạch</title>
+    <style>
+        canvas {
+            border: solid 1px burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+
+
+        var ball = { // Vẽ Ball
+            x: 20, // Tọa độ x
+            y: 20, // Tọa độ y
+            dx: 5,
+            dy: 2,
+            radius: 15 // Bán kính
+        }
+
+        var paddle = { // Vẽ Paddle
+            width: 70, // Độ rộng
+            height: 10, // Độ cao
+            x: 0, // Tọa độ x
+            y: canvas.height - 10, //Tọa độ y 
+            speed: 10,
+            isMovingLeft: false,
+            isMovingRight: false
+        }
+
+        var brick = {
+            offsetX: 25,
+            offsetY: 25,
+            margin: 25,
+            width: 70,
+            height: 15,
+            totalRow: 3,
+            totalCol: 5
+        }
+
+        var isGameOver = false;
+        var isGameWin = false;
+        var userScore = 0;
+        var maxScore = brick.totalRow * brick.totalCol;
+
+        var brickList = [];
+
+        for (var i = 0; i < brick.totalRow; i++) {
+            for (var j = 0; j < brick.totalCol; j++) {
+                brickList.push({
+                    x: brick.offsetX + j * (brick.width + brick.margin),
+                    y: brick.offsetY + i * (brick.height + brick.margin),
+                    isBroken: false
+                })
+            }
+        }
+
+        document.addEventListener("keyup", function(event) {
+            if (event.keyCode == 37) {
+                paddle.isMovingLeft = false;
+            } else if (event.keyCode == 39) {
+                paddle.isMovingRight = false;
+            }
+        })
+
+        document.addEventListener("keydown", function(event) {
+            if (event.keyCode == 37) {
+                paddle.isMovingLeft = true;
+            } else if (event.keyCode == 39) {
+                paddle.isMovingRight = true;
+            }
+        })
+
+        function drawBall() { // Vẽ Bóng
+            c.beginPath();
+            c.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            c.fillStyle = "red";
+            c.fill();
+            c.closePath();
+        }
+
+        function drawPaddle() { // Vẽ Paddle
+            c.beginPath();
+            c.rect(paddle.x, paddle.y, paddle.width, paddle.height);
+            c.fill();
+            c.closePath();
+        }
+
+        // 2 * OFFSET + 5 * WIDTH + 4 * MAGIN = 500
+        // OFFSET = MAGIN = 25 => WIDTH = 70
+        // ROW = 3
+        // COL = 5
+
+        function drawBricks() { // Vẽ các viên gạch
+            brickList.forEach(function(b) {
+                if (!b.isBroken) {
+                    c.beginPath();
+                    c.rect(b.x, b.y, brick.width, brick.height)
+                    c.fill();
+                    c.closePath();
+                }
+            })
+        }
+
+        function ballAndBrick() {
+            brickList.forEach(function(b) {
+                if (!b.isBroken) {
+                    if (ball.x >= b.x && ball.x <= b.x + brick.width && ball.y + ball.radius >= b.y &&
+                        ball.y - ball.radius <= b.y + brick.height) {
+                        ball.dy = -ball.dy;
+                        b.isBroken = true;
+                        userScore += 1;
+                        if (userScore >= maxScore) {
+                            isGameOver = true;
+                            isGameWin = true;
+                        }
+                    }
+                }
+            })
+        }
+
+        function limit() {
+            if (ball.x < ball.radius || ball.x > canvas.width - ball.radius) {
+                ball.dx = -ball.dx;
+            }
+            if (ball.y < ball.radius) {
+                ball.dy = -ball.dy;
+            }
+        }
+
+        function ballOnPaddle() {
+            if (ball.x + ball.radius >= paddle.x && ball.x + ball.radius <= paddle.x + paddle.width && ball.y + ball.radius >= canvas.height - paddle.height) {
+                ball.dy = -ball.dy;
+            }
+        }
+
+        function moveBall() {
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+        }
+
+        function updatePaddlePosition() {
+            if (paddle.isMovingLeft) {
+                paddle.x -= paddle.speed;
+            } else if (paddle.isMovingRight) {
+                paddle.x += paddle.speed;
+            }
+
+            if (paddle.x < 0) {
+                paddle.x = 0;
+            } else if (paddle.x > canvas.width - paddle.width) {
+                paddle.x = canvas.width - paddle.width;
+            }
+        }
+
+        function checkGameOver() {
+            if (ball.y > canvas.height - ball.radius) {
+                isGameOver = true;
+            }
+        }
+
+        function handleGameOver() {
+            if (isGameWin) {
+                console.log("You Win")
+            } else {
+                console.log("You Lose")
+            }
+        }
+
+        function draw() {
+            if (!isGameOver) {
+                c.clearRect(0, 0, canvas.width, canvas.height); // xóa khung hình
+                drawBall();
+                drawPaddle();
+                drawBricks();
+                ballAndBrick();
+                updatePaddlePosition();
+                checkGameOver();
+                limit();
+                moveBall();
+                ballOnPaddle();
+                requestAnimationFrame(draw); // Cải thiện hiệu ứng khi vẽ trên vanvas
+            } else {
+                handleGameOver();
+            }
+        }
+
+        draw();
+    </script>
+</body>
+
+</html>

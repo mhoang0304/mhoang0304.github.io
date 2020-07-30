@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="1420px" height="700px" style="background:white; margin:20px"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext('2d');
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        addEventListener("resize", function() {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+        });
+
+        var cols = 100;
+        var rows = 100;
+        var p = 10;
+
+        function draw() {
+            for (var i = 0; i < rows; i += 40) {
+                c.moveTo(0.5 + i + p, p)
+                c.lineTo(0.5 + i + p, cols + p)
+            }
+            c.strokeStyle = "black";
+            c.stroke();
+        }
+
+        draw()
+
+        // function setup() {
+        //     createCanvas(300, 300)
+        // }
+
+        // function draw() {
+        //     background(51);
+        //     for (var i = 0; i < cols; i++) {
+        //         for (var j = 0; j < rows; j++) {
+        //             var x = i * 30;
+        //             var y = i * 30;
+        //             stroke();
+        //             fill(255);
+        //             rect(x, y, 30, 30);
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
