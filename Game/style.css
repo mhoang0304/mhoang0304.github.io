@@ -4,3 +4,36 @@
     transform: translate(-50%, -50%);
     position: absolute;
 }
+
+img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#btn_start-game, #btn_reload{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+button{
+    padding: 7px 20px;
+    border: none;
+    background-color:#272F59;
+    font-size: 30px;
+    border-radius: 100px;  
+    font-weight: 600;
+    color: white;
+}
+
+#game{
+    display: none;
+}
+
+#end-game{
+    display: none;
+}
+
