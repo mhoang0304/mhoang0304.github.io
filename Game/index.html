@@ -23,7 +23,7 @@
             <source src="./audio/music.mp3" type="audio/mpeg"> 
         </audio>
     </div>
-    
+
     <!-- Màn hình kết thúc game -->
     <div id="end-game">
         <img src="./Image/endgame.jpg" width="1000px"
@@ -44,22 +44,24 @@
         let btn_reload = document.getElementById("btn_reload");
         let btn_replay = document.getElementById("btn_replay");
 
-        //Bắt đầu game
+        //Nút bắt đầu game
         btn_start_game.addEventListener("click", function () {
             start_game.style.display = "none";
             game.style.display = "block";
         })
 
-        //Chơi lại game
+        //Nút chơi lại game
         btn_replay.addEventListener("click", function () {
-            boss.score = 0;
-            gameWin = false;
+            // boss.score = 0;
+            // gameWin = false;
+            window.location.reload();
+            start_game.style.display = "none";
             game.style.display = "block";
-            end_game.style.display = "none";
-            animate();
+            // end_game.style.display = "none";
+            // animate();
         })
 
-        //Thoát game về màn hình chính
+        //Nút thoát game về màn hình chính
         btn_reload.addEventListener("click", function () {
             window.location.reload();
         })
@@ -134,10 +136,10 @@
             }
         }
 
-        var boss = new Boss(25, 25, 25, "yellow", 0);
-        var arrayPoint = [];
-        var N = 60;
-        var gameWin = false;
+        let boss = new Boss(25, 25, 25, "yellow", 0);
+        let arrayPoint = [];
+        let N = 60;
+        let gameWin = false;
 
         addEventListener('keydown', function (event) {
             if (event.keyCode == 40) { // Down
