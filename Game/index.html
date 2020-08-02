@@ -42,185 +42,190 @@
         let btn_reload = document.getElementById("btn_reload");
         let btn_replay = document.getElementById("btn_replay");
 
-            //Nút bắt đầu game
-            btn_start_game.addEventListener("click", function () {
-                start_game.style.display = "none";
-                game.style.display = "block";
-            })
+        //Nút bắt đầu game
+        btn_start_game.addEventListener("click", function () {
+            start_game.style.display = "none";
+            game.style.display = "block";
+        })
 
-            //Nút chơi lại game
-            btn_replay.addEventListener("click", function () {
-                // boss.score = 0;                       //Cái này em nghĩ ra 2 trường hợp:
-                // gameWin = false;                      //TH1: reset điểm về 0, cờ về flase chạy lại hàm animate nhưng hiện mỗi quả bóng đứng yên                          
-                window.location.reload();                //TH2: load lại trang và ẩn trang đầu để vào game luôn nhưng k được                                  
-                start_game.style.display = "none";
-                game.style.display = "block";
-                // end_game.style.display = "none";
-                // animate();
-            })
+        //Nút chơi lại game
+        btn_replay.addEventListener("click", function () {
+            boss.score = 0;
+            boss.x = 25;
+            boss.y = 25;
+            gameWin = false;
+            createBalls(N);
+            start_game.style.display = "none";
+            game.style.display = "block";
+            end_game.style.display = "none";
+            animate();
+        })
 
-            //Nút thoát game về màn hình chính
-            btn_reload.addEventListener("click", function () {
-                window.location.reload();
-            })
+        //Nút thoát game về màn hình chính
+        btn_reload.addEventListener("click", function () {
+            window.location.reload();
+        })
 
-            class Boss {
-                constructor(x, y, radius, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.radius = radius;
-                    this.color = color;
-                    this.score = 0;
-                    this.dx = 5;
-                    this.dy = 0;
-                }
-                draw() {
-                    c.beginPath();
-                    c.arc(this.x, this.y, this.radius / 3, 0, 2 * Math.PI);
-                    c.fillStyle = this.color;
-                    c.fill();
-                    c.closePath();
-                }
-                drawBoss() {
-                    c.beginPath()
-                    c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-                    c.fillStyle = this.color;
-                    c.shadowColor = "white";
-                    c.shadowBlur = 16;
-                    c.fill();
-                    c.closePath();
-
-                    c.beginPath();
-                    c.font = "14px sans-serif";
-                    c.fillStyle = "white";
-                    c.fillText("HAHA", this.x - 20, this.y + 5);
-                    c.closePath();
-                }
-                drawScore() {
-                    c.beginPath();
-                    c.fillStyle = "white";
-                    c.font = "30px sans-serif";
-                    c.fillText("Score:", (canvas.width / 20) - 30, canvas.height - 15);
-                    c.fillText(this.score, canvas.width / 9, canvas.height - 15);
-                    c.closePath();
-                }
-                drawYouWin() {
-                    c.beginPath();
-                    c.fillStyle = "white";
-                    c.font = "40px sans-serif";
-                    c.fillText("You Win!", (canvas.width / 2) - 80, canvas.height / 2);
-                }
-                move() {
-                    if (this.x > canvas.width - this.radius) {
-                        boss.dx = -5;
-                        boss.dy = 0;
-                    }
-                    if (this.x < this.radius) {
-                        boss.dx = 5;
-                        boss.dy = 0;
-                    }
-                    if (this.y > canvas.height - this.radius) {
-                        boss.dx = 0;
-                        boss.dy = -5;
-                    }
-                    if (this.y < this.radius) {
-                        boss.dx = 0;
-                        boss.dy = 5;
-                    }
-                    this.x = this.x + this.dx;
-                    this.y = this.y + this.dy;
-                    this.drawScore();
-                    this.drawBoss();
-                }
+        class Boss {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.score = 0;
+                this.dx = 0;
+                this.dy = 0;
             }
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.radius / 3, 0, 2 * Math.PI);
+                c.fillStyle = this.color;
+                c.fill();
+                c.closePath();
+            }
+            drawBoss() {
+                c.beginPath()
+                c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                c.fillStyle = this.color;
+                c.shadowColor = "white";
+                c.shadowBlur = 16;
+                c.fill();
+                c.closePath();
 
-            let boss = new Boss(25, 25, 25, "yellow", 0);
-            let arrayPoint = [];
-            let N = 60;
-            let gameWin = false;
-
-            addEventListener('keydown', function (event) {
-                if (event.keyCode == 40) { // Down
-                    boss.dy = 5;
-                    boss.dx = 0;
-                }
-                if (event.keyCode == 38) { // Up
-                    boss.dy = -5;
-                    boss.dx = 0;
-                }
-                if (event.keyCode == 39) { // Right
-                    boss.dy = 0;
-                    boss.dx = 5;
-                }
-                if (event.keyCode == 37) { // Left
-                    boss.dy = 0;
+                c.beginPath();
+                c.font = "14px sans-serif";
+                c.fillStyle = "white";
+                c.fillText("HAHA", this.x - 20, this.y + 5);
+                c.closePath();
+            }
+            drawScore() {
+                c.beginPath();
+                c.fillStyle = "white";
+                c.font = "30px sans-serif";
+                c.fillText("Score:", (canvas.width / 20) - 30, canvas.height - 15);
+                c.fillText(this.score, canvas.width / 9, canvas.height - 15);
+                c.closePath();
+            }
+            drawYouWin() {
+                c.beginPath();
+                c.fillStyle = "white";
+                c.font = "40px sans-serif";
+                c.fillText("You Win!", (canvas.width / 2) - 80, canvas.height / 2);
+            }
+            move() {
+                if (this.x > canvas.width - this.radius) {
                     boss.dx = -5;
+                    boss.dy = 0;
                 }
-            });
+                if (this.x < this.radius) {
+                    boss.dx = 5;
+                    boss.dy = 0;
+                }
+                if (this.y > canvas.height - this.radius) {
+                    boss.dx = 0;
+                    boss.dy = -5;
+                }
+                if (this.y < this.radius) {
+                    boss.dx = 0;
+                    boss.dy = 5;
+                }
+                this.x = this.x + this.dx;
+                this.y = this.y + this.dy;
+                this.drawScore();
+                this.drawBoss();
+            }
+        }
 
+        let boss = new Boss(25, 25, 25, "yellow", 0);
+        let arrayPoint = [];
+        let N = 60;
+        let gameWin = false;
+
+        addEventListener('keydown', function (event) {
+            if (event.keyCode == 40) { // Down
+                boss.dy = 5;
+                boss.dx = 0;
+            }
+            if (event.keyCode == 38) { // Up
+                boss.dy = -5;
+                boss.dx = 0;
+            }
+            if (event.keyCode == 39) { // Right
+                boss.dy = 0;
+                boss.dx = 5;
+            }
+            if (event.keyCode == 37) { // Left
+                boss.dy = 0;
+                boss.dx = -5;
+            }
+        });
+
+        function createBalls(N) {
             for (let i = 0; i < N; i++) {
                 var pointBall = new Boss(randomPosition(15, canvas.width - 15), randomPosition(15, canvas.height - 15), 30, rgb());
                 arrayPoint.push(pointBall);
             }
+        }
+        createBalls(N);
 
-            function update() {
-                arrayPoint.forEach((x) => {
-                    if (Math.sqrt(Math.pow(boss.x - x.x, 2) + Math.pow(boss.y - x.y, 2)) <= (x.radius + boss.radius)) {
-                        boss.score++;
-                        arrayPoint.splice(arrayPoint.indexOf(x), 1);
-                    }
-                })
-            }
-
-            function gameOver() {
-                if (boss.score >= N) {
-                    gameWin = true;
+        function update() {
+            arrayPoint.forEach((x) => {
+                if (Math.sqrt(Math.pow(boss.x - x.x, 2) + Math.pow(boss.y - x.y, 2)) <= (x.radius + boss.radius)) {
+                    boss.score++;
+                    arrayPoint.splice(arrayPoint.indexOf(x), 1);
                 }
-            }
+            })
+        }
 
-            function handleGameOver() {
-                if (gameWin) {
-                    c.fillStyle = "#272F59";
-                    c.fillRect(0, 0, canvas.width, canvas.height);
-                    c.fill();
-                    boss.dx = 0;
-                    boss.dy = 0;
-                }
+        function gameOver() {
+            if (boss.score >= N) {
+                gameWin = true;
             }
+        }
 
-            function animate() {
-                if (!gameWin) {
-                    c.clearRect(0, 0, canvas.width, canvas.height);
-                    boss.drawBoss();
-                    boss.drawScore();
-                    arrayPoint.forEach((x) => x.draw());
-                    gameOver();
-                    boss.move();
-                    update();
-                    requestAnimationFrame(animate);
-                } else {
-                    handleGameOver();
-                    boss.drawYouWin();
-                    boss.drawScore();
-                    setTimeout(() => {
-                        game.style.display = "none";
-                        end_game.style.display = "block";
-                    }, 2000)
-                }
+        function handleGameOver() {
+            if (gameWin) {
+                c.fillStyle = "#272F59";
+                c.fillRect(0, 0, canvas.width, canvas.height);
+                c.fill();
+                boss.dx = 0;
+                boss.dy = 0;
             }
-            animate();
+        }
 
-            function randomPosition(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
+        function animate() {
+            if (!gameWin) {
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                boss.drawBoss();
+                boss.drawScore();
+                arrayPoint.forEach((x) => x.draw());
+                gameOver();
+                boss.move();
+                update();
+                requestAnimationFrame(animate);
+            } else {
+                handleGameOver();
+                boss.drawYouWin();
+                boss.drawScore();
+                setTimeout(() => {
+                    game.style.display = "none";
+                    end_game.style.display = "block";
+                }, 2000)
             }
+        }
+        animate();
 
-            function rgb() {
-                color = 'rgb(';
-                for (var i = 0; i < 3; i++) {
-                    color += Math.floor(Math.random() * 255) + ',';
-                }
-                return color.replace(/\,$/, ')');
+        function randomPosition(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function rgb() {
+            color = 'rgb(';
+            for (var i = 0; i < 3; i++) {
+                color += Math.floor(Math.random() * 255) + ',';
             }
+            return color.replace(/\,$/, ')');
+        }
 
     </script>
 </body>
