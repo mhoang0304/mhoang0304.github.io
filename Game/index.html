@@ -51,8 +51,8 @@
         //Nút chơi lại game
         btn_replay.addEventListener("click", function () {
             boss.score = 0;
-            boss.x = 25;
-            boss.y = 25;
+            boss.x = canvas.width / 2;
+            boss.y = canvas.height / 2;
             gameWin = false;
             createBalls(N);
             start_game.style.display = "none";
@@ -136,7 +136,7 @@
             }
         }
 
-        let boss = new Boss(25, 25, 25, "yellow", 0);
+        let boss = new Boss(canvas.width / 2, canvas.height / 2, 25, "yellow", 0);
         let arrayPoint = [];
         let N = 60;
         let gameWin = false;
