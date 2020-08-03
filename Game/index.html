@@ -18,7 +18,7 @@
     <!-- Màn hình chơi game -->
     <div id="game">
         <canvas id="canvas" style="background-color: black;" width="1000px" height="600px"></canvas>
-        <audio autoplay>
+        <audio autoplay preload="auto">
             <source src="./audio/music.mp3" type="audio/mpeg">
         </audio>
     </div>
@@ -81,7 +81,6 @@
                 c.arc(this.x, this.y, this.radius / 3, 0, 2 * Math.PI);
                 c.fillStyle = this.color;
                 c.fill();
-                c.closePath();
             }
             drawBoss() {
                 c.beginPath()
@@ -90,13 +89,11 @@
                 c.shadowColor = "white";
                 c.shadowBlur = 16;
                 c.fill();
-                c.closePath();
 
                 c.beginPath();
                 c.font = "14px sans-serif";
                 c.fillStyle = "white";
                 c.fillText("HAHA", this.x - 20, this.y + 5);
-                c.closePath();
             }
             drawScore() {
                 c.beginPath();
@@ -104,7 +101,6 @@
                 c.font = "30px sans-serif";
                 c.fillText("Score:", (canvas.width / 20) - 30, canvas.height - 15);
                 c.fillText(this.score, canvas.width / 9, canvas.height - 15);
-                c.closePath();
             }
             drawYouWin() {
                 c.beginPath();
