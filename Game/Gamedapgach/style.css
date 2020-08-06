@@ -4,3 +4,50 @@
     transform: translate(-50%, -50%);
     position: absolute;
 }
+
+img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#game, #end-game{
+    display: none;
+}
+
+#btn_reload{
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#btn_start-game, #btn_replay{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: "red";
+    
+}
+
+#start-game, #end-game{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 1100px;
+    height: 600px;
+    background-color: #202426;
+}
+
+button{
+    padding: 7px 20px;
+    border: none;
+    background-color:#9DA65D;
+    font-size: 30px;
+    border-radius: 100px;  
+    font-weight: 600;
+    color: #F2F2F2;
+}

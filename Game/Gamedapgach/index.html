@@ -9,10 +9,59 @@
 </head>
 
 <body>
-    <canvas id="canvas" width="1100px" height="600px" style="border: solid 3px black;"></canvas>
+    <!-- Màn hình chính -->
+    <div id="start-game">
+        <button id="btn_start-game">Bắt đầu</button>
+    </div>
+
+    <!-- Màn hình chơi game -->
+    <div id="game">
+        <canvas id="canvas" width="1100px" height="600px" style="border: solid 3px black;"></canvas>
+    </div>
+
+    <!-- Màn hình kết thúc game -->
+    <div id="end-game">
+        <button id="btn_replay">Chơi lại</button>
+        <button id="btn_reload">Thoát game</button>
+    </div>
+
     <script>
         const canvas = document.getElementById("canvas");
         const c = canvas.getContext("2d");
+
+        let start_game = document.getElementById("start-game");
+        let game = document.getElementById("game");
+        let end_game = document.getElementById("end-game");
+
+        let btn_start_game = document.getElementById("btn_start-game");
+        let btn_reload = document.getElementById("btn_reload");
+        let btn_replay = document.getElementById("btn_replay");
+
+        //Nút bắt đầu game
+        btn_start_game.addEventListener("click", function () {
+            start_game.style.display = "none";
+            game.style.display = "block";
+        })
+
+        //Nút chơi lại game
+        btn_replay.addEventListener("click", function () {
+            bricks.score = 0;
+            gameOver = false;
+            ball.dx = 5;
+            ball.dy = 2;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 4;
+            bricks.generateBricks();
+            end_game.style.display = "none";
+            game.style.display = "block";
+            start_game.style.display = "none";
+            animate();
+        })
+
+        //Nút thoát game về màn hình chính
+        btn_reload.addEventListener("click", function () {
+            window.location.reload();
+        })
 
         class Ball {
             constructor(x, y, radius, color) {
@@ -44,8 +93,6 @@
                 if (this.y >= canvas.height - this.radius) { // Bottom
                     gameOver = true;
                     this.dy = -this.dy;
-                    // this.dx = 0;
-                    // this.dy = 0;
                 }
                 this.x = this.x + this.dx;
                 this.y = this.y + this.dy;
@@ -138,14 +185,14 @@
                 c.fillText("Score:", canvas.width - 90, 25);
                 c.fillText(this.score, canvas.width - 25, 25);
 
-                if(this.score >= this.scoreWin){
+                if (this.score >= this.scoreWin) {
                     gameOver = true;
                 }
             }
             endGame() {
                 if (this.score >= this.scoreWin) {
                     c.beginPath();
-                    c.fillStyle = "#272F59";
+                    c.fillStyle = "#9DA65D";
                     c.fillRect(0, 0, canvas.width, canvas.height);
                     c.fill();
 
@@ -155,7 +202,7 @@
                     c.fillText("You Win!", (canvas.width / 2) - 80, canvas.height / 2);
                 } else {
                     c.beginPath();
-                    c.fillStyle = "#272F59";
+                    c.fillStyle = "#9DA65D";
                     c.fillRect(0, 0, canvas.width, canvas.height);
                     c.fill();
 
@@ -167,9 +214,9 @@
             }
         }
 
-        let ball = new Ball(canvas.width / 2, canvas.height / 4, 15, "green");
-        let paddle = new Paddle(canvas.width / 2, canvas.height - 25, 120, 20, "red");
-        let bricks = new Bricks(115, 20, 70, 17, "blue");
+        let ball = new Ball(canvas.width / 2, canvas.height / 4, 15, "#8C8C88");
+        let paddle = new Paddle(canvas.width / 2, canvas.height - 25, 120, 20, "#202426");
+        let bricks = new Bricks(115, 20, 70, 17, "#6C733D");
 
         let gameOver = false;
         let movingRight = false;
@@ -209,6 +256,10 @@
                 setTimeout(() => {
                     bricks.endGame();
                 }, 1000)
+                setTimeout(() => {
+                    game.style.display = "none";
+                    end_game.style.display = "block";
+                }, 3000)
             }
         }
 
