@@ -18,6 +18,10 @@ birdImg_up.src = "./image/bird-up.png";
 const birdImg_down = new Image();
 birdImg_down.src = "./image/bird-down.png";
 
+//Sound:
+const FLAP = new Audio();
+FLAP.src = "./audio/sfx_flap.wav";
+
 class Bird {
     constructor(x, y) {
         this.x = x;
@@ -32,7 +36,7 @@ class Bird {
     }
     drawBird() {
         let bird_animation = this.animation[this.frame];
-
+        console.log(this.frame);
         c.drawImage(bird_animation, this.x, this.y);
     }
     fly() {
@@ -42,8 +46,12 @@ class Bird {
             bird.y += 2;
         }
     }
-    update() {
+    update() {  
         this.frame += (bird.frames % 4) == 0 ? 0 : 1;
+        if(this.frame >= 4){
+            this.frame == 0;
+        }
+        console.log(this.frame);
     }
 }
 
@@ -52,6 +60,7 @@ let frames = 0;
 
 addEventListener("keydown", function () {
     bird.y -= 60;
+    FLAP.play();
 })
 
 function animate() {
