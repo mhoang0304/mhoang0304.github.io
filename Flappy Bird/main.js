@@ -22,13 +22,19 @@ birdImg_down.src = "./image/bird-down.png";
 const FLAP = new Audio();
 FLAP.src = "./audio/sfx_flap.wav";
 
+const DIE = new Audio();
+DIE.src = "./audio/sfx_die.wav";
+
 class Bird {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-
+        this.width = 34;
+        this.height = 25;
+ 
         this.score = 0;
         this.frame = 0;
+        this.frames = 0;
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
     }
     drawBackround() {
@@ -36,27 +42,24 @@ class Bird {
     }
     drawBird() {
         let bird_animation = this.animation[this.frame];
-        console.log(this.frame);
-        c.drawImage(bird_animation, this.x, this.y);
+
+        c.drawImage(bird_animation, this.x, this.y, this.width, this.height);
     }
     fly() {
-        if (bird.y >= canvas.height - 130) {
-            bird.y += 0;
-        } else {
-            bird.y += 2;
+        if (this.y >= canvas.height - 130) {
+            this.y += 0;
+        }
+        else {
+            this.y += 2;
         }
     }
-    update() {  
-        this.frame += (bird.frames % 4) == 0 ? 0 : 1;
-        if(this.frame >= 4){
-            this.frame == 0;
-        }
-        console.log(this.frame);
+    update() {
+        this.frame += this.frames % 5 == 0 ? 1 : 0;
+        this.frame = this.frame % this.animation.length;
     }
 }
 
 let bird = new Bird(canvas.width / 3, canvas.height / 2);
-let frames = 0;
 
 addEventListener("keydown", function () {
     bird.y -= 60;
@@ -66,12 +69,11 @@ addEventListener("keydown", function () {
 function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height);
     bird.drawBackround();
-    bird.drawBird();
+    bird.update();
     bird.fly();
-    // bird.update();
+    bird.drawBird();
 
-    frames++;
-
+    bird.frames++;
     requestAnimationFrame(animate);
 }
 
