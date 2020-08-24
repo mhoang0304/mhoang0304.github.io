@@ -31,10 +31,14 @@ class Bird {
         this.y = y;
         this.width = 34;
         this.height = 25;
+
+        this.gravity = 0.25;
+        this.jump = 4.6;
+        this.speed = 0;
  
         this.score = 0;
-        this.frame = 0;
-        this.frames = 0;
+        this.frame = 0; // Frame theo chuyển động con chim
+        this.frames = 0; // Frames theo số khung hình
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
     }
     drawBackround() {
@@ -45,24 +49,30 @@ class Bird {
 
         c.drawImage(bird_animation, this.x, this.y, this.width, this.height);
     }
-    fly() {
-        if (this.y >= canvas.height - 130) {
-            this.y += 0;
-        }
-        else {
-            this.y += 2;
-        }
+    flap(){
+        this.speed = -this.jump;
     }
     update() {
+        // Tăng frame lên 1 theo mỗi giai đoạn
         this.frame += this.frames % 5 == 0 ? 1 : 0;
+        // Tăng từ 0 lên 4, sau đó trả về 0
         this.frame = this.frame % this.animation.length;
+
+        this.speed += this.gravity;
+        this.y += this.speed; 
+
+        if (this.y >= canvas.height - 130) {
+            this.y = canvas.height - 130;
+            this.speed = 0;
+        }
+     
     }
 }
 
-let bird = new Bird(canvas.width / 3, canvas.height / 2);
+let bird = new Bird(canvas.width / 4, canvas.height / 4);
 
-addEventListener("keydown", function () {
-    bird.y -= 60;
+addEventListener("click", function () {
+    bird.flap();
     FLAP.play();
 })
 
@@ -70,7 +80,6 @@ function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height);
     bird.drawBackround();
     bird.update();
-    bird.fly();
     bird.drawBird();
 
     bird.frames++;
