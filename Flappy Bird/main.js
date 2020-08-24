@@ -5,8 +5,7 @@ const c = canvas.getContext("2d");
 const background = new Image();
 background.src = "./image/background.png";
 
-// Image Bird:
-// Bay thẳng:
+// Image Bird: Bay thẳng:
 const birdImg = new Image();
 birdImg.src = "./image/bird.png";
 
@@ -40,14 +39,20 @@ class Bird {
         this.frame = 0; // Frame theo chuyển động con chim
         this.frames = 0; // Frames theo số khung hình
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
+
+        this.degree = Math.PI / 180;
+        this.rotation = 0;
     }
     drawBackround() {
         c.drawImage(background, 0, 0);
     }
     drawBird() {
         let bird_animation = this.animation[this.frame];
-
-        c.drawImage(bird_animation, this.x, this.y, this.width, this.height);
+        c.save();
+        c.translate(this.x, this.y);
+        c.rotate(this.rotation);
+        c.drawImage(bird_animation, -this.width / 2, -this.height / 2, this.width, this.height);
+        c.restore();
     }
     flap(){
         this.speed = -this.jump;
@@ -61,11 +66,15 @@ class Bird {
         this.speed += this.gravity;
         this.y += this.speed; 
 
-        if (this.y >= canvas.height - 130) {
-            this.y = canvas.height - 130;
-            this.speed = 0;
+        if (this.y >= canvas.height - 120) {
+            this.y = canvas.height - 120;
         }
-     
+
+        if(this.speed > this.jump){
+            this.rotation = 90 * this.degree;
+        } else {
+            this.rotation = -20 * this.degree;
+        }
     }
 }
 
