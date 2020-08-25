@@ -38,7 +38,7 @@ class Bird {
         this.width = 34;
         this.height = 25;
 
-        this.gravity = 0.25;
+        this.gravity = 0.25; // Trọng lực
         this.jump = 4.6;
         this.speed = 0;
 
@@ -47,16 +47,16 @@ class Bird {
         this.frames = 0; // Frames theo số khung hình
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
 
-        // this.degree = Math.PI / 180;
-        // this.rotation = 0;
+        this.degree = Math.PI / 180;
+        this.rotation = 0;
     }
     draw() {
         let bird_animation = this.animation[this.frame];
-        // c.save();
-        // c.translate(0, 0);
-        // c.rotate(this.rotation);
-        c.drawImage(bird_animation, this.x, this.y, this.width, this.height);
-        // c.restore();
+        c.save();
+        c.translate(this.x, this.y);
+        c.rotate(this.rotation);
+        c.drawImage(bird_animation, 0, 0, this.width, this.height);
+        c.restore();
     }
     flap() {
         this.speed = -this.jump;
@@ -73,11 +73,13 @@ class Bird {
         if (this.y >= canvas.height - background.heightGround - this.height) {
             this.y = canvas.height - background.heightGround - this.height;
         }
-        // if(this.speed > this.jump){
-        //     this.rotation = 90 * this.degree;
-        // } else {
-        //     this.rotation = -20 * this.degree;
-        // }
+
+        // Góc xoay của con chim
+        if (this.speed > this.jump) {
+            this.rotation = 90 * this.degree;
+        } else {
+            this.rotation = -20 * this.degree;
+        }
     }
 }
 
@@ -100,35 +102,35 @@ class Background {
         this.maxYPipe = -160;
         this.dxPipe = 2;
     }
-    draw(){
+    draw() {
         c.drawImage(backgroundImg, this.x, this.y, this.width, this.height);
     }
-    drawGround(){
-        c.drawImage(groundImg, this.xGround,canvas.height- this.heightGround, this.widthGround, this.heightGround);
+    drawGround() {
+        c.drawImage(groundImg, this.xGround, canvas.height - this.heightGround, this.widthGround, this.heightGround);
     }
-    update(){
+    update() {
         this.xGround = (this.xGround - this.dx) % (this.widthGround / 2);
 
         // Tạo tao độ cho ống
-        if(bird.frames % 100 == 0){
+        if (bird.frames % 100 == 0) {
             this.arr.push({
                 x: canvas.width, // Toạ độ bắt đầu ở ngoài màn hình
                 y: this.maxYPipe * (Math.random() + 1) // Toạ độ Y nằm trong khoảng xấp xỉ -160 đến -320
             });
         }
-        for(let i = 0; i < this.arr.length; i++){
+        for (let i = 0; i < this.arr.length; i++) {
             let p = this.arr[i];
 
             p.x -= this.dxPipe; // Di chuyển ống
 
             // Xoá ống trong mảng khi di chuyển ra khỏi màn hình
-            if(p.x + this.widthPipe <= 0){
+            if (p.x + this.widthPipe <= 0) {
                 this.arr.shift();
             }
         }
     }
-    drawPipe(){
-        for(let i = 0; i < this.arr.length; i++){
+    drawPipe() {
+        for (let i = 0; i < this.arr.length; i++) {
             let p = this.arr[i];
 
             let topYPipe = p.y;
