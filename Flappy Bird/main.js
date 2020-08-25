@@ -2,18 +2,19 @@ const canvas = document.getElementById("canvas");
 const c = canvas.getContext("2d");
 
 // Background:
-const background = new Image();
-background.src = "./image/background.png";
+const backgroundImg = new Image();
+backgroundImg.src = "./image/background.png";
 
-// Image Bird: Bay thẳng:
+const groundImg = new Image();
+groundImg.src = "./image/ground.png";
+
+// Image Bird: 
 const birdImg = new Image();
 birdImg.src = "./image/bird.png";
 
-// Bay lên:
 const birdImg_up = new Image();
 birdImg_up.src = "./image/bird-up.png";
 
-// Bay xuống:
 const birdImg_down = new Image();
 birdImg_down.src = "./image/bird-down.png";
 
@@ -34,27 +35,24 @@ class Bird {
         this.gravity = 0.25;
         this.jump = 4.6;
         this.speed = 0;
- 
+
         this.score = 0;
         this.frame = 0; // Frame theo chuyển động con chim
         this.frames = 0; // Frames theo số khung hình
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
 
-        this.degree = Math.PI / 180;
-        this.rotation = 0;
+        // this.degree = Math.PI / 180;
+        // this.rotation = 0;
     }
-    drawBackround() {
-        c.drawImage(background, 0, 0);
-    }
-    drawBird() {
+    draw() {
         let bird_animation = this.animation[this.frame];
-        c.save();
-        c.translate(this.x, this.y);
-        c.rotate(this.rotation);
-        c.drawImage(bird_animation, -this.width / 2, -this.height / 2, this.width, this.height);
-        c.restore();
+        // c.save();
+        // c.translate(this.x, this.y);
+        // c.rotate(this.rotation);
+        c.drawImage(bird_animation, this.x, this.y, this.width, this.height);
+        // c.restore();
     }
-    flap(){
+    flap() {
         this.speed = -this.jump;
     }
     update() {
@@ -64,21 +62,44 @@ class Bird {
         this.frame = this.frame % this.animation.length;
 
         this.speed += this.gravity;
-        this.y += this.speed; 
+        this.y += this.speed;
 
-        if (this.y >= canvas.height - 120) {
-            this.y = canvas.height - 120;
+        if (this.y >= canvas.height - 130) {
+            this.y = canvas.height - 130;
         }
+        // if(this.speed > this.jump){
+        //     this.rotation = 90 * this.degree;
+        // } else {
+        //     this.rotation = -20 * this.degree;
+        // }
+    }
+}
 
-        if(this.speed > this.jump){
-            this.rotation = 90 * this.degree;
-        } else {
-            this.rotation = -20 * this.degree;
-        }
+class Background {
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+
+        this.xGround = 0;
+        this.widthGround = 1800;
+        this.heightGround = 111;
+        this.dx = 2;
+    }
+    draw(){
+        c.drawImage(backgroundImg, this.x, this.y);
+    }
+    drawGround(){
+        c.drawImage(groundImg, this.xGround, this.height, this.widthGround, this.heightGround);
+    }
+    update(){
+        this.xGround = (this.xGround - this.dx) % (this.widthGround / 2);
     }
 }
 
 let bird = new Bird(canvas.width / 4, canvas.height / 4);
+let background = new Background(0, 0, 900, 393);
 
 addEventListener("click", function () {
     bird.flap();
@@ -87,9 +108,12 @@ addEventListener("click", function () {
 
 function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height);
-    bird.drawBackround();
+    background.draw();
+    background.drawGround();
+    background.update();
+
     bird.update();
-    bird.drawBird();
+    bird.draw();
 
     bird.frames++;
     requestAnimationFrame(animate);
