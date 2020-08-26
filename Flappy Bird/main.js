@@ -55,7 +55,7 @@ class Bird {
         c.save();
         c.translate(this.x, this.y);
         c.rotate(this.rotation);
-        c.drawImage(bird_animation, 0, 0, this.width, this.height);
+        c.drawImage(bird_animation, -this.width / 2, -this.height / 2 , this.width, this.height); 
         c.restore();
     }
     flap() {
@@ -70,15 +70,15 @@ class Bird {
         this.speed += this.gravity;
         this.y += this.speed;
 
-        if (this.y >= canvas.height - background.heightGround - this.height) {
-            this.y = canvas.height - background.heightGround - this.height;
+        if (this.y + this.height / 2 >= canvas.height - background.heightGround) {
+            this.y = canvas.height - background.heightGround - this.height / 2;
         }
 
         // Góc xoay của con chim
-        if (this.speed > this.jump) {
+        if (this.speed > this.jump * 1.5) {
             this.rotation = 90 * this.degree;
         } else {
-            this.rotation = -20 * this.degree;
+            this.rotation = -25 * this.degree;
         }
     }
 }
