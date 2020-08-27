@@ -148,7 +148,6 @@ class Background {
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
                 HIT.play();
-              
             }
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
