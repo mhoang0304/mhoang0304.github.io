@@ -34,6 +34,17 @@ DIE.src = "./audio/sfx_die.wav";
 const POINT = new Audio();
 POINT.src = "./audio/sfx_point.wav";
 
+let start_game = document.getElementById("start-game");
+let play_game = document.getElementById("play-game");
+
+let btn_start_game = document.getElementById("btn_start-game");
+
+btn_start_game.addEventListener("click", function(){
+    start_game.style.display = "none";
+    play_game.style.display = "block";
+    animate();
+})
+
 class Bird {
     constructor(x, y) {
         this.x = x;
@@ -129,12 +140,18 @@ class Background {
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
                 && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.heightPipe) {
+
+                bird.rotation = 90 * bird.degree;
+                bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
                 DIE.play();
             }
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
                 && bird.y + bird.radius > bottomPipeY && bird.y - bird.radius < bottomPipeY + this.heightPipe) {
+
+                bird.rotation = 90 * bird.degree;
+                bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
                 DIE.play();
             }
@@ -198,4 +215,3 @@ function animate() {
     }
 }
 
-animate();

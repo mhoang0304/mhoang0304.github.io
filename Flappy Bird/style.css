@@ -2,10 +2,28 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-#canvas{
+#start-game img{
+    width: 900px;
+    height: 500px;
+}
+
+#start-game button{
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#start-game img, #canvas{
     border: solid 2px black;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
 }
+
+#play-game{
+    display: none;
+    object-fit: cover;
+}
+
