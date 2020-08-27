@@ -31,18 +31,21 @@ FLAP.src = "./audio/sfx_flap.wav";
 const DIE = new Audio();
 DIE.src = "./audio/sfx_die.wav";
 
+const POINT = new Audio();
+POINT.src = "./audio/sfx_point.wav";
+
 class Bird {
     constructor(x, y) {
         this.x = x;
         this.y = y;
         this.width = 34;
         this.height = 25;
+        this.radius = 12;
 
         this.gravity = 0.25; // Trọng lực
         this.jump = 4.6;
         this.speed = 0;
 
-        this.score = 0;
         this.frame = 0; // Frame theo chuyển động con chim
         this.frames = 0; // Frames theo số khung hình
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
@@ -55,7 +58,7 @@ class Bird {
         c.save();
         c.translate(this.x, this.y);
         c.rotate(this.rotation);
-        c.drawImage(bird_animation, -this.width / 2, -this.height / 2 , this.width, this.height); 
+        c.drawImage(bird_animation, -this.width / 2, -this.height / 2, this.width, this.height);
         c.restore();
     }
     flap() {
@@ -75,7 +78,7 @@ class Bird {
         }
 
         // Góc xoay của con chim
-        if (this.speed > this.jump * 1.5) {
+        if (this.speed > this.jump) {
             this.rotation = 90 * this.degree;
         } else {
             this.rotation = -25 * this.degree;
@@ -89,6 +92,7 @@ class Background {
         this.y = y;
         this.width = width;
         this.height = height;
+        this.score = 0;
 
         this.xGround = 0;
         this.widthGround = 1800;
@@ -111,7 +115,7 @@ class Background {
     update() {
         this.xGround = (this.xGround - this.dx) % (this.widthGround / 2);
 
-        // Tạo tao độ cho ống
+        // Tạo toạ độ cho ống
         if (bird.frames % 100 == 0) {
             this.arr.push({
                 x: canvas.width, // Toạ độ bắt đầu ở ngoài màn hình
@@ -121,11 +125,27 @@ class Background {
         for (let i = 0; i < this.arr.length; i++) {
             let p = this.arr[i];
 
+            let bottomPipeY = p.y + this.heightPipe + this.gap;
+
+            if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
+                && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.heightPipe) {
+                gameOver = true;
+                DIE.play();
+            }
+
+            if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
+                && bird.y + bird.radius > bottomPipeY && bird.y - bird.radius < bottomPipeY + this.heightPipe) {
+                gameOver = true;
+                DIE.play();
+            }
+
             p.x -= this.dxPipe; // Di chuyển ống
 
             // Xoá ống trong mảng khi di chuyển ra khỏi màn hình
             if (p.x + this.widthPipe <= 0) {
                 this.arr.shift();
+                this.score++;
+                POINT.play();
             }
         }
     }
@@ -143,10 +163,18 @@ class Background {
             c.drawImage(pipe_bottom, p.x, botYPipe, this.widthPipe, this.heightPipe);
         }
     }
+    drawScore() {
+        c.beginPath();
+        c.fillStyle = "white";
+        c.font = "30px sans-serif";
+        c.fillText(this.score, canvas.width / 2, 40);
+    }
 }
 
-let bird = new Bird(canvas.width / 4, canvas.height / 4);
+let bird = new Bird(50, canvas.height / 4);
 let background = new Background(0, 0, 900, 500);
+
+let gameOver = false;
 
 addEventListener("click", function () {
     bird.flap();
@@ -154,17 +182,20 @@ addEventListener("click", function () {
 })
 
 function animate() {
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    background.draw();
-    background.update();
-    background.drawPipe();
-    background.drawGround();
+    if (!gameOver) {
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        background.draw();
+        background.update();
+        background.drawPipe();
+        background.drawGround();
+        background.drawScore();
 
-    bird.update();
-    bird.draw();
+        bird.update();
+        bird.draw();
 
-    bird.frames++;
-    requestAnimationFrame(animate);
+        bird.frames++;
+        requestAnimationFrame(animate);
+    }
 }
 
 animate();
