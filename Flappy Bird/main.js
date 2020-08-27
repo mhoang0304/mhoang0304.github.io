@@ -34,6 +34,9 @@ DIE.src = "./audio/sfx_die.wav";
 const POINT = new Audio();
 POINT.src = "./audio/sfx_point.wav";
 
+const HIT = new Audio();
+HIT.src = "./audio/sfx_hit.wav";
+
 let start_game = document.getElementById("start-game");
 let play_game = document.getElementById("play-game");
 
@@ -144,7 +147,8 @@ class Background {
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
-                DIE.play();
+                HIT.play();
+              
             }
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
@@ -153,7 +157,7 @@ class Background {
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
-                DIE.play();
+                HIT.play();
             }
 
             p.x -= this.dxPipe; // Di chuyển ống

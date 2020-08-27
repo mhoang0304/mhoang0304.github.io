@@ -12,6 +12,27 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
+    width: 155px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color:white;
+    background-color: #5C8C2B;
+    border: solid 2px #82B8D9;
+    border-radius: 50px;
+}
+
+#start-game button:focus{
+    outline: none;
+}
+
+#start-game button:hover{
+    background-color: #4B732F;
+    border: solid 2px #2955D9;
+}
+
+button:active{
+    color: white;
 }
 
 #start-game img, #canvas{
