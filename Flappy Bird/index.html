@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flappy Bird</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -19,6 +21,22 @@
     <!-- Màn hình chơi game -->
     <div id="play-game">
         <canvas id="canvas" width="900" height="500"></canvas>
+    </div>
+
+    <!-- Màn hình kết thúc game -->
+    <div id="end-game">
+        <div>
+            <button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+            <p>PLay Again</p>
+        </div>
+        <div>
+            <button>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
+            <p>Exit</p>
+        </div>
     </div>
 
     <script src="./main.js"></script>

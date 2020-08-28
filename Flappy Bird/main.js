@@ -14,6 +14,18 @@ pipe_bottom.src = "./image/pipe-bottom.png";
 const pipe_top = new Image();
 pipe_top.src = "./image/pipe-top.png";
 
+const medal_1 = new Image();
+medal_1.src = "./image/medal-1.png";
+
+const medal_2 = new Image();
+medal_2.src = "./image/medal-2.png";
+
+const medal_3 = new Image();
+medal_3.src = "./image/medal-3.png";
+
+const medal_4 = new Image();
+medal_4.src = "./image/medal-4.png";
+
 // Image Bird: 
 const birdImg = new Image();
 birdImg.src = "./image/bird.png";
@@ -42,7 +54,7 @@ let play_game = document.getElementById("play-game");
 
 let btn_start_game = document.getElementById("btn_start-game");
 
-btn_start_game.addEventListener("click", function(){
+btn_start_game.addEventListener("click", function () {
     start_game.style.display = "none";
     play_game.style.display = "block";
     animate();
@@ -147,7 +159,7 @@ class Background {
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
-                HIT.play();
+                // HIT.play();
             }
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
@@ -156,7 +168,7 @@ class Background {
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
                 gameOver = true;
-                HIT.play();
+                // HIT.play();
             }
 
             p.x -= this.dxPipe; // Di chuyển ống
@@ -165,7 +177,7 @@ class Background {
             if (p.x + this.widthPipe <= 0) {
                 this.arr.shift();
                 this.score++;
-                POINT.play();
+                // POINT.play();
             }
         }
     }
@@ -189,6 +201,42 @@ class Background {
         c.font = "30px sans-serif";
         c.fillText(this.score, canvas.width / 2, 40);
     }
+    transcript() {
+        c.beginPath();
+        c.fillStyle = "#2B190E";
+        c.fillRect(canvas.width / 2 - 150, canvas.height / 2 - 150, 300, 150);
+
+        c.beginPath();
+        c.fillStyle = "#FCEF87";
+        c.fillRect(canvas.width / 2 - 145, canvas.height / 2 - 145, 290, 135);
+
+        c.beginPath();
+        c.fillStyle = "#E37332";
+        c.font = "normal normal 600 25px sans-serif ";
+        c.fillText("SCORE", canvas.width / 2 - 110, 155);
+
+        c.beginPath();
+        c.fillStyle = "#260101";
+        c.font = "normal normal 700 40px sans-serif";
+        c.fillText(this.score, canvas.width / 2 - 80, 210);
+
+        c.beginPath();
+        c.fillStyle = "#E37332";
+        c.font = "normal normal 600 25px sans-serif ";
+        c.fillText("MEDAL", canvas.width / 2 + 20, 155);
+
+        if (this.score >= 0) {
+            c.drawImage(medal_1, canvas.width / 2 + 40, 170);
+        }
+        if (this.score >= 2) {
+            c.drawImage(medal_2, canvas.width / 2 + 40, 170);
+        }
+        if (this.score >= 4) {
+            c.drawImage(medal_3, canvas.width / 2 + 40, 170);
+        } if (this.score >= 6) {
+            c.drawImage(medal_4, canvas.width / 2 + 40, 170);
+        }
+    }
 }
 
 let bird = new Bird(50, canvas.height / 4);
@@ -198,7 +246,7 @@ let gameOver = false;
 
 addEventListener("click", function () {
     bird.flap();
-    FLAP.play();
+    // FLAP.play();
 })
 
 function animate() {
@@ -212,9 +260,12 @@ function animate() {
 
         bird.update();
         bird.draw();
+        background.transcript();
 
         bird.frames++;
         requestAnimationFrame(animate);
+    } else {
+
     }
 }
 
