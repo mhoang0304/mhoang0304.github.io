@@ -181,7 +181,10 @@ img{
 }
 
 .about .contain .title-about h2,
-.skill .contain-skill .title-skill h2{
+.skill .contain-skill .title-skill h2,
+.experience .contain-exp .title-exp h2,
+.project .contain-project .title-project h2,
+.contact .contain-contact .title-contact h2{
     color: white;
     font-size: 30px;
     margin: 20px 0px 30px;
@@ -236,6 +239,10 @@ img{
     color: #9a9696;
 }
 
+.skill .contain-skill .main-skill .left-skill{
+    padding-right: 40px;
+}
+
 .skill .contain-skill .main-skill .left-skill,
 .skill .contain-skill .main-skill .right-skill{
     flex-basis: 50%;
@@ -248,6 +255,37 @@ img{
 
 .skill .contain-skill .main-skill .right-skill #code{
     padding-top: 25px;
+}
+
+.project .contain-project .title-project h2{
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    margin: 20px 0px 30px 0px;   
+}
+
+.experience .contain-exp .main-exp{
+    color: white;
+}
+
+.experience .contain-exp .main-exp #name{
+    color: #9a9696;
+    padding-top: 4px; 
+}
+
+.experience .contain-exp .main-exp .exp-1{
+    margin-bottom: 35px;
+}
+
+.experience .contain-exp .main-exp .exp-1 div,
+.experience .contain-exp .main-exp .exp-2 div{
+    text-indent: 25px;
+    margin-top: 6px;
+}
+
+.experience .contain-exp .main-exp .exp-1 div p,
+.experience .contain-exp .main-exp .exp-2 div p{
+    padding-top: 3px;
 }
 
 
