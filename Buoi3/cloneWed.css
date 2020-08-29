@@ -1,0 +1,29 @@
+h1{
+    text-transform: uppercase;
+}
+.image{
+    border: 1px solid yellow;
+    float: left;
+    width: 16%;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10%;
+}
+.image{
+    padding: 1px ;
+}
+.fruit1::after{
+    content:"Sầu riêng Musang King Maylaysia";
+}
+.fruit2::after{
+    content:"Dưa lưới Nhật";
+}
+.fruit3::after{
+    content:"Nho Đen không hạt Mỹ";
+}
+.fruit4::after{
+    content:"Lựu Peru";
+}
+.fruit5::after{
+    content:"KiwiBerry New Zealand";
+}

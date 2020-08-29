@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Màn hình chính -->
+    <div id="start-game">
+        <img src="./Image/Background.jpg" width="1000px" height="600px">
+        <button id="btn_start-game">Bắt đầu</button>
+    </div>
+
+    <!-- Màn hình chơi game -->
+    <div id="game">
+        <canvas id="canvas" style="background-color: black;" width="1000px" height="600px"></canvas>
+        <audio autoplay preload="auto">
+            <source src="./audio/music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Màn hình kết thúc game -->
+    <div id="end-game">
+        <img src="./Image/endgame.jpg" width="1000px" height="600px">
+        <button id="btn_replay">Chơi lại</button>
+        <button id="btn_reload">Thoát game</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+
+        let start_game = document.getElementById("start-game");
+        let game = document.getElementById("game");
+        let end_game = document.getElementById("end-game");
+
+        let btn_start_game = document.getElementById("btn_start-game");
+        let btn_reload = document.getElementById("btn_reload");
+        let btn_replay = document.getElementById("btn_replay");
+
+        //Nút bắt đầu game
+        btn_start_game.addEventListener("click", function () {
+            start_game.style.display = "none";
+            game.style.display = "block";
+        })
+
+        //Nút chơi lại game
+        btn_replay.addEventListener("click", function () {
+            boss.score = 0;
+            boss.x = canvas.width / 2;
+            boss.y = canvas.height / 2;
+            gameWin = false;
+            createBalls(N);
+            start_game.style.display = "none";
+            game.style.display = "block";
+            end_game.style.display = "none";
+            animate();
+        })
+
+        //Nút thoát game về màn hình chính
+        btn_reload.addEventListener("click", function () {
+            window.location.reload();
+        })
+
+        class Boss {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.score = 0;
+                this.dx = 0;
+                this.dy = 0;
+            }
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.radius / 3, 0, 2 * Math.PI);
+                c.fillStyle = this.color;
+                c.fill();
+            }
+            drawBoss() {
+                c.beginPath()
+                c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                c.fillStyle = this.color;
+                c.shadowColor = "white";
+                c.shadowBlur = 16;
+                c.fill();
+
+                c.beginPath();
+                c.font = "14px sans-serif";
+                c.fillStyle = "white";
+                c.fillText("HAHA", this.x - 20, this.y + 5);
+            }
+            drawScore() {
+                c.beginPath();
+                c.fillStyle = "white";
+                c.font = "30px sans-serif";
+                c.fillText("Score:", (canvas.width / 20) - 30, canvas.height - 15);
+                c.fillText(this.score, canvas.width / 9, canvas.height - 15);
+            }
+            drawYouWin() {
+                c.beginPath();
+                c.fillStyle = "white";
+                c.font = "40px sans-serif";
+                c.fillText("You Win!", (canvas.width / 2) - 80, canvas.height / 2);
+            }
+            move() {
+                if (this.x > canvas.width - this.radius) {
+                    boss.dx = -5;
+                    boss.dy = 0;
+                }
+                if (this.x < this.radius) {
+                    boss.dx = 5;
+                    boss.dy = 0;
+                }
+                if (this.y > canvas.height - this.radius) {
+                    boss.dx = 0;
+                    boss.dy = -5;
+                }
+                if (this.y < this.radius) {
+                    boss.dx = 0;
+                    boss.dy = 5;
+                }
+                this.x = this.x + this.dx;
+                this.y = this.y + this.dy;
+                this.drawScore();
+                this.drawBoss();
+            }
+        }
+
+        let boss = new Boss(canvas.width / 2, canvas.height / 2, 25, "yellow", 0);
+        let arrayPoint = [];
+        let N = 60;
+        let gameWin = false;
+
+        addEventListener('keydown', function (event) {
+            if (event.keyCode == 40) { // Down
+                boss.dy = 5;
+                boss.dx = 0;
+            }
+            if (event.keyCode == 38) { // Up
+                boss.dy = -5;
+                boss.dx = 0;
+            }
+            if (event.keyCode == 39) { // Right
+                boss.dy = 0;
+                boss.dx = 5;
+            }
+            if (event.keyCode == 37) { // Left
+                boss.dy = 0;
+                boss.dx = -5;
+            }
+        });
+
+        function createBalls(N) {
+            for (let i = 0; i < N; i++) {
+                var pointBall = new Boss(randomPosition(15, canvas.width - 15), randomPosition(15, canvas.height - 15), 30, rgb());
+                arrayPoint.push(pointBall);
+            }
+        }
+        createBalls(N);
+
+        function update() {
+            arrayPoint.forEach((x) => {
+                if (Math.sqrt(Math.pow(boss.x - x.x, 2) + Math.pow(boss.y - x.y, 2)) <= (x.radius + boss.radius)) {
+                    boss.score++;
+                    arrayPoint.splice(arrayPoint.indexOf(x), 1);
+                }
+            })
+        }
+
+        function gameOver() {
+            if (boss.score >= N) {
+                gameWin = true;
+            }
+        }
+
+        function handleGameOver() {
+            if (gameWin) {
+                c.fillStyle = "#272F59";
+                c.fillRect(0, 0, canvas.width, canvas.height);
+                c.fill();
+                boss.dx = 0;
+                boss.dy = 0;
+            }
+        }
+
+        function animate() {
+            if (!gameWin) {
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                boss.drawBoss();
+                boss.drawScore();
+                arrayPoint.forEach((x) => x.draw());
+                gameOver();
+                boss.move();
+                update();
+                requestAnimationFrame(animate);
+            } else {
+                handleGameOver();
+                boss.drawYouWin();
+                boss.drawScore();
+                setTimeout(() => {
+                    game.style.display = "none";
+                    end_game.style.display = "block";
+                }, 2000)
+            }
+        }
+        animate();
+
+        function randomPosition(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function rgb() {
+            color = 'rgb(';
+            for (var i = 0; i < 3; i++) {
+                color += Math.floor(Math.random() * 255) + ',';
+            }
+            return color.replace(/\,$/, ')');
+        }
+
+    </script>
+</body>
+
+</html>

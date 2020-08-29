@@ -1,0 +1,54 @@
+#canvas {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#btn_replay{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#btn_reload{
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#btn_replay, #btn_reload {
+    background-color: #92D602;
+}
+
+#btn_replay, #btn_start-game{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+button{
+    padding: 7px 20px;
+    border: none;
+    background-color:#272F59;
+    font-size: 30px;
+    border-radius: 100px;  
+    font-weight: 600;
+    color: white;
+}
+
+#game, #end-game{
+    display: none;
+}
+
+

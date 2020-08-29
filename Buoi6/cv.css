@@ -1,0 +1,25 @@
+.image {
+    position: absolute;
+    top: 0px;
+    right: 35px;
+}
+
+.heading {
+    position: relative;
+}
+
+.info {
+    float: left;
+}
+
+.exp {
+    clear: both;
+}
+
+* {
+    text-indent: 30px;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
