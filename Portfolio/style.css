@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body::-webkit-scrollbar { 
+    display: none; 
+}
+
 img{
     display: block;
     max-width:100%;
@@ -125,7 +129,7 @@ img{
 }
 
 .about .contain, .skill .contain-skill,
-.experience .contain-exp, .project .contain-project,
+.experience .contain-exp, .project .contain-project .title-project,
 .contact .contain-contact{
     width: 1020px;
     margin: auto;
@@ -287,6 +291,37 @@ img{
 .experience .contain-exp .main-exp .exp-2 div p{
     padding-top: 3px;
 }
+
+.project .contain-project .main-project{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.project .contain-project .main-project .row-project1,
+.project .contain-project .main-project .row-project2{
+    display: flex;
+    margin: auto;
+}
+
+.project .contain-project .main-project .image-project{
+    padding: 36px 18px 0px;
+}
+
+.project .contain-project .main-project .image-project img{
+    width: 325px;
+    height: 460px;
+    object-fit: cover;
+    position: relative;
+}
+
+.project .contain-project .main-project .image-project .icon-image{
+    font-size: 40px;
+    color: white;
+    position: absolute;
+}
+
+
 
 
 
