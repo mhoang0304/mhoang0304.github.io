@@ -14,6 +14,9 @@ pipe_bottom.src = "./image/pipe-bottom.png";
 const pipe_top = new Image();
 pipe_top.src = "./image/pipe-top.png";
 
+const game_ready = new Image();
+game_ready.src = "./image/ready.png";
+
 const medal_1 = new Image();
 medal_1.src = "./image/medal-1.png";
 
@@ -131,6 +134,12 @@ class Background {
         this.gap = 105; // Khoảng cách 2 ống
         this.maxYPipe = -160;
         this.dxPipe = 2;
+
+        // Trạng thái game
+        this.current = 0; // Trạng thái hiện tại
+        this.ready = 0;  // Chuẩn bị
+        this.game = 1;   // Chơi game
+        this.over = 2;   // Kết thúc game
     }
     draw() {
         c.drawImage(backgroundImg, this.x, this.y, this.width, this.height);
@@ -158,7 +167,7 @@ class Background {
 
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
-                gameOver = true;
+                // gameOver = true;
                 // HIT.play();
             }
 
@@ -167,7 +176,7 @@ class Background {
 
                 bird.rotation = 90 * bird.degree;
                 bird.y = canvas.height - this.heightGround - bird.height / 2;
-                gameOver = true;
+                // gameOver = true;
                 // HIT.play();
             }
 
@@ -201,40 +210,47 @@ class Background {
         c.font = "30px sans-serif";
         c.fillText(this.score, canvas.width / 2, 40);
     }
-    transcript() {
-        c.beginPath();
-        c.fillStyle = "#2B190E";
-        c.fillRect(canvas.width / 2 - 150, canvas.height / 2 - 150, 300, 150);
-
-        c.beginPath();
-        c.fillStyle = "#FCEF87";
-        c.fillRect(canvas.width / 2 - 145, canvas.height / 2 - 145, 290, 135);
-
-        c.beginPath();
-        c.fillStyle = "#E37332";
-        c.font = "normal normal 600 25px sans-serif ";
-        c.fillText("SCORE", canvas.width / 2 - 110, 155);
-
-        c.beginPath();
-        c.fillStyle = "#260101";
-        c.font = "normal normal 700 40px sans-serif";
-        c.fillText(this.score, canvas.width / 2 - 80, 210);
-
-        c.beginPath();
-        c.fillStyle = "#E37332";
-        c.font = "normal normal 600 25px sans-serif ";
-        c.fillText("MEDAL", canvas.width / 2 + 20, 155);
-
-        if (this.score >= 0) {
-            c.drawImage(medal_1, canvas.width / 2 + 40, 170);
+    drawReady() { // Chuẩn bị vào game
+        if(this.current == this.ready){
+            c.drawImage(game_ready, canvas.width / 2, canvas.height / 2);
         }
-        if (this.score >= 2) {
-            c.drawImage(medal_2, canvas.width / 2 + 40, 170);
-        }
-        if (this.score >= 4) {
-            c.drawImage(medal_3, canvas.width / 2 + 40, 170);
-        } if (this.score >= 6) {
-            c.drawImage(medal_4, canvas.width / 2 + 40, 170);
+    }
+    transcript() { // Kết thúc game
+        if (this.current == this.over) {
+            c.beginPath();
+            c.fillStyle = "#2B190E";
+            c.fillRect(canvas.width / 2 - 150, canvas.height / 2 - 150, 300, 150);
+
+            c.beginPath();
+            c.fillStyle = "#FCEF87";
+            c.fillRect(canvas.width / 2 - 145, canvas.height / 2 - 145, 290, 135);
+
+            c.beginPath();
+            c.fillStyle = "#E37332";
+            c.font = "normal normal 600 25px sans-serif ";
+            c.fillText("SCORE", canvas.width / 2 - 110, 155);
+
+            c.beginPath();
+            c.fillStyle = "#260101";
+            c.font = "normal normal 700 40px sans-serif";
+            c.fillText(this.score, canvas.width / 2 - 80, 210);
+
+            c.beginPath();
+            c.fillStyle = "#E37332";
+            c.font = "normal normal 600 25px sans-serif ";
+            c.fillText("MEDAL", canvas.width / 2 + 20, 155);
+
+            if (this.score >= 0) {
+                c.drawImage(medal_1, canvas.width / 2 + 40, 170);
+            }
+            if (this.score >= 5) {
+                c.drawImage(medal_2, canvas.width / 2 + 40, 170);
+            }
+            if (this.score >= 10) {
+                c.drawImage(medal_3, canvas.width / 2 + 40, 170);
+            } if (this.score >= 20) {
+                c.drawImage(medal_4, canvas.width / 2 + 40, 170);
+            }
         }
     }
 }
@@ -242,30 +258,37 @@ class Background {
 let bird = new Bird(50, canvas.height / 4);
 let background = new Background(0, 0, 900, 500);
 
-let gameOver = false;
+// let gameOver = false;
 
-addEventListener("click", function () {
-    bird.flap();
-    // FLAP.play();
+canvas.addEventListener("click", function () {
+    switch (background.current) {
+        case background.ready:
+            background.current = background.game;
+            break;
+        case background.game:
+            bird.flap();
+            break;
+        case background.over:
+            background.current = background.ready;
+            break;
+    }
 })
 
 function animate() {
-    if (!gameOver) {
-        c.clearRect(0, 0, canvas.width, canvas.height);
-        background.draw();
-        background.update();
-        background.drawPipe();
-        background.drawGround();
-        background.drawScore();
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    background.draw();
+    background.update();
+    background.drawPipe();
+    background.drawGround();
+    background.drawScore();
+    background.drawReady();
+    background.transcript();
+    bird.update();
+    bird.draw();
 
-        bird.update();
-        bird.draw();
-        background.transcript();
 
-        bird.frames++;
-        requestAnimationFrame(animate);
-    } else {
-
-    }
+    bird.frames++;
+    requestAnimationFrame(animate);
 }
+
 
