@@ -55,6 +55,9 @@ HIT.src = "./audio/sfx_hit.wav";
 const START = new Audio();
 START.src = "./audio/sfx_swooshing.wav";
 
+const INTRO = new Audio();
+INTRO.src = "./audio/intro.mp3";
+
 let start_game = document.getElementById("start-game");
 let play_game = document.getElementById("play-game");
 let end_game = document.getElementById("end-game");
@@ -66,6 +69,7 @@ let btn_exit = document.getElementById("btn_exit");
 btn_start_game.addEventListener("click", function () {
     start_game.style.display = "none";
     play_game.style.display = "block";
+    INTRO.play();
     animate();
 })
 
@@ -81,7 +85,6 @@ btn_play_again.addEventListener("click", function () {
     background.score = 0;
     bird.speed = 0;
     bird.y = canvas.height / 4;
-  
     background.current = background.game;
 })
 
