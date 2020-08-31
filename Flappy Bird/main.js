@@ -76,9 +76,9 @@ btn_start_game.addEventListener("click", function () {
 
 // Nút chơi lại game:
 btn_play_again.addEventListener("click", function () {
+    end_game.style.display = "none";
     start_game.style.display = "none";
     play_game.style.display = "block";
-    end_game.style.display = "none";
     bird.rotation = 0;
     animate();
     background.arr = [];
