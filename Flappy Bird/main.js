@@ -75,11 +75,14 @@ btn_play_again.addEventListener("click", function () {
     start_game.style.display = "none";
     play_game.style.display = "block";
     end_game.style.display = "none";
+    bird.rotation = 0;
+    animate();
     background.arr = [];
     background.score = 0;
     bird.speed = 0;
     bird.y = canvas.height / 4;
-    background.current = background.ready;
+  
+    background.current = background.game;
 })
 
 btn_exit.addEventListener("click", function () {
@@ -323,11 +326,10 @@ function animate() {
         bird.frames++;
         requestAnimationFrame(animate);
     } else {
-        start_game.style.display = "none";
-        play_game.style.display = "block";
+        // start_game.style.display = "none";
+        // play_game.style.display = "block";
         end_game.style.display = "block";
         background.transcript();
-        background.current == background.ready;
     }
 }
 
