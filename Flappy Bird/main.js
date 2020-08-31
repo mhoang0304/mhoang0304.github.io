@@ -52,15 +52,38 @@ POINT.src = "./audio/sfx_point.wav";
 const HIT = new Audio();
 HIT.src = "./audio/sfx_hit.wav";
 
+const START = new Audio();
+START.src = "./audio/sfx_swooshing.wav";
+
 let start_game = document.getElementById("start-game");
 let play_game = document.getElementById("play-game");
+let end_game = document.getElementById("end-game");
 
 let btn_start_game = document.getElementById("btn_start-game");
+let btn_play_again = document.getElementById("btn_play-again");
+let btn_exit = document.getElementById("btn_exit");
 
 btn_start_game.addEventListener("click", function () {
     start_game.style.display = "none";
     play_game.style.display = "block";
     animate();
+})
+
+
+// Nút chơi lại game:
+btn_play_again.addEventListener("click", function () {
+    start_game.style.display = "none";
+    play_game.style.display = "block";
+    end_game.style.display = "none";
+    background.arr = [];
+    background.score = 0;
+    bird.speed = 0;
+    bird.y = canvas.height / 4;
+    background.current = background.ready;
+})
+
+btn_exit.addEventListener("click", function () {
+    window.location.reload();
 })
 
 class Bird {
@@ -77,6 +100,7 @@ class Bird {
 
         this.frame = 0; // Frame theo chuyển động con chim
         this.frames = 0; // Frames theo số khung hình
+        this.period = 10;
         this.animation = [birdImg_up, birdImg, birdImg_down, birdImg];
 
         this.degree = Math.PI / 180;
@@ -94,23 +118,36 @@ class Bird {
         this.speed = -this.jump;
     }
     update() {
+        if (background.current == background.game) {
+            this.period = 5;
+        }
         // Tăng frame lên 1 theo mỗi giai đoạn
-        this.frame += this.frames % 5 == 0 ? 1 : 0;
+        this.frame += this.frames % this.period == 0 ? 1 : 0;
         // Tăng từ 0 lên 4, sau đó trả về 0
         this.frame = this.frame % this.animation.length;
 
-        this.speed += this.gravity;
-        this.y += this.speed;
-
-        if (this.y + this.height / 2 >= canvas.height - background.heightGround) {
-            this.y = canvas.height - background.heightGround - this.height / 2;
-        }
-
-        // Góc xoay của con chim
-        if (this.speed > this.jump) {
-            this.rotation = 90 * this.degree;
+        if (background.current == background.ready) {
+            this.y = canvas.height / 4;
+            this.speed = 0;
         } else {
-            this.rotation = -25 * this.degree;
+            this.speed += this.gravity;
+            this.y += this.speed;
+
+            if (this.y + this.height / 2 >= canvas.height - background.heightGround) {
+                this.y = canvas.height - background.heightGround - this.height / 2;
+                if (background.current == background.game) {
+                    background.current = background.over;
+                    DIE.play;
+                }
+            }
+
+            // Góc xoay của con chim
+            if (this.speed > this.jump) {
+                this.rotation = 90 * this.degree;
+                this.frame = 1;
+            } else {
+                this.rotation = -25 * this.degree;
+            }
         }
     }
 }
@@ -148,12 +185,18 @@ class Background {
         c.drawImage(groundImg, this.xGround, canvas.height - this.heightGround, this.widthGround, this.heightGround);
     }
     update() {
-        this.xGround = (this.xGround - this.dx) % (this.widthGround / 2);
+        if (this.current == this.game) {
+            this.xGround = (this.xGround - this.dx) % (this.widthGround / 2);
+        }
+
+        if (this.current != this.game) {
+            return;
+        }
 
         // Tạo toạ độ cho ống
         if (bird.frames % 100 == 0) {
             this.arr.push({
-                x: canvas.width, // Toạ độ bắt đầu ở ngoài màn hình
+                x: canvas.width,
                 y: this.maxYPipe * (Math.random() + 1) // Toạ độ Y nằm trong khoảng xấp xỉ -160 đến -320
             });
         }
@@ -164,20 +207,14 @@ class Background {
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
                 && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.heightPipe) {
-
-                bird.rotation = 90 * bird.degree;
-                bird.y = canvas.height - this.heightGround - bird.height / 2;
-                // gameOver = true;
-                // HIT.play();
+                this.current = this.over;
+                HIT.play();
             }
 
             if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.widthPipe
                 && bird.y + bird.radius > bottomPipeY && bird.y - bird.radius < bottomPipeY + this.heightPipe) {
-
-                bird.rotation = 90 * bird.degree;
-                bird.y = canvas.height - this.heightGround - bird.height / 2;
-                // gameOver = true;
-                // HIT.play();
+                this.current = this.over;
+                HIT.play();
             }
 
             p.x -= this.dxPipe; // Di chuyển ống
@@ -186,7 +223,7 @@ class Background {
             if (p.x + this.widthPipe <= 0) {
                 this.arr.shift();
                 this.score++;
-                // POINT.play();
+                POINT.play();
             }
         }
     }
@@ -194,11 +231,10 @@ class Background {
         for (let i = 0; i < this.arr.length; i++) {
             let p = this.arr[i];
 
-            let topYPipe = p.y;
             let botYPipe = p.y + this.heightPipe + this.gap;
 
             // Top Pipe:
-            c.drawImage(pipe_top, p.x, topYPipe, this.widthPipe, this.heightPipe);
+            c.drawImage(pipe_top, p.x, p.y, this.widthPipe, this.heightPipe);
 
             // Bottom Pipe:
             c.drawImage(pipe_bottom, p.x, botYPipe, this.widthPipe, this.heightPipe);
@@ -211,8 +247,8 @@ class Background {
         c.fillText(this.score, canvas.width / 2, 40);
     }
     drawReady() { // Chuẩn bị vào game
-        if(this.current == this.ready){
-            c.drawImage(game_ready, canvas.width / 2, canvas.height / 2);
+        if (this.current == this.ready) {
+            c.drawImage(game_ready, canvas.width / 2 - 58, canvas.height / 2 - 100);
         }
     }
     transcript() { // Kết thúc game
@@ -258,37 +294,41 @@ class Background {
 let bird = new Bird(50, canvas.height / 4);
 let background = new Background(0, 0, 900, 500);
 
-// let gameOver = false;
-
 canvas.addEventListener("click", function () {
     switch (background.current) {
         case background.ready:
             background.current = background.game;
+            START.play();
             break;
         case background.game:
             bird.flap();
-            break;
-        case background.over:
-            background.current = background.ready;
+            FLAP.play();
             break;
     }
 })
 
 function animate() {
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    background.draw();
-    background.update();
-    background.drawPipe();
-    background.drawGround();
-    background.drawScore();
-    background.drawReady();
-    background.transcript();
-    bird.update();
-    bird.draw();
+    if (background.current == background.ready || background.current == background.game) {
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        background.draw();
+        background.update();
+        background.drawPipe();
+        background.drawGround();
+        background.drawScore();
+        background.drawReady();
 
+        bird.update();
+        bird.draw();
 
-    bird.frames++;
-    requestAnimationFrame(animate);
+        bird.frames++;
+        requestAnimationFrame(animate);
+    } else {
+        start_game.style.display = "none";
+        play_game.style.display = "block";
+        end_game.style.display = "block";
+        background.transcript();
+        background.current == background.ready;
+    }
 }
 
 
