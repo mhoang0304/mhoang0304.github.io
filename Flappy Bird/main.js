@@ -85,7 +85,7 @@ btn_play_again.addEventListener("click", function () {
     background.score = 0;
     bird.speed = 0;
     bird.y = canvas.height / 4;
-    background.current = background.game;
+    background.current = background.ready;
 })
 
 btn_exit.addEventListener("click", function () {
@@ -329,8 +329,6 @@ function animate() {
         bird.frames++;
         requestAnimationFrame(animate);
     } else {
-        // start_game.style.display = "none";
-        // play_game.style.display = "block";
         end_game.style.display = "block";
         background.transcript();
     }
