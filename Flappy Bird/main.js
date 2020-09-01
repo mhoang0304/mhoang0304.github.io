@@ -74,13 +74,12 @@ btn_play_again.addEventListener("click", function () {
     end_game.style.display = "none";
     start_game.style.display = "none";
     play_game.style.display = "block";
-    bird.rotation = 0;
-    animate();
+    bird.rotation = 0;  
     background.arr = [];
     background.score = 0;
     bird.speed = 0;
-    bird.y = canvas.height / 4;
     background.current = background.ready;
+    animate();
 })
 
 btn_exit.addEventListener("click", function () {
