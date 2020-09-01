@@ -77,8 +77,8 @@ img{
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #fff;
-    transition: all 0.5s ease-in;
+    background-color: #9a9696;
+    transition: all 0.3s ease-in;
 }
 
 .introduce .navbar .menu .icon:hover:after {
@@ -329,28 +329,66 @@ img{
     position: relative;
     height: 460px;
     margin: 0px 15px 29px;
+    overflow: hidden;
+}
+
+.project .image-project:hover img{
+    transform: scale(1.2);
+    transition: all 1s;
+    opacity: 0.5;
 }
 
 .project .image-project img{
     height: 460px;
     width: 325px;
     object-fit: cover;
-    filter: brightness(80%);
 }
 
 .project .icon-image i{
     font-size: 40px;
     color: white;
     position: absolute;
-    left: 27px;
+    left: 16px;
     top: 12px;
 }
 
 .project .text-project{
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    bottom: -112px;
     color:#fff;
+    padding: 0px 15px;
+    overflow: hidden;
+}
+
+.project .image-project:hover .text-project{
+    bottom: 0px;
+    transition: all 1s;
+}
+
+.project .text-project h1{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+
+.project .link-project{
+    text-align: center;
+}
+
+.project .link-project a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.project .link-project a:active{
+    color: #fff;
+}
+
+.project .text-project p{
+    color: #9a9696;
+    font-size: 16px;
 }
 
 
