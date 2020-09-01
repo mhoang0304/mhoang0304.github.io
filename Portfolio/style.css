@@ -40,13 +40,13 @@ img{
     background-color: #000;
 }
 
-.introduce .navbar .image,
-.introduce .navbar .name{
+.introduce .image,
+.introduce .name{
   display: flex;
   justify-content: center;
 }
 
-.introduce .navbar .image img{
+.introduce .image img{
     width: 110px;
     height: 110px;
     object-fit: cover;
@@ -54,7 +54,7 @@ img{
     margin: 25px 0px 30px;
 }
 
-.introduce .navbar .name{
+.introduce .name{
     color: white;
     font-weight: 500;
     font-size: 18px;
@@ -76,18 +76,13 @@ img{
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: #fff;
-    transition: all .3s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 .introduce .navbar .menu .icon:hover:after {
     width: 100%;
-}
-
-.introduce .navbar .menu .icon:hover{
-    border-bottom:solid 1px #999;
-    transition: all 2s; 
 }
 
 .introduce .navbar .menu .icon i{
@@ -270,7 +265,7 @@ img{
 
 .skill .contain-skill .main-skill .right-skill p{
     padding-bottom: 10px;
-    border-bottom: solid 3px #9a9696;
+    border-bottom: solid 3px #fff;
     position: relative;
 }
 
@@ -281,7 +276,7 @@ img{
     right: 0;
     width: 20%;
     height: 3px;
-    background-color: #fff;
+    background-color: #9a9696;
 }
 
 .skill .contain-skill .main-skill .right-skill #code{
@@ -308,50 +303,45 @@ img{
     margin-bottom: 35px;
 }
 
-.experience .contain-exp .main-exp .exp-1 div,
-.experience .contain-exp .main-exp .exp-2 div{
+.experience .exp-1 div,
+.experience .exp-2 div{
     text-indent: 25px;
     margin-top: 6px;
 }
 
-.experience .contain-exp .main-exp .exp-1 div p,
-.experience .contain-exp .main-exp .exp-2 div p{
+.experience .exp-1 div p,
+.experience .exp-2 div p{
     padding-top: 3px;
 }
 
-.project .contain-project .main-project{
+.project .main-project{
     display: flex;
     flex-direction: column;
-
 }
 
-.project .contain-project .main-project .row-project1,
-.project .contain-project .main-project .row-project2{
+.project .row-project1,
+.project .row-project2{
     display: flex;
     margin: auto;
 }
 
-.project .contain-project .main-project .image-project{
-    padding: 36px 18px 0px;
- 
-    height: 460px;
-    margin-bottom: 30px;
-}
-
-.project .contain-project .main-project .image-project img{
+.project .image-project{
     position: relative;
-    height: 500px;
-    width: 100%;
-    object-fit: cover;
-    left: 0px;
-    top: 0px;
-    right: 0px;
 }
 
-.project .contain-project .main-project .image-project .icon-image{
+.project .image-project img{
+    height: 460px;
+    width: 325px;
+    object-fit: cover;
+    margin: 0px 16px 31px;
+}
+
+.project .icon-image i{
     font-size: 40px;
     color: white;
-      position: absolute;
+    position: absolute;
+    left: 27px;
+    top: 12px;
 }
 
 

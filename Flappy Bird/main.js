@@ -128,7 +128,6 @@ class Bird {
 
         if (background.current == background.ready) {
             this.y = canvas.height / 4;
-            this.speed = 0;
         } else {
             this.speed += this.gravity;
             this.y += this.speed;
