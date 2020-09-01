@@ -362,7 +362,7 @@ img{
 }
 
 .project .image-project:hover .text-project{
-    bottom: 0px;
+    bottom: 30px;
     transition: all 1s;
 }
 
@@ -370,7 +370,7 @@ img{
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .project .link-project{
@@ -390,6 +390,39 @@ img{
     color: #9a9696;
     font-size: 16px;
 }
+
+.contact .main-contact{
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0px;
+}
+
+.contact .left-contact, .contact .right-contact{
+    border: solid 1px #9a9696;
+    flex-basis: 45%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+}
+
+.contact i{
+    color: #9a9696;
+    font-size: 30px;
+    padding-bottom: 32px;
+}
+
+.contact a{
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.contact p{
+    color: #9a9696;
+}
+
 
 
 
