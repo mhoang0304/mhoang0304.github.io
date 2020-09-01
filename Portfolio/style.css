@@ -327,13 +327,15 @@ img{
 
 .project .image-project{
     position: relative;
+    height: 460px;
+    margin: 0px 15px 29px;
 }
 
 .project .image-project img{
     height: 460px;
     width: 325px;
     object-fit: cover;
-    margin: 0px 16px 31px;
+    filter: brightness(80%);
 }
 
 .project .icon-image i{
@@ -342,6 +344,13 @@ img{
     position: absolute;
     left: 27px;
     top: 12px;
+}
+
+.project .text-project{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color:#fff;
 }
 
 
