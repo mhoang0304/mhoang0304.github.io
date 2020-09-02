@@ -74,12 +74,11 @@ btn_play_again.addEventListener("click", function () {
     end_game.style.display = "none";
     start_game.style.display = "none";
     play_game.style.display = "block";
-    bird.rotation = 0;  
+    bird.rotation = 0;
     background.arr = [];
     background.score = 0;
     bird.speed = 0;
     background.current = background.ready;
-    animate();
 })
 
 btn_exit.addEventListener("click", function () {
@@ -275,16 +274,14 @@ class Background {
             c.font = "normal normal 600 25px sans-serif ";
             c.fillText("MEDAL", canvas.width / 2 + 20, 155);
 
-            if (this.score >= 0) {
-                c.drawImage(medal_1, canvas.width / 2 + 40, 170);
-            }
-            if (this.score >= 5) {
-                c.drawImage(medal_2, canvas.width / 2 + 40, 170);
-            }
-            if (this.score >= 10) {
-                c.drawImage(medal_3, canvas.width / 2 + 40, 170);
-            } if (this.score >= 20) {
+            if (this.score >= 20) {
                 c.drawImage(medal_4, canvas.width / 2 + 40, 170);
+            } else if (this.score >= 10) {
+                c.drawImage(medal_3, canvas.width / 2 + 40, 170);
+            } else if (this.score >= 5) {
+                c.drawImage(medal_2, canvas.width / 2 + 40, 170);
+            } else {
+                c.drawImage(medal_1, canvas.width / 2 + 40, 170);
             }
         }
     }
@@ -307,24 +304,24 @@ canvas.addEventListener("click", function () {
 })
 
 function animate() {
-    if (background.current == background.ready || background.current == background.game) {
-        c.clearRect(0, 0, canvas.width, canvas.height);
-        background.draw();
-        background.update();
-        background.drawPipe();
-        background.drawGround();
-        background.drawScore();
-        background.drawReady();
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    background.draw();
+    background.update();
+    background.drawPipe();
+    background.drawGround();
+    background.drawScore();
+    background.drawReady();
 
-        bird.update();
-        bird.draw();
+    bird.update();
+    bird.draw();
 
-        bird.frames++;
-        requestAnimationFrame(animate);
-    } else {
+    bird.frames++;
+
+    if (background.current == background.over) {
         end_game.style.display = "block";
         background.transcript();
     }
+    requestAnimationFrame(animate);
 }
 
 
