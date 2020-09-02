@@ -51,7 +51,7 @@ img{
     height: 110px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 25px 0px 30px;
+    margin: 25px 82px 30px;
 }
 
 .introduce .name{
@@ -65,12 +65,12 @@ img{
     margin: 48px 26px 0px;
 }
 
-.introduce .menu .icon{
+.introduce .icon{
     padding: 22px 12px 10px 9px;
     position: relative;
 }
 
-.introduce .menu .icon::after {
+.introduce .icon::after {
     content:"";
     position: absolute;
     bottom: 0;
@@ -81,22 +81,21 @@ img{
     transition: all 0.3s ease-in;
 }
 
-.introduce .menu .icon:hover:after {
+.introduce .icon:hover:after {
     width: 100%;
 }
 
-.introduce .menu .icon i{
+.introduce .icon i{
     color: #999;
-    width: 200px;
     font-size: 20px;
+    margin-right: 10px;
 }
 
-.introduce .menu .icon a{
+.introduce .icon a{
     color: #999;
     text-decoration: none;
     font-size: 12px;
     letter-spacing: 2px;
-    margin-left: 10px;
 }
 
 .introduce .icon:hover i{
@@ -249,35 +248,66 @@ img{
     padding-left: 56px;
 }
 
-.skill .contain-skill .main-skill{
+.skill .main-skill{
     display: flex;
     color: #9a9696;
 }
 
-.skill .contain-skill .main-skill .left-skill{
+.skill .left-skill{
     padding-right: 40px;
 }
 
-.skill .contain-skill .main-skill .left-skill,
-.skill .contain-skill .main-skill .right-skill{
+.skill .left-skill,
+.skill .right-skill{
     flex-basis: 50%;
 }
 
-.skill .contain-skill .main-skill .right-skill p{
+.skill .right-skill p{
     padding-bottom: 10px;
-    border-bottom: solid 3px #fff;
+    border-bottom: solid 4px #9a9696;
     position: relative;
 }
 
-.skill .contain-skill .main-skill .right-skill p::before {
+.skill .html p::before {
     content: "";
     position: absolute;
-    bottom: -3px;
-    right: 0;
-    width: 20%;
-    height: 3px;
-    background-color: #9a9696;
+    bottom: -4px;
+    left: 0px;
+    width: 54%;
+    height: 4px;
+    background-color: #FFF249;
 }
+
+.skill .css p::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    width: 52%;
+    height: 4px;
+    background-color: #FFF249;
+}
+
+.skill .javascript p::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    width: 40%;
+    height: 4px;
+    background-color: #FFF249;
+}
+
+.skill .git p::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    width: 10%;
+    height: 4px;
+    background-color: #FFF249;
+}
+
 
 .skill .contain-skill .main-skill .right-skill #code{
     padding-top: 25px;
