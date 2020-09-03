@@ -139,8 +139,7 @@ img{
 }
 
 .about .contain, .skill .contain-skill,
-.experience .contain-exp, .project .contain-project,
-.contact .contain-contact{
+.experience .contain-exp, .contact .contain-contact{
     width: 1020px;
     margin: auto;
     padding-bottom: 100px;
@@ -314,10 +313,6 @@ img{
     padding-top: 25px;
 }
 
-.project .contain-project {
-    padding-bottom: 100px;
-}
-
 .experience .contain-exp .main-exp{
     color: white;
 }
@@ -342,6 +337,11 @@ img{
     padding-top: 3px;
 }
 
+.project .title-project{
+    width: 1020px;
+    margin: auto;
+}
+
 .project .main-project{
     display: flex;
     flex-direction: column;
@@ -353,10 +353,15 @@ img{
     margin: auto;
 }
 
+.project .contain-project {
+    padding-bottom: 100px;
+}
+
+
 .project .image-project{
     position: relative;
     height: 460px;
-    margin: 0px 15px 29px;
+    margin: 0px 15px 32px;
     overflow: hidden;
 }
 
