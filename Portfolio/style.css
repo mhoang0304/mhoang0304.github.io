@@ -139,10 +139,11 @@ img{
 }
 
 .about .contain, .skill .contain-skill,
-.experience .contain-exp, .project .contain-project .title-project,
+.experience .contain-exp, .project .contain-project,
 .contact .contain-contact{
     width: 1020px;
     margin: auto;
+    padding-bottom: 100px;
 }
 
 .about .contain .title-about,
@@ -151,7 +152,7 @@ img{
 .project .contain-project .title-project,
 .contact .contain-contact .title-contact{
     position: relative;
-    padding-top: 100px;
+    padding-top: 30px;
 }
 
 .about .contain .title-about span,
@@ -175,7 +176,7 @@ img{
    height: 1px;
    width: 50px;
    left: 0px;
-   top: 110px;
+   top: 40px;
    position: absolute;
 }
 
@@ -190,18 +191,18 @@ img{
     height: 5px;
     width: 5px;
     background: #333;
-    top: 108px;
+    top: 38px;
     border-radius: 50%;
 }
 
-.about .contain .title-about h2,
+.about .title-about h2,
 .skill .contain-skill .title-skill h2,
 .experience .contain-exp .title-exp h2,
-.project .contain-project .title-project h2,
+.project .title-project h2,
 .contact .contain-contact .title-contact h2{
     color: white;
     font-size: 30px;
-    margin: 20px 0px 30px;
+    margin: 20px 0px 60px;
     font-weight: 100;
 }
 
@@ -313,11 +314,8 @@ img{
     padding-top: 25px;
 }
 
-.project .contain-project .title-project h2{
-    color: white;
-    font-size: 30px;
-    font-weight: 100;
-    margin: 20px 0px 30px 0px;   
+.project .contain-project {
+    padding-bottom: 100px;
 }
 
 .experience .contain-exp .main-exp{
@@ -424,7 +422,7 @@ img{
 .contact .main-contact{
     display: flex;
     justify-content: space-around;
-    padding: 100px 0px;
+    padding: 50px 0px;
 }
 
 .contact .left-contact, .contact .right-contact{
