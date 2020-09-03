@@ -16,7 +16,7 @@ img{
 }
 
 .introduce{
-    background-image: url(https://www.kensington.com/siteassets/blog/2019/11-november/how-and-why-to-lock-a-macbook-pro-pic-2.jpg?width=1000&height=667);
+    background-image: url(./image/cover.jpg);
     height: 100vh;
     background-repeat: no-repeat;  
     background-size: 100% 100%; 
