@@ -250,16 +250,24 @@ img{
 
 .skill .main-skill{
     display: flex;
-    color: #9a9696;
 }
 
 .skill .left-skill{
     padding-right: 40px;
+    color: #9a9696;
+}
+
+.skill .right-skill{
+   color: #fff;
 }
 
 .skill .left-skill,
 .skill .right-skill{
     flex-basis: 50%;
+}
+
+.skill .right-skill span{
+    color: #9a9696;
 }
 
 .skill .right-skill p{
@@ -308,8 +316,7 @@ img{
     background-color: #FFF249;
 }
 
-
-.skill .contain-skill .main-skill .right-skill #code{
+.skill #code{
     padding-top: 25px;
 }
 
@@ -377,6 +384,11 @@ img{
     object-fit: cover;
 }
 
+.project .image-project h3{
+    font-weight: 500;
+    text-align: center;
+}
+
 .project .icon-image i{
     font-size: 40px;
     color: white;
@@ -388,14 +400,18 @@ img{
 .project .text-project{
     position: absolute;
     left: 0px;
-    bottom: -112px;
+    top: 284px;
     color:#fff;
-    padding: 0px 15px;
+    padding: 131px 20px 20px;
     overflow: hidden;
 }
 
+.project .project-game1{
+    margin-bottom: 12px;
+}
+
 .project .image-project:hover .text-project{
-    bottom: 30px;
+    top: 0px;
     transition: all 1s;
 }
 
@@ -403,20 +419,16 @@ img{
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
-    padding-bottom: 25px;
-}
-
-.project .link-project{
-    text-align: center;
+    padding-bottom: 20px;
 }
 
 .project .link-project a{
     text-decoration: none;
-    color: #fff;
+    color: #FFF249;;
 }
 
 .project .link-project a:active{
-    color: #fff;
+    color: #FFF249;;
 }
 
 .project .text-project p{
@@ -428,6 +440,15 @@ img{
     display: flex;
     justify-content: space-around;
     padding: 50px 0px;
+    font-size: 16px;
+}
+
+.contact .left-contact{
+    padding: 30px 140px 30px;
+}
+
+.contact .right-contact{
+    padding: 30px 105px 30px;
 }
 
 .contact .left-contact, .contact .right-contact{
@@ -437,7 +458,6 @@ img{
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 30px;
 }
 
 .contact i{
@@ -450,6 +470,22 @@ img{
     text-decoration: none;
     color: #fff;
     padding-bottom: 20px;
+    position: relative;
+}
+
+.contact .main-contact a::after{
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 1px;
+    background-color: #fff;
+    left: 0px;
+    bottom: 18px;
+}
+
+.contact .main-contact a:hover:after{
+    width: 100%;
+    transition: all 0.5s;
 }
 
 .contact p{
