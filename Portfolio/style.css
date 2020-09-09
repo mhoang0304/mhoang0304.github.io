@@ -21,6 +21,7 @@ img{
     background-repeat: no-repeat;  
     background-size: 100% 100%; 
     margin-left: 273px;
+    background-attachment: fixed;
 }
 
 .introduce .text{
