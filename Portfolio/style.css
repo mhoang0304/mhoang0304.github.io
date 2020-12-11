@@ -484,7 +484,7 @@ img{
     bottom: 18px;
 }
 
-.contact .main-contact a:hover:after{
+.contact .main-contact a:hover::after{
     width: 100%;
     transition: all 0.5s;
 }

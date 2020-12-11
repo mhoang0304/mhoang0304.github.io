@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(45deg, #CCFFFF, #FFCCCC);
+    user-select: none;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    margin: auto;  
+    background-color: black;
+    padding: 12px 15px 20px;
+    border-radius: 23px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.clock {
+    color: #fefefe;
+    font-weight: 500;
+}
+
+.theme {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.status img {
+    width: 100%;
+    height: 19px;
+}
+
+.screen {
+    position: relative;
+    height: 60px;
+    width: 100%;
+}
+
+.input {
+    position: absolute;
+    color: #fefefe;
+    font-size: 50px;
+    top: 0;
+    right: 5px;
+}
+
+.input i {
+    font-size: 35px;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 60px);
+    gap: 10px 10px;
+    width: 100%;
+    margin: 6px 0px 24px;
+}
+
+.item {
+    font-weight: 600;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #343134;
+    color: #fefefe;
+}
+
+.math {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.operator {
+    background-color: #fe9505;
+}
+
+.number-0 {
+    grid-column: 1/span 2;
+    border-radius: 50px;
+    padding-right: 70px;
+}
+
+.line {
+    position: absolute;
+    bottom: 10px;
+    width: 104px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,23 @@
+ul{
+    list-style: none;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    display: flex;
+    padding: 30px 50px;
+    justify-content: space-between;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0px 10px;
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 1.8rem;
+}
+
+nav .menu ul, nav .logo ul{
+    display: flex;
+}
