@@ -83,6 +83,11 @@ body {
     color: #fefefe;
 }
 
+.item:hover {
+    background-color: #a5a5a5bd;
+    color: white;
+}
+
 .math {
     background-color: #a5a5a5;
     color: black;
@@ -90,6 +95,11 @@ body {
 
 .operator {
     background-color: #fe9505;
+}
+
+.operator:hover {
+    background-color: white;
+    color: #fe9505;
 }
 
 .number-0 {
