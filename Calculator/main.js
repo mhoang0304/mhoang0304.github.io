@@ -35,7 +35,7 @@ items.forEach(function (btn) {
                 input.innerHTML = "0";
             }
         } else if (btn.value == "=") {
-            input.innerHTML = eval(string);
+            input.innerHTML = eval(string).toFixed(2).replace(/\.?0*$/g,'');
         } else {
             input.innerHTML += btn.innerHTML;
             string += btn.value;
@@ -45,11 +45,10 @@ items.forEach(function (btn) {
 })
 
 //Change Theme:
-let background = document.body.style.background;
 
 function theme() {
     if(document.body.style.background == "white") {
-        document.body.style.background = "linear-gradient(45deg, #CCFFFF, #FFCCCC)"
+        document.body.style.background = "linear-gradient(45deg, #CCFFFF, #FFCCCC)";
     } else {
         document.body.style.background = "white";
     }
