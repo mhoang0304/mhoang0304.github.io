@@ -15,13 +15,10 @@
     <div class="main">
         <header class="header">
             <div class="clock">
-                <span class="hour"></span>
-                <span>:</span>
-                <span class="minutes"></span>
-                <span onclick="theme()" class="theme"><i class="fas fa-moon"></i>Theme</span>
+                <span class="hour"></span> : <span class="minutes"></span>
             </div>
-            <div class="status">
-                <img src="./img/status.png" alt="status">
+            <div class="theme">
+                <span onclick="theme()" class="theme"><i class="fas fa-moon"></i>Theme</span>
             </div>
         </header>
 
@@ -30,29 +27,29 @@
         </div>
 
         <div class="keyboard">
-            <button class="item math">AC</button>
-            <button value="*(1/100)" class="item math"><i class="fas fa-percent"></i></button>
-            <button class="item math"></button>
-            <button class="item operator">DEL</button>
-            <button class="item"></button>
-            <button class="item"></button>
-            <button class="item"></button>
-            <button value="/" class="item operator"><i class="fas fa-divide"></i></button>
-            <button value="7" class="item">7</button>
-            <button value="8" class="item">8</button>
-            <button value="9" class="item">9</button>
-            <button value="*" class="item operator"><i class="fas fa-times"></i></button>
-            <button value="4" class="item">4</button>
-            <button value="5" class="item">5</button>
-            <button value="6" class="item">6</button>
-            <button value="-" class="item operator"><i class="fas fa-minus"></i></button>
-            <button value="1" class="item">1</button>
-            <button value="2" class="item">2</button>
-            <button value="3" class="item">3</button>
-            <button value="+" class="item operator"><i class="fas fa-plus"></i></button>
-            <button value="0" class="item number-0">0</button>
-            <button value="." class="item">.</button>
-            <button value="=" class="item operator"><i class="fas fa-equals"></i></button>
+            <div onclick="reset()" class="item math">AC</div>
+            <div class="item math"><i class="fas fa-percent"></i></div>
+            <div class="item math">π</div>
+            <div class="item math">DEL</div>
+            <div class="item math"></div>
+            <div class="item math"></div>
+            <div class="item math"></div>
+            <div onclick="input('÷')" class="item operator"><i class="fas fa-divide"></i></div>
+            <div onclick="input(7)" class="item">7</div>
+            <div onclick="input(8)" class="item">8</div>
+            <div onclick="input(9)" class="item">9</div>
+            <div onclick="input('×')" class="item operator"><i class="fas fa-times"></i></div>
+            <div onclick="input(4)" class="item">4</div>
+            <div onclick="input(5)" class="item">5</div>
+            <div onclick="input(6)" class="item">6</div>
+            <div onclick="input('–')" class="item operator"><i class="fas fa-minus"></i></div>
+            <div onclick="input(1)" class="item">1</div>
+            <div onclick="input(2)" class="item">2</div>
+            <div onclick="input(3)" class="item">3</div>
+            <div onclick="input('+')" class="item operator"><i class="fas fa-plus"></i></div>
+            <div onclick="input(0)" class="item number-0">0</div>
+            <div onclick="input('.')" class="item">.</div>
+            <div onclick="equal()" class="item operator"><i class="fas fa-equals"></i></div>
         </div>
 
         <div class="line"></div>
