@@ -7,8 +7,10 @@
 
 body {
     height: 100vh;
-    background-image: linear-gradient(45deg, #CCFFFF, #FFCCCC);
     user-select: none;
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main {
@@ -17,26 +19,43 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    margin: auto;  
-    background-color: black;
     padding: 12px 15px 20px;
     border-radius: 23px;
+    background-color: black;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     padding-bottom: 34px;
-}
-
-.clock {
     color: #fefefe;
     font-weight: 500;
 }
 
+/* Theme */
+.main.change-style {
+    background-image: linear-gradient(45deg, #b3ffff, #FFCCCC);
+    border: solid 3px black;
+    padding: 9px 12px 17px;
+}
+
+.change-style .header { 
+    color: black;
+    font-weight: 500;
+}
+
+.change-style .line {
+    background-color: black;
+}
+
+.change-style .input {
+    color: black;
+}
+
+/* End Theme */
+
 .theme {
     cursor: pointer;
-    color: white;
 }
 
 .screen {
@@ -89,6 +108,11 @@ body {
 
 .math {
     background-color: #a5a5a5;
+    color: black;
+}
+
+.math:hover {
+    background-color: #a5a5a599;
     color: black;
 }
 

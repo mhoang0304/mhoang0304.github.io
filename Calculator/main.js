@@ -11,7 +11,7 @@ function updateTime() {
         minutes = "0" + minutes;
     }
 
-    if(hour < 10) {
+    if (hour < 10) {
         hour = "0" + hour;
     }
 
@@ -39,7 +39,7 @@ function input(value) {
 
     //Kiểm tra trường hợp lặp phép toán
     let check = screenDisplay.innerHTML.slice(-1);
-    console.log("kiểm tra giá trị cuối là: " + check);
+
     if (check == "+" || check == "-" || check == "×" || check == "÷") {
         if (value == "%" || value == "<sup>2</sup>" || value == "÷" || value == "×" || value == "+" || value == ".") {
             value = "";
@@ -60,8 +60,8 @@ function input(value) {
             value = "";
         }
     }
-    if (check == "(") { 
-        if (value == "%" || value == "<sup>2</sup>" || value == "(" || value == "×" || value == "÷"  || value == ".") {
+    if (check == "(") {
+        if (value == "%" || value == "<sup>2</sup>" || value == "(" || value == "×" || value == "÷" || value == ".") {
             value = "";
         }
     }
@@ -92,9 +92,5 @@ function equal() {
 
 //Change Theme:
 function theme() {
-    if (document.body.style.background == "white") {
-        document.body.style.background = "linear-gradient(45deg, #CCFFFF, #FFCCCC)";
-    } else {
-        document.body.style.background = "white";
-    }
+    document.querySelector(".main").classList.toggle("change-style");
 }
