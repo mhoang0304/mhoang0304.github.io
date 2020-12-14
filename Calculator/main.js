@@ -41,7 +41,7 @@ function input(value) {
     let check = screenDisplay.innerHTML.slice(-1);
 
     if (check == "+" || check == "-" || check == "×" || check == "÷") {
-        if (value == "%" || value == "<sup>2</sup>" || value == "÷" || value == "×" || value == "+" || value == ".") {
+        if (value == "%" || value == "<sup>2</sup>" || value == "÷" || value == "×" || value == "+" || value == "." || value == ")") {
             value = "";
         }
     }
