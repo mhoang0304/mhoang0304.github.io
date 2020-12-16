@@ -60,27 +60,27 @@
 
         <div class="post">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-12 col-sm-12 col-md-6">
                     <div class="post__item">
                         <div class="post__thumbnail">
                             <img src="./img/thumbnail-1.jpg" alt="">
                         </div>
-                        <div>Lifestyle</div>
-                        <div>More than just a music festival</div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">Lifestyle</div>
+                        <div class="post__title">More than just a music festival</div>
+                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-end">
                     <div class="post__item">
                         <div class="post__thumbnail">
                             <img src="./img/thumbnail-2.jpg" alt="">
                         </div>
-                        <div>Lifestyle</div>
-                        <div>More than just a music festival</div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">Lifestyle</div>
+                        <div class="post__title">Life tastes better with coffee</div>
+                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
@@ -88,27 +88,27 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="thumbnail">
+                <div class="col-12 col-sm-12 col-md-6">
+                    <div class="post__item">
+                        <div class="post__thumbnail">
                             <img src="./img/thumbnail-3.jpg" alt="">
                         </div>
-                        <div>Lifestyle</div>
-                        <div>More than just a music festival</div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">Lifestyle</div>
+                        <div class="post__title">American dream</div>
+                        <div class="post__content mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="thumbnail">
+                <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-end">
+                    <div class="post__item">
+                        <div class="post__thumbnail">
                             <img src="./img/thumbnail-4.jpg" alt="">
                         </div>
-                        <div>Lifestyle</div>
-                        <div>More than just a music festival</div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">Lifestyle</div>
+                        <div class="post__title">A day exploring the Alps</div>
+                        <div class="post__content mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
@@ -117,11 +117,68 @@
         </div>
     </section>
 
-    <section class="container-fluid"></section>
+    <section class="container-fluid d-flex flex-column align-items-center contact ">
+        <h2 class="contact__title">Sign up for our newsletter!</h2>
+        <div class="contact__info">
+            <input class="contact__input" type="text" placeholder="Enter a valid email address">
+            <img class="contact__img" src="./img/icon-send.png" alt="">
+        </div>
+    </section>
 
-    <section class="container"></section>
+    <section class="container px-0 section">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="post__item">
+                    <div class="post__thumbnail">
+                        <img src="./img/thumbnail-5.jpg" alt="">
+                    </div>
+                    <div class="post__lifestyle">Lifestyle</div>
+                    <div class="post__title">Top 10 song for running</div>
+                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris </div>
+                </div>
+            </div>
 
-    <footer class="contaier"></footer>
+            <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-end">
+                <div class="post__item">
+                    <div class="post__thumbnail">
+                        <img src="./img/thumbnail-6.jpg" alt="">
+                    </div>
+                    <div class="post__lifestyle">Lifestyle</div>
+                    <div class="post__title">Cold winter days</div>
+                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button d-flex justify-content-center">
+            <button class="button__load">Load more</button>
+        </div>
+    </section>
+
+    <footer class="contaier footer d-flex justify-content-between align-items-center">
+        <ul  class="footer__term d-flex">
+            <li class="footer__term-link"><a href="#">Terms and conditions</a></li>
+            <li class="footer__term-link"><a href="#">Privacy</a></li>
+        </ul>
+        <ul  class="footer__follow d-flex">
+            <li class="footer__follow-text">
+               Follow
+            </li>
+            <li class="footer__follow-link">
+                <a href="#"><img src="./img/facebook.png" alt="facebook"></a>
+            </li>
+            <li class="footer__follow-link">
+                <a href="#"><img src="./img/twitter.png" alt="twitter"></a>
+            </li>
+            <li class="footer__follow-link">
+                <a href="#"><img src="./img/instagram.png" alt="instagram"></a>
+            </li>
+        </ul>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
