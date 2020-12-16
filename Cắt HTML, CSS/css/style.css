@@ -1,0 +1,66 @@
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: #626262;
+}
+
+.header {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.header__nav {
+    height: 164px;
+}
+
+.header__brand {
+    font-family: 'Inconsolata', monospace;
+    font-size: 30px;
+    color: #000000;
+}
+
+.header__menu-link:nth-child(1) {
+    padding-right: 121px !important;
+}
+
+.header__menu-link:nth-child(2) {
+    padding-right: 103px !important;
+}
+
+.header__menu-link:nth-child(3) {
+    padding-right: 95px !important;
+}
+
+.header__menu {
+    flex-grow: 0;
+}
+
+.section {
+    padding: 0px 81px !important;
+}
+
+.description__h3 {
+    font-size: 14px;
+    color: #b4ad9e;
+    margin: 99px 0px 29px;
+}
+
+.description__h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.description__end {
+    margin: 52px 0 136px;
+    color: #b4ad9e;
+}
+
+.post__item {
+    width: 420px;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1062px;
+    }
+}
