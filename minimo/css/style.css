@@ -9,37 +9,20 @@ body {
     font-weight: 600;
 }
 
-.header__nav {
-    height: 164px;
-}
-
+/* Navigation */
 .header__brand {
     font-family: 'Inconsolata', monospace;
     font-size: 30px;
     color: #000000;
 }
 
-.header__menu-link:nth-child(1) {
-    padding-right: 121px !important;
-}
-
-.header__menu-link:nth-child(2) {
-    padding-right: 103px !important;
-}
-
-.header__menu-link:nth-child(3) {
-    padding-right: 95px !important;
-}
-
 .header__menu {
     flex-grow: 0;
 }
 
-.section {
-    padding: 0px 81px !important;
-}
-
+/* Description */
 .description__h3 {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     color: #b4ad9e;
     margin: 99px 0px 29px;
@@ -50,27 +33,58 @@ body {
     margin-bottom: 35px;
 }
 
+.description__h2 a {
+    color: #626262;
+    text-decoration: none;
+}
+
+.description__h2:hover a{
+    color: #383838;
+}
+
 .description__end {
+    font-family: 'Ubuntu', sans-serif;
     margin: 52px 0 136px;
     color: #b4ad9e;
 }
 
+.description__end a {
+    margin: 52px 0 136px;
+    color: #b4ad9e;
+}
+
+.description__end:hover a {
+    text-decoration: none;
+    color: #626262;;
+}
+
+/* Post */
 .post__item {
     width: 420px;
 }
 
 .post__lifestyle {
+    font-family: 'Ubuntu', sans-serif;
     margin: 30px 0px;
+    color: #b4ad9e;
+    text-transform: uppercase;
 }
 
-.post__title {
+.post__title a {
     font-size: 30px;
+    text-decoration: none;
+    color: #626262;
+}
+
+.post__title:hover a {
+    color: #383838;
 }
 
 .post__content {
     margin: 34px 0px 132px;
 }
 
+/* Contact */
 .contact {
     background-color: #f0f0f0;
     margin: 122px 0px 103px;
@@ -86,6 +100,8 @@ body {
 
 .contact__info {
     position: relative;
+    width: 399px;
+    display: flex;
 }
 
 .contact__info::after {
@@ -95,38 +111,53 @@ body {
     left: 0;
     background-color: black;
     height: 1px;
-    width: 399px;
+    width: 100%;
 }
 
 .contact__input {
     border: none;
     outline: none;
     background-color:#f0f0f0;
-    width: 367px;
     padding: 0 0 0 3px;
+    width: 100%;
 }
 
 .contact__img {
     cursor: pointer;
 }
 
+/* Button Load */
 .button {
     font-size: 20px;
-    margin: 34px 0px 1370px;
+    margin: 34px 0px 140px;
+}
+
+button:hover {
+    background-color: #dadada;
 }
 
 .button__load {
-    padding: 20px 33px 13px;
+    padding: 18px 33px;
     outline: none;
     border: solid 1px #626262;
+    border-radius: 1px;
+    background-color: #fff;
+}
+
+.button__load a {
+    text-decoration: none;
     color: #626262;
+}
+
+.button__load:hover a {
+    color: #2b2b2b;
 }
 
 .footer {
     height: 99px;
     background-color: #f0f0f0;
-    padding: 0 150px 0 71px;
-    width: 100%;
+    max-width: 100%;
+    padding: 0 30px;
 }
 
 .footer ul {
@@ -164,19 +195,84 @@ body {
     margin-right: 18px;
 }
 
-@media (min-width: 1200px) {
-    .container{
-        max-width: 1062px;
+/* width < 576px */
+@media (max-width: 575px) {
+    /* Navigation */
+    .header__menu-link {
+        text-align: right;
     }
-}
 
-@media (max-width: 576px) {
+    /* Post */
+    .post__content-gap {
+        margin-bottom: 122px !important;
+    }
+
     .footer {
         flex-direction: column;
         align-items: center;
         padding: 25px 0px;
-        width: 100%;
+    }
+
+    .contact__info {
+        width: 80%;
     }
 }
+
+/*sm: width >= 576px */
+@media (min-width: 576px) {
+    .header__menu-link {
+        text-align: right;
+        padding-right: 8px !important;
+    }
+
+    /* Post */
+    .post__content-gap {
+        margin-bottom: 122px !important;
+    }
+}
+
+/*md: width >= 768px */
+@media (min-width: 768px) {
+    /* Navigation */
+    .header__nav {
+        height: 164px;
+    }
+
+    .header__menu-link:nth-child(4) {
+        padding-right: 0 !important;
+    }
+}
+
+/*lg: width >= 992px */
+@media (min-width: 992px) {
+    /* Navigation */
+    .header__menu-link:nth-child(1) {
+        padding-right: 121px !important;
+    }
+    
+    .header__menu-link:nth-child(2) {
+        padding-right: 103px !important;
+    }
+    
+    .header__menu-link:nth-child(3) {
+        padding-right: 95px !important;
+    }
+}
+
+/*xl: width >= 1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1062px;
+    }
+
+    .indent {
+        padding: 0px 81px !important;
+    }
+
+    .footer {
+        padding: 0 150px 0 71px;
+    }
+}
+
 
 

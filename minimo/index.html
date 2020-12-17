@@ -9,14 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Playfair+Display&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <title>Minimo</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <header class="container header px-0">
+    <header class="container px-0 header">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light justify-content-between px-0 header__nav">
+        <nav class="navbar navbar-expand-md navbar-light justify-content-between px-md-0 header__nav">
             <a class="navbar-brand header__brand" href="#">Minimø</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,24 +27,24 @@
             <div class="collapse navbar-collapse header__menu" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link header__menu-link" href="#">lifestyle</a>
-                    <a class="nav-link pl-0 header__menu-link" href="#">photodiary</a>
-                    <a class="nav-link pl-0 header__menu-link" href="#">music</a>
-                    <a class="nav-link px-0" href="#">travel</a>
+                    <a class="nav-link header__menu-link pl-lg-0" href="#">photodiary</a>
+                    <a class="nav-link header__menu-link pl-lg-0" href="#">music</a>
+                    <a class="nav-link header__menu-link px-lg-0" href="#">travel</a>
                 </div>
             </div>
         </nav>
         <!--End Navigation -->
 
-        <div id="banner">
+        <div>
             <img class="img-fluid" src="./img/banner.jpg" alt="banner">
         </div>
     </header>
 
-    <section class="container px-0 section">
+    <section class="container indent">
         <!-- Description -->
         <div class="description">
             <h3 class="description__h3">PHOTODIARY</h3>
-            <h2 class="description__h2">The perfect weekend getaway</h2>
+            <h2 class="description__h2"><a href="#">The perfect weekend getaway</a></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -54,33 +56,35 @@
                 nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
                 sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
             </p>
-            <p class="description__end">LEAVE A COMMENT</p>
+            <p class="description__end"><a href="#">LEAVE A COMMENT</a></p>
         </div>
         <!--End Description -->
 
+        <!-- Post -->
         <div class="post">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-md-center">
+                <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
                     <div class="post__item">
-                        <div class="post__thumbnail">
-                            <img class="img-fluid" src="./img/thumbnail-1.jpg" alt="">
+                        <div>
+                            <a href="#"><img class="img-fluid" src="./img/thumbnail-1.jpg" alt="thumbnail-1"></a>
                         </div>
                         <div class="post__lifestyle">Lifestyle</div>
-                        <div class="post__title">More than just a music festival</div>
-                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__title"><a href="#">More than just a music festival</a></div>
+                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-md-center justify-content-lg-end">
+                <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
                     <div class="post__item">
-                        <div class="post__thumbnail">
-                            <img class="img-fluid" src="./img/thumbnail-2.jpg" alt="">
+                        <div>
+                            <a href="#"><img class="img-fluid" src="./img/thumbnail-2.jpg" alt="thumbnail-2"></a>
                         </div>
                         <div class="post__lifestyle">Lifestyle</div>
-                        <div class="post__title">Life tastes better with coffee</div>
-                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__title"><a href="#">Life tastes better with coffee</a></div>
+                        <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
@@ -88,85 +92,93 @@
             </div>
 
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-md-center">
+                <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
                     <div class="post__item">
-                        <div class="post__thumbnail">
-                            <img class="img-fluid" src="./img/thumbnail-3.jpg" alt="">
+                        <div>
+                            <a href="#"><img class="img-fluid" src="./img/thumbnail-3.jpg" alt="thumbnail-3"></a>
                         </div>
-                        <div class="post__lifestyle">Lifestyle</div>
-                        <div class="post__title">American dream</div>
-                        <div class="post__content mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">photodiary</div>
+                        <div class="post__title"><a href="#">American dream</a></div>
+                        <div class="post__content post__content-gap mb-0">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do
+                            eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-md-center justify-content-end">
+                <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
                     <div class="post__item">
-                        <div class="post__thumbnail">
-                            <img class="img-fluid" src="./img/thumbnail-4.jpg" alt="">
+                        <div>
+                            <a href="#"><img class="img-fluid" src="./img/thumbnail-4.jpg" alt="thumbnail-4"></a>
                         </div>
-                        <div class="post__lifestyle">Lifestyle</div>
-                        <div class="post__title">A day exploring the Alps</div>
-                        <div class="post__content mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        <div class="post__lifestyle">photodiary</div>
+                        <div class="post__title"><a href="#">A day exploring the Alps</a></div>
+                        <div class="post__content mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- End Post -->
     </section>
 
-    <section class="container-fluid d-flex flex-column align-items-center contact ">
-        <h2 class="contact__title">Sign up for our newsletter!</h2>
+    <!-- Contact -->
+    <section class="container-fluid d-flex flex-column align-items-center contact">
+        <h2 class="text-center contact__title">Sign up for our newsletter!</h2>
         <div class="contact__info">
             <input class="contact__input" type="text" placeholder="Enter a valid email address">
-            <img class="contact__img" src="./img/icon-send.png" alt="">
+            <img class="contact__img img-fluid" src="./img/icon-send.png" alt="icon-send">
         </div>
     </section>
+    <!--End Contact -->
 
-    <section class="container px-0 section">
+    <section class="container indent">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-md-center">
+            <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
                 <div class="post__item">
-                    <div class="post__thumbnail">
-                        <img class="img-fluid" src="./img/thumbnail-5.jpg" alt="">
+                    <div>
+                        <a href="#"><img class="img-fluid" src="./img/thumbnail-5.jpg" alt="thumbnail-5"></a>
                     </div>
                     <div class="post__lifestyle">Lifestyle</div>
-                    <div class="post__title">Top 10 song for running</div>
-                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    <div class="post__title"><a href="#">Top 10 song for running</a></div>
+                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex d-flex justify-content-md-center justify-content-end">
+            <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
                 <div class="post__item">
-                    <div class="post__thumbnail">
-                        <img class="img-fluid" src="./img/thumbnail-6.jpg" alt="">
+                    <div>
+                        <a href="#"><img class="img-fluid" src="./img/thumbnail-6.jpg" alt="thumbnail-6"></a>
                     </div>
                     <div class="post__lifestyle">Lifestyle</div>
-                    <div class="post__title">Cold winter days</div>
-                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    <div class="post__title"><a href="#">Cold winter days</a></div>
+                    <div class="post__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris </div>
                 </div>
             </div>
         </div>
 
+        <!-- Button Load -->
         <div class="button d-flex justify-content-center">
-            <button class="button__load">Load more</button>
+            <button class="button__load"><a href="#">Load more</a></button>
         </div>
+        <!--End Button Load -->
     </section>
 
-    <footer class="contaier footer d-flex justify-content-between align-items-center">
-        <ul  class="footer__term d-flex">
+    <footer class="container-fluid footer d-flex justify-content-between align-items-center">
+        <ul class="footer__term d-flex">
             <li class="footer__term-link"><a href="#">Terms and conditions</a></li>
             <li class="footer__term-link"><a href="#">Privacy</a></li>
         </ul>
-        <ul  class="footer__follow d-flex">
+        <ul class="footer__follow d-flex">
             <li class="footer__follow-text">
-               Follow
+                Follow
             </li>
             <li class="footer__follow-link">
                 <a href="#"><img src="./img/facebook.png" alt="facebook"></a>
