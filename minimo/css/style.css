@@ -195,6 +195,69 @@ button:hover {
     margin-right: 18px;
 }
 
+/*post-full-width */
+.description__end-text {
+    margin-bottom: 7px;
+}
+
+.post__img {
+    margin-top: 57px;
+}
+
+.post__detail-quote {
+    margin: 56px 0 33px;
+    padding: 0 21px;
+    font-style: italic;
+}
+
+.post__detail p{
+    margin: 0;
+}
+
+.post__share {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 64px 0 76px;
+}
+
+.post__share span {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    color: #b4ad9e;
+    cursor: default;
+    padding-right: 10px;
+}
+
+.post__share-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post__share-link {
+    margin: 0 14px;
+}
+
+.slide {
+    height: 435px;
+    max-width: 100%;
+    background-color: #f5f5f5;
+    padding-top: 68px;
+}
+
+.slide__title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color:#b4ad9e;
+    margin-bottom: 41px;
+}
+
+.slide__title-img {
+    font-size: 20px;
+    margin: 24px 0 0;
+}
+
 /* width < 576px */
 @media (max-width: 575px) {
     /* Navigation */
