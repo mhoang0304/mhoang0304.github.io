@@ -154,10 +154,13 @@ button:hover {
 }
 
 .footer {
-    height: 99px;
+    min-width: 100%;
     background-color: #f0f0f0;
+}
+
+.footer__main {
+    height: 99px;
     max-width: 100%;
-    padding: 0 30px;
 }
 
 .footer ul {
@@ -421,10 +424,9 @@ button:hover {
         margin-bottom: 122px !important;
     }
 
-    .footer {
+    .footer__main {
         flex-direction: column;
-        align-items: center;
-        padding: 25px 0px;
+        justify-content: space-evenly;
     }
 
     .contact__info {
@@ -582,8 +584,8 @@ button:hover {
         padding: 0px 81px !important;
     }
 
-    .footer {
-        padding: 0 150px 0 71px;
+    .footer__term {
+        margin-left: 80px !important;
     }
 
     /*post-sidebar */
