@@ -590,7 +590,7 @@ button:hover {
 
     /*post-sidebar */
     .indent-left {
-        padding: 0 0 0 81px;
+        padding: 0 0 0 81px !important;
     }
 }
 
