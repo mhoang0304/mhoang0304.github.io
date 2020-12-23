@@ -1,0 +1,272 @@
+:root {
+    --white-color: #ffffff;
+    --title-color: #3E4C5B;
+    --content-color: #9AA8B6;
+    --link-color: #23CF5F;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main {
+    position: relative;
+    height: 1080px;
+    background-image: url(../image/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 38px 50px 0;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(354.72deg, rgba(255, 255, 255, 0.0001) -231.62%, rgba(24, 151, 196, 0.0001) 56.67%, rgba(13, 146, 193, 0.947412) 100.9%, #008CBE 100.9%);
+}
+
+/* Navigation */
+.nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    max-width: 100%;
+}
+
+.nav__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.nav__logo-icon {
+    margin-right: 20px;
+}
+
+.nav__list {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 286px);
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 17px;
+}
+
+.nav__items:nth-child(1),
+.nav__items:nth-child(3) {
+    margin-right: 43px;
+}
+
+.nav__items:nth-child(2),
+.nav__items:nth-child(4),
+.nav__items:nth-child(5) {
+    margin-right: 44px;
+}
+
+.nav__list a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.nav__icon {
+    position: absolute;
+    top: 9px;
+    right: 0;
+}
+
+.nav__icon-search {
+    margin-right: 30px;
+}
+
+.nav__icon-material {
+    margin-right: 2px;
+}
+/* End Navigation */
+
+.title {
+    position: absolute;
+    z-index: 3;
+    top: 333px;
+    left: 257px;
+}
+
+.title__welcome {
+    position: relative;
+    color: var(--white-color);
+    font-size: 2.2rem;
+    line-height: 27px;
+    font-weight: 500;
+}
+
+.title__welcome::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--white-color);
+}
+
+.title__main {
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 8rem;
+    margin: 54px 0 33.5px;
+}
+
+.title__detail {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.title__detail-img {
+    padding-right: 16.5px;
+    cursor: pointer;
+}
+
+.social {
+    position: absolute;
+    z-index: 4;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 878.5px;
+    left: 51px;
+}
+
+.social__icon:nth-child(2) {
+    margin: 31.5px 0 33px;
+}
+
+.donate {
+    position: absolute;
+    z-index: 5;
+    height: 120px;
+    display: flex;
+    top: 880px;
+    left: 210px;
+    background-color: var(--white-color);
+    border-radius: 3px;
+    padding-left: 97.5px;
+}
+
+.donate__title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--title-color);
+    margin-top: 37px;
+    line-height: 44px;
+}
+
+.donate__amount {
+    display: flex;
+    margin-left: 96.5px;
+    padding: 20px 104px 0 115px;
+    border-left: 2px solid #DFE4E8;
+    border-right: 2px solid #DFE4E8;
+}
+
+.donate__amount-btn span {
+    cursor: pointer;
+    color: var(--content-color);
+    font-size: 1.4rem;
+    line-height: 31px;
+}
+
+.donate__amount-money {
+    line-height: 31px;
+    color: var(--title-color);
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.donate__arrow {
+    margin: 12px 0 0 11px;
+}
+
+.donate__period {
+    display: flex;
+    padding: 21px 152px 0 135px;
+}
+
+.donate__period-btn {
+    position: relative;
+}
+
+.donate__period-btn p {
+    color: var(--content-color);
+    font-size: 1.4rem;
+    line-height: 31px;
+    text-align: center;
+    margin: 0;
+}
+
+.donate__period-month {
+    font-size: 2.2rem;
+    line-height: 31px;
+    font-weight: 500;
+    color: var(--title-color);
+    margin-top: 4px;
+}
+
+.donate__period-img {
+    position: absolute;
+    top: 10px;
+    right: -8px;
+}
+
+.donate__btn {
+    padding: 10px 10px 10px 0;
+}
+
+.donate__button {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 26.82px;
+    color: var(--white-color);
+    background-color: var(--link-color);
+    min-height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.donate__button span {
+    padding: 0 29px;
+    margin: 37px 72px 36px;
+}
+
