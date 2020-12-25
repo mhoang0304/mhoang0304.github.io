@@ -20,6 +20,7 @@ img {
 }
 
 .header {
+    position: relative;
     max-width: 100%;
     overflow: hidden;
 }
@@ -44,8 +45,8 @@ img {
 .carousel__img {
     /* position: absolute;
     top: 0;
-    left: 0;
-    opacity: 0; */
+    left: 0; */
+    opacity: 0;
     visibility: hidden;
 }
 
@@ -125,7 +126,9 @@ img {
 
 /* Navigation */
 .nav {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 2;
     display: flex;
     max-width: 100%;
