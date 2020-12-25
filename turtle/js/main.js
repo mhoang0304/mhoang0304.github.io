@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let carousel = setInterval(function () {
+    // let carousel = setInterval(function () {
         let imageNext = $(".active").next();
 
         // Xử lí trạng thái ảnh
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 $(".move-in").addClass("active").removeClass("move-in");
             });
         }
-    }, 3000);
+    // }, 3000);
 
     $(".status__items").click(function () {
         clearInterval(carousel);
