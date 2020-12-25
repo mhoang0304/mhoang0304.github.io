@@ -33,6 +33,7 @@ $(document).ready(function () {
         }
     }, 3000);
 
+    // Xử lí khi click vào nút
     $(".status__items").click(function () {
         clearInterval(carousel);
 
