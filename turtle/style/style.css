@@ -30,7 +30,6 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(354.72deg, rgba(255, 255, 255, 0.0001) -231.62%, rgba(24, 151, 196, 0.0001) 56.67%, rgba(13, 146, 193, 0.947412) 100.9%, #008CBE 100.9%);
@@ -38,14 +37,10 @@ img {
 
 /* Carousel */
 .carousel {
-    overflow: hidden;
-    /* position: relative; */
+    height: 1080px;
 }
 
 .carousel__img {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     opacity: 0;
     visibility: hidden;
 }
@@ -99,13 +94,14 @@ img {
 
 .status {
     position: absolute;
-
+    top: 475px;
+    right: 50px;
 }
 
 .status__list {
     list-style: none;
-    /* padding: 0;
-    margin: 0; */
+    padding: 0;
+    margin: 0;
 }
 
 .status__items {
@@ -115,7 +111,14 @@ img {
     border-radius: 50%;
     cursor: pointer;
     transition: 0.4s;
-    margin: 20px;
+}
+
+.status__items:nth-child(1) {
+    margin-bottom: 24px;
+}
+
+.status__items:nth-child(2) {
+    margin-bottom: 28px;
 }
 
 .status__items.light {
@@ -127,9 +130,9 @@ img {
 /* Navigation */
 .nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    top: 38px;
+    left: 50px;
+    right: 50px;
     display: flex;
     max-width: 100%;
 }
@@ -159,6 +162,7 @@ img {
     padding: 0;
     margin: 0;
     line-height: 17px;
+    visibility: hidden;
 }
 
 .nav__items:nth-child(1),
@@ -181,8 +185,8 @@ img {
 
 .nav__icon {
     position: absolute;
-    top: 9px;
-    right: 0;
+    top: 10px;
+    right: 56px;
 }
 
 .nav__icon-search {
@@ -192,11 +196,23 @@ img {
 .nav__icon-material {
     margin-right: 2px;
 }
+/* Navigation For Mobile */
+.nav__mobile-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: var(--white-color);
+    border: solid 3px white;
+    border-radius: 3px;
+    padding: 0px 5px;
+    display: block;
+}
+
 /* End Navigation */
 
 .title {
     position: absolute;
-    z-index: 3;
     top: 333px;
     left: 257px;
 }
@@ -257,6 +273,7 @@ img {
     margin: 31.5px 0 33px;
 }
 
+/* Button Donate */
 .donate {
     position: absolute;
     z-index: 5;
@@ -357,6 +374,7 @@ img {
     padding: 0 29px;
     margin: 37px 72px 36px;
 }
+/* End Button Donate */
 
 .main {
     max-width: 1170px;
@@ -367,5 +385,110 @@ img {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 192px;
+    padding-top: 167px;
+}
+
+.post__content-project {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 17px;
+    color: var(--title-color);
+    margin: 21px 0 56px;
+}
+
+.post__content-title {
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+    line-height: 61px;
+    font-size: 5rem;
+    color: var(--title-color);
+}
+
+.post__content-main {
+    font-size: 2.2rem;
+    line-height: 34px;
+    font-weight: 500;
+    color: var(--content-color);
+    margin: 42px 0 37px 4px;
+}
+
+.post__content-link {
+    display: flex;
+    align-items: center;
+}
+
+.post__content-link a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--link-color);
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    margin: 0 36px 0 4px;
+}
+
+.post-second {
+    padding-top: 160px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 230px;
+}
+
+.post-second__content-program {
+    text-transform: uppercase;
+    margin: 21px 0 56px 3px;
+    color: var(--title-color);
+    font-size: 1.4rem;
+    line-height: 17px;
+    font-weight: bold;
+}
+
+.post-second__content-title {
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--title-color);
+    font-size: 5rem;
+    line-height: 61px;
+    font-weight: bold;
+}
+
+.post-second__content-main {
+    color: var(--content-color);
+    margin: 42px 0 37px 4px;
+    font-weight: 500;
+    line-height: 34px;
+    font-size: 2.2rem;
+}
+
+.post-second__content-link {
+    display: flex;
+    align-items: center;
+}
+
+.post-second__content-link a{
+    text-decoration: none;
+    color: var(--link-color);
+    margin: 0 37px 0 4px;
+    line-height: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+/* width >= 768px */
+@media (min-width: 47.9375em) {
+    .nav__mobile-btn {
+        display: none;
+    }
+
+    .nav__list {
+        visibility: visible;
+    }
+
+    .nav__icon {
+        top: 9px;
+        right: 0;
+    }
 }
 

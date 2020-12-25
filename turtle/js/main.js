@@ -12,26 +12,26 @@ $(document).ready(function () {
         }
         $(".status__items:nth-child("+ (status + 1) +")").addClass("light");
 
-        if (imageNext.length == 0) { // Đến slide cuối cùng
-            $(".active").addClass("move-out").one("webkitAnimationEnd", function () {
-                $(".move-out").removeClass("move-out");
-            });
+    //     if (imageNext.length == 0) { // Đến slide cuối cùng
+    //         $(".active").addClass("move-out").one("webkitAnimationEnd", function () {
+    //             $(".move-out").removeClass("move-out");
+    //         });
 
-            $(".carousel__img:first-child").addClass("move-in").one("webkitAnimationEnd", function () {
-                $(".active").removeClass("active");
-                $(".move-in").addClass("active").removeClass("move-in");
-            });
-        } else {
-            $(".active").addClass("move-out").one("webkitAnimationEnd", function () {
-                $(".move-out").removeClass("move-out");
-            });
+    //         $(".carousel__img:first-child").addClass("move-in").one("webkitAnimationEnd", function () {
+    //             $(".active").removeClass("active");
+    //             $(".move-in").addClass("active").removeClass("move-in");
+    //         });
+    //     } else {
+    //         $(".active").addClass("move-out").one("webkitAnimationEnd", function () {
+    //             $(".move-out").removeClass("move-out");
+    //         });
 
-            imageNext.addClass("move-in").one("webkitAnimationEnd", function () {
-                $(".active").removeClass("active");
-                $(".move-in").addClass("active").removeClass("move-in");
-            });
-        }
-    }, 3000);
+    //         imageNext.addClass("move-in").one("webkitAnimationEnd", function () {
+    //             $(".active").removeClass("active");
+    //             $(".move-in").addClass("active").removeClass("move-in");
+    //         });
+    //     }
+    // }, 3000);
 
     // Xử lí khi click vào nút
     $(".status__items").click(function () {
