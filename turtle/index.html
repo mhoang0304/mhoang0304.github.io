@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 
 <body>
@@ -40,6 +41,7 @@
 
         <!-- Navigation  -->
         <nav class="nav">
+            <!-- Navigation For PC  -->
             <a class="nav__logo" href="./index.html">
                 <img class="nav__logo-icon" src="./image/logo.png" alt="Logo">SOSTURTLE
             </a>
@@ -64,15 +66,17 @@
 
         <div class="nav__overlay"></div>
 
-  
         <nav class="nav__mobile">
+            <div class="nav__mobile-close">
+                <i class="fas fa-times"></i>
+            </div>
             <ul class="nav__mobile-list">
-                <li class="nav__mobile-items"><a href="#">ABOUT</a></li>
-                <li class="nav__mobile-items"><a href="#">STORIES</a></li>
-                <li class="nav__mobile-items"><a href="#">NEWS</a></li>
-                <li class="nav__mobile-items"><a href="#">RESEARCH</a></li>
-                <li class="nav__mobile-items"><a href="#">BLOG</a></li>
-                <li class="nav__mobile-items"><a href="#">CONTACT</a></li>
+                <li class="nav__mobile-items"><a href="#">About</a></li>
+                <li class="nav__mobile-items"><a href="#">Stories</a></li>
+                <li class="nav__mobile-items"><a href="#">News</a></li>
+                <li class="nav__mobile-items"><a href="#">Research</a></li>
+                <li class="nav__mobile-items"><a href="#">Blog</a></li>
+                <li class="nav__mobile-items"><a href="#">Contact</a></li>
             </ul>
         </nav>
         <!-- End Navigation -->
@@ -159,14 +163,140 @@
     </section>
 
     <section class="main">
-
+        <div class="data">
+            <div class="data__number">
+                <div class="data__card">
+                    <h1 class="data__card-title">BILLION BABY TURTLES</h1>
+                    <p class="data__card-content">We protect endangered sea turtles throughout Latin America and the
+                        world by supporting community-based conservation eforts.</p>
+                </div>
+                <div class="data__detail">
+                    <div class="data__detail-number">
+                        <h2 class="data__detail-number--title">09</h2>
+                        <p class="data__detail-number--content">grants to conservation organizations</p>
+                    </div>
+                    <div class="data__detail-number">
+                        <h2 class="data__detail-number--title">10</h2>
+                        <p class="data__detail-number--content">turtle nesting beaches supported</p>
+                    </div>
+                    <div class="data__detail-number">
+                        <h2 class="data__detail-number--title">05</h2>
+                        <p class="data__detail-number--content">species of sea turtles protected</p>
+                    </div>
+                </div>
+            </div>
+            <div class="data__saved">
+                <h2 class="data__saved-detail">407K</h2>
+                <p class="data__saved-content">hatchlings <br> saved</p>
+            </div>
+        </div>
     </section>
 
-    <section></section>
+    <section class="main">
+        <div class="slide">
+            <div class="slide__post">
+                <div class="slide__post-img">
+                    <img src="./image/slide-1.png" alt="slide">
+                </div>
+                <div class="slide__post-detail">
+                    <h3 class="slide__post-program">PROGRAMS</h3>
+                    <h1 class="slide__post-title">SOS TURTLE CONSERVATION TRIPS</h1>
+                    <p class="slide__post-content">SOS Turtle Conservation Tours
+                        ofer the opportunity to see and participate in sea turtle conservation
+                        programs around Latin America. Our trips work with local researchers to help study and protect
+                        turtles on the beach or at sea and every trip helps save at least 100 hatchlings through our
+                        Billion Baby Turtles program.</p>
+                </div>
+            </div>
+            <div class="slide__post">
+                <div class="slide__post-img">
+                    <img src="https://picsum.photos/id/1050/600/600" alt="slide">
+                </div>
+                <div class="slide__post-detail">
+                    <h3 class="slide__post-program">PROGRAMS</h3>
+                    <h1 class="slide__post-title">SOS TURTLE CONSERVATION TRIPS</h1>
+                    <p class="slide__post-content">SOS Turtle Conservation Tours
+                        ofer the opportunity to see and participate in sea turtle conservation
+                        programs around Latin America. Our trips work with local researchers to help study and protect
+                        turtles on the beach or at sea and every trip helps save at least 100 hatchlings through our
+                        Billion Baby Turtles program.</p>
+                </div>
+            </div>
+            <div class="slide__post">
+                <div class="slide__post-img">
+                    <img src="https://picsum.photos/id/1008/600/600" alt="slide">
+                </div>
+                <div class="slide__post-detail">
+                    <h3 class="slide__post-program">PROGRAMS</h3>
+                    <h1 class="slide__post-title">SOS TURTLE CONSERVATION TRIPS</h1>
+                    <p class="slide__post-content">SOS Turtle Conservation Tours
+                        ofer the opportunity to see and participate in sea turtle conservation
+                        programs around Latin America. Our trips work with local researchers to help study and protect
+                        turtles on the beach or at sea and every trip helps save at least 100 hatchlings through our
+                        Billion Baby Turtles program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer></footer>
+    <section class="main">
+        <h1 class="news-title">LATEST NEWS</h1>
+        <div class="news">
+            <div class="news__post">
+                <h3 class="news__post-info">CAMPAIGN</h3>
+                <h1 class="news__post-title">Milman Islet Research</h1>
+                <p class="news__post-date">On June 12, 2018 / By Turtle Save</p>
+                <div class="news__post-img">
+                    <img src="./image/news-1.jpg" alt="news">
+                </div>
+                <p class="news__post-content">Researchers have been monitoring nesting turtle populations on Milman
+                    Islet for over 25 years. It is a small sandy cay within the Denham groups of Islands in the northern
+                    Great…</p>
+                <a class="news__post-link" href="#">continue reading</a>
+            </div>
+
+            <div class="news__post">
+                <h3 class="news__post-info">VOLUNTARY POSITIONS</h3>
+                <h1 class="news__post-title">Project Assistant Volunteer</h1>
+                <p class="news__post-date">On February 10, 2018 / By Turtle Save</p>
+                <div class="news__post-img">
+                    <img src="./image/news-2.jpg" alt="news">
+                </div>
+                <p class="news__post-content">We are now looking for a Project Assistant to undertake research, prepare
+                    information (including written communications and documentation) and provide fundraising, program…
+                </p>
+                <a class="news__post-link" href="#">continue reading</a>
+            </div>
+        </div>
+        <div class="news__button">
+            <button>MORE NEWS</button>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="contact">
+            <h3 class="contact__title">Sign up for monthly news, fun promotions,</h3>
+            <h3 class="contact__title color">and ways to help save turtles!</h3>
+            <div class="contact__input">
+                <input class="contact__input-main" type="text" placeholder="Enter your email address">
+                <button class="contact__input-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__create">
+            Created by Geovani Almeida<span class="footer__create-version"> CC 2018, Creative Commons 4.0</span>
+        </div>
+        <ul class="footer__info">
+            <li class="footer__link"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="footer__link"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="footer__link"><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
