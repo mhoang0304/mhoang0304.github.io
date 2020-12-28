@@ -54,8 +54,8 @@
                 <li class="nav__items"><a href="#">CONTACT</a></li>
             </ul>
             <div class="nav__icon">
-                <img class="nav__icon-search" src="./image/icon-search.png" alt="search">
-                <img class="nav__icon-material" src="./image/icon-material.png" alt="material">
+                <a href="#"> <img class="nav__icon-search" src="./image/icon-search.png" alt="search"></a>
+                <a href="#"><img class="nav__icon-material" src="./image/icon-material.png" alt="material"></a>
             </div>
 
             <!-- Navigation For Mobile -->
@@ -67,16 +67,29 @@
         <div class="nav__overlay"></div>
 
         <nav class="nav__mobile">
-            <div class="nav__mobile-close">
-                <i class="fas fa-times"></i>
+            <div class="nav__mobile-main">
+                <div class="nav__mobile-close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="nav__mobile-search">
+                    <input class="nav__mobile-input" type="text" placeholder="Search for articles...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul class="nav__mobile-list">
+                    <li class="nav__mobile-items"><a href="#">About</a></li>
+                    <li class="nav__mobile-items"><a href="#">Stories</a></li>
+                    <li class="nav__mobile-items"><a href="#">News</a></li>
+                    <li class="nav__mobile-items"><a href="#">Research</a></li>
+                    <li class="nav__mobile-items"><a href="#">Blog</a></li>
+                    <li class="nav__mobile-items"><a href="#">Contact</a></li>
+                </ul>
             </div>
-            <ul class="nav__mobile-list">
-                <li class="nav__mobile-items"><a href="#">About</a></li>
-                <li class="nav__mobile-items"><a href="#">Stories</a></li>
-                <li class="nav__mobile-items"><a href="#">News</a></li>
-                <li class="nav__mobile-items"><a href="#">Research</a></li>
-                <li class="nav__mobile-items"><a href="#">Blog</a></li>
-                <li class="nav__mobile-items"><a href="#">Contact</a></li>
+            <ul class="nav__mobile-social">
+                <li class="nav__mobile-social--icon"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="nav__mobile-social--icon"><a href="#"><i class="fab fa-twitter"></i></li>
+                <li class="nav__mobile-social--icon"><a href="#"><i class="fas fa-wifi"></i></a>
+                </li>
             </ul>
         </nav>
         <!-- End Navigation -->
@@ -84,8 +97,8 @@
         <div class="title">
             <span class="title__welcome">Welcome</span>
             <h1 class="title__main">Help Us Save<br>A Billion Baby Turtles!</h1>
-            <h2 class="title__detail"><img class="title__detail-img" src="./image/icon-play.png" alt="play">HOW WE USE
-                YOUR DONATION</h2>
+            <h2 class="title__detail"><a href="#"><img class="title__detail-img" src="./image/icon-play.png"
+                        alt="play">HOW WE USE YOUR DONATION</a></h2>
         </div>
 
         <ul class="social">
@@ -100,24 +113,18 @@
                 <span>Donate to save baby turtles</span>
             </div>
             <div class="donate__amount">
-                <div class="donate__amount-btn">
+                <button class="donate__amount-btn">
                     <span>AMOUNT</span>
-                    <div class="donate__amount-money">$20</div>
-                </div>
-                <div class="donate__arrow">
                     <img src="./image/arrow-up.png" alt="arrow-up">
-                </div>
+                </button>
+                <div class="donate__amount-money">$20</div>
             </div>
             <div class="donate__period">
-                <div class="donate__period-detail">
-                    <div class="donate__period-btn">
-                        <p>PERIOD</p>
-                        <div class="donate__period-month">Monthly</div>
-                        <div class="donate__period-img">
-                            <img src="./image/arrow-up.png" alt="arrow-up">
-                        </div>
-                    </div>
-                </div>
+                    <button class="donate__period-btn">
+                        <span>PERIOD</span>
+                        <img src="./image/arrow-up.png" alt="arrow-up">
+                    </button> 
+                    <div class="donate__period-month">Monthly</div> 
             </div>
             <div class="donate__btn">
                 <button class="donate__button">
@@ -127,6 +134,31 @@
         </div>
         <!-- End Button Donate -->
     </header>
+
+    <section class="main-donate">
+        <div class="main donate__main">
+            <div class="donate__main-title">
+                <span>Donate to save baby turtles</span>
+            </div>
+            <div class="donate__main-amount">
+                <button class="donate__main-btn">
+                    <span>AMOUNT</span>
+                    <img src="./image/arrow-up.png" alt="arrow-up">
+                </button>
+                <div class="donate__main-total">$20</div>
+            </div>
+            <div class="donate__main-period">
+                <button class="donate__main-btn">
+                    <span>PERIOD</span>
+                    <img src="./image/arrow-up.png" alt="arrow-up">
+                </button>
+                <div class="donate__main-total">Monthly</div>
+            </div>
+            <div class="donate__main-button">
+                <button class="donate__main-button--send">DONATE</button>
+            </div>
+        </div>
+    </section>
 
     <section class="main">
         <div class="post">
@@ -192,7 +224,7 @@
         </div>
     </section>
 
-    <section class="main">
+    <!-- <section class="main">
         <div class="slide">
             <div class="slide__post">
                 <div class="slide__post-img">
@@ -293,7 +325,7 @@
             <li class="footer__link"><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li class="footer__link"><a href="#"><i class="fab fa-youtube"></i></a></li>
         </ul>
-    </footer>
+    </footer> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

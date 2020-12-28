@@ -76,4 +76,9 @@ $(document).ready(function () {
         arrows: false,
         dots: true
     });
+  
+    //Responsive navbar
+    $(window).resize(function () {
+        $(".carousel").height($(".carousel__img").height());
+    });
 });
