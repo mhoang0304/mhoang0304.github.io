@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    //Responsive navbar:
+    $(".carousel").height($(".carousel__img").height());
+
+    $(window).resize(function () {
+        $(".carousel").height($(".carousel__img").height());
+    });
+
     //Carousel thứ 1:
     let carousel = setInterval(function () {
         let imageNext = $(".active").next();
@@ -74,13 +81,6 @@ $(document).ready(function () {
         autoplaySpeed: 3000,
         arrows: false,
         dots: true
-    });
-
-    //Responsive navbar:
-    $(".carousel").height($(".carousel__img").height());
-
-    $(window).resize(function () {
-        $(".carousel").height($(".carousel__img").height());
     });
 });
 
