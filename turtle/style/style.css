@@ -43,14 +43,9 @@ img {
 .carousel__img {
     opacity: 0;
     visibility: hidden;
-}
-
-.carousel__img:nth-child(2) {
-    transform: translateY(-100%);
-}
-
-.carousel__img:nth-child(3) {
-    transform: translateY(-200%);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .carousel__img.active {
