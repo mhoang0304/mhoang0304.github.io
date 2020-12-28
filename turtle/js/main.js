@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     //Carousel thứ 2:
     $('.slide').slick({
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
         dots: true
