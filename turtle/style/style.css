@@ -1040,8 +1040,16 @@ img {
     display: inline-block;
 }
 
-.footer__link:hover i {
-    color: var(--title-color);
+.footer__link:nth-child(1):hover i {
+    color: #3B5998;
+}
+
+.footer__link:nth-child(2):hover i {
+    color: #1DA1F2;
+}
+
+.footer__link:nth-child(3):hover i {
+    color: #ff0000;
 }
 
 .footer__link:nth-child(2) {
