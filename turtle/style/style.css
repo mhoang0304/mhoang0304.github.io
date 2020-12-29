@@ -530,6 +530,7 @@ img {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 45px 45px 45px;
     background-color: #fff;
+    border-radius: 3px;
 }
 
 .donate__main-title,
@@ -857,6 +858,7 @@ img {
 
 .slick-active button {
     background-color: var(--link-color);
+    animation: light 1s ease-in infinite;
 }
 
 .news-title {
@@ -1131,9 +1133,8 @@ img {
     }
 
     .donate__main-button--send {
-        font-size: 2.2rem;
-        line-height: 27px;
-        padding: 21px 50px;
+        font-size: 2rem;
+        padding: 17px 30px;
     }
 
     .donate__main-total {
@@ -1290,11 +1291,15 @@ img {
     .donate__main {
         grid-template-columns: 2fr 1fr 1fr 1fr;
         grid-template-rows: 80px;
-        border-radius: 3px;
     }
 
     .donate__main-title {
         grid-column: unset;
+    }
+
+    .donate__main-button--send {
+        font-size: 2.2rem;
+        padding: 20px 40px;
     }
 
     .post {
@@ -1425,6 +1430,10 @@ img {
     
     .status__items:nth-child(2) {
         margin: 0 0 28px 0;
+    }
+
+    .donate__main-button--send {
+        padding: 21px 50px;
     }
 
     .post {
