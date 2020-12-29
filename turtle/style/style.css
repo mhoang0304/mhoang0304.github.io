@@ -983,7 +983,7 @@ img {
     padding: 0;
     background-color: #F9FCFF;
     padding: 10px 0 14px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 21px;
     color: black;
     font-weight: 500;
@@ -1179,6 +1179,7 @@ img {
 
     .contact__input-main {
         line-height: 51px;
+        font-size: 1.4rem;
     }
 }
 
