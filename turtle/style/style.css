@@ -3,6 +3,7 @@
     --title-color: #3E4C5B;
     --content-color: #9AA8B6;
     --link-color: #23CF5F;
+    --hover-color: #159a43;
 }
 
 * {
@@ -371,6 +372,15 @@ img {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.title__detail {
+    margin: 0;
+}
+
+.title__detail-img {
+    padding-right: 8px;
+    width: 30px;
+}
+
 .title__detail a {
     display: flex;
     align-items: center;
@@ -380,15 +390,11 @@ img {
     margin: 0;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.4s;
 }
 
-.title__detail {
-    margin: 0;
-}
-
-.title__detail-img {
-    padding-right: 8px;
-    width: 30px;
+.title__detail:hover a {
+    color: var(--link-color);
 }
 
 .social {
@@ -633,6 +639,10 @@ img {
     margin: 0 36px 0 4px;
 }
 
+.post__content-link a:hover  {
+    color: #159a43;
+}
+
 .post-second {
     padding-top: 60px;
     display: grid;
@@ -684,6 +694,10 @@ img {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.4rem;
+}
+
+.post-second__content-link a:hover {
+    color: var(--hover-color);
 }
 
 .post-second__img {
@@ -895,6 +909,10 @@ img {
     text-transform: uppercase;
     color: var(--link-color);
     text-decoration: none;
+}
+
+.news__post-link:hover {
+    color: var(--hover-color);
 }
 
 .news__button {
