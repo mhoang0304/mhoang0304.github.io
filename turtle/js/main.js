@@ -1,9 +1,9 @@
 $(document).ready(function () {
     //Responsive navbar:
-    $(".carousel").height($(".carousel__img").height());
+    $(".carousel").height($(".carousel__img img").height());
 
     $(window).resize(function () {
-        $(".carousel").height($(".carousel__img").height());
+        $(".carousel").height($(".carousel__img img").height());
     });
 
     //Carousel thứ 1:
