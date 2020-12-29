@@ -28,6 +28,7 @@ img {
 .header::before {
     content: "";
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -89,6 +90,7 @@ img {
 
 .status {
     position: absolute;
+    z-index: 3;
     top: 90%;
     right: calc(50% - 28px);
 }
@@ -127,6 +129,7 @@ img {
     right: 15px;
     display: flex;
     max-width: 100%;
+    z-index: 4;
 }
 
 .nav__logo {
@@ -338,6 +341,7 @@ img {
 
 .title {
     position: absolute;
+    z-index: 3;
     top: calc(50% - 40px);
     left: calc(50% - 115px);
 }
