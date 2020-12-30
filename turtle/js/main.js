@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Responsive navbar:
-    $(".carousel__img img").load("./image/banner.jpg",function() {
+    $(".carousel__img.active img").load("./image/banner.jpg",function() {
         $(".header").height($(".carousel__img img").height());
     });
 
