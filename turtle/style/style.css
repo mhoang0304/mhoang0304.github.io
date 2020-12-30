@@ -39,6 +39,10 @@ img {
 }
 
 /* Carousel */
+.carousel {
+    position: relative;
+}
+
 .carousel__img {
     opacity: 0;
     visibility: hidden;
