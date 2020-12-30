@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Responsive navbar:
-    $(".header").height($(".carousel__img.active img").height());
+    $(".header").height($(".carousel__img img").height());
     
     $(window).resize(function () {
         $(".header").height($(".carousel__img img").height());
