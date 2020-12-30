@@ -577,6 +577,12 @@ img {
     font-weight: 500;
     font-size: 1.6rem;
     color: var(--title-color);
+    padding-right: 22px;
+}
+
+
+.donate__main-monthly {
+    padding-right: 0;
 }
 
 .donate__main-period {
