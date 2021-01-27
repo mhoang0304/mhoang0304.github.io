@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    font-family: noto-sans;
+}
+
+:root {
+
+}
+
+@font-face {
+    font-family: noto-sans;
+    src: url(../font/noto-sans/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: verdana;
+    src: url(../font/verdana/verdana.ttf);
+}
+
