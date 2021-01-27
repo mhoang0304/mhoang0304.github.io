@@ -28,6 +28,10 @@ img {
 
 /* Navigation */
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 100px;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -43,7 +47,6 @@ img {
     font-size: 2.6rem;
     display: flex;
     color: white;
-
 }
 
 .nav__menu {
@@ -70,13 +73,22 @@ img {
 
 .nav__button {
     display: flex;
+    align-items: center;
+}
+
+.nav__button-icon {
+    margin-right: 15px;
 }
 
 .nav__button-login button {
     background: none;
+    padding: 0 8px 0 21px;
 }
 
 .nav__button-register button {
+    width: 81px;
+    height: 32px;
+    border-radius: 4px;
     background-color: var(--green-color);
 }
 
@@ -85,6 +97,7 @@ img {
     border: none;
     outline: none;
     font-size: 1.6rem;
+    color: white;
 }
 /* End Navigation */
 
