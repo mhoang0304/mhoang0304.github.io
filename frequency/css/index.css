@@ -1,3 +1,143 @@
 .banner {
-    /* position: relative; */
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.28);;
+}
+
+.banner__content {
+    position: absolute;
+    top: 401px;
+    left: 138px;
+    color: white;
+}
+
+.banner__content-h1 {
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 4.2rem;
+    line-height: 5.1rem;
+    margin: 0;
+}
+
+.banner__content-h1:nth-child(2) {
+    margin: 11px 0 33px 46px;
+}
+
+.banner__content-h2 {
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin: 0 0 0 104px;
+}
+
+.poster {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.poster__title {
+    display: flex;
+    flex-direction: column;
+}
+
+.poster__title-hashtag {
+    flex-basis: 50%;
+    background-color: #F8F6F7;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.7rem;
+}
+
+.poster__title-hashtag-content {
+    margin: 0;
+}
+
+.poster__title-hashtag-content:nth-child(1) {
+    margin: 91px 0 4px;
+}
+
+.poster__title-hashtag-link {
+    text-decoration: none;
+    color: #383838;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-top: 41px;
+    display: inline-block;
+}
+
+.poster__title-collection {
+    display: flex;
+    flex-basis: 50%;
+    background-color: #1A1A1A;
+    color: white;
+    line-height: 3.5rem;
+    font-size: 2.6rem;
+    align-items: center;
+}
+
+.poster__title-collection a {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 123px;
+    text-decoration: none;
+    color: white;
+}
+
+.poster__title-collection span {
+    font-weight: bold;
+    margin: 0 80px 0 8px;
+}
+
+.description {
+    background-color: #F8F6F9;
+}
+
+.description-main {
+    max-width: 426px;
+    margin: 169px 0 0 80px;
+}   
+
+.description__main-title {
+    color: #424242;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.9rem;
+}
+
+.description__main-h1 {
+    font-weight: 600;
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+    margin: 18px 0 22px;
+}
+
+.description__main-content {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-bottom: 80px;
+}
+
+.description__main-btn {
+    border: none;
+    outline: none;
+    background-color: black;
+    padding: 19px 74px;
+}
+
+.description__main-btn--link {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    color: white;
 }

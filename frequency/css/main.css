@@ -21,6 +21,21 @@ html {
     font-size: 62.5%;
 }
 
+h1, h2, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -32,14 +47,13 @@ img {
     top: 0;
     left: 0;
     right: 0;
+    margin: auto;
+    z-index: 1;
+    max-width: 1440px;
     height: 100px;
     background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav--align {
-    padding: 0 12px;
+    padding: 0 60px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -47,9 +61,12 @@ img {
     font-size: 2.6rem;
     display: flex;
     color: white;
+    text-decoration: none;
 }
 
 .nav__menu {
+    position: absolute;
+    left: calc(50% - 257.5px);
     list-style: none;
     display: flex;
     padding: 0;
@@ -74,6 +91,7 @@ img {
 .nav__button {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav__button-icon {
@@ -100,4 +118,9 @@ img {
     color: white;
 }
 /* End Navigation */
+
+/* Card */
+.watch {
+    max-width: 270px;
+}
 
