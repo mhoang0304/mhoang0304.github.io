@@ -1,64 +1,21 @@
 <!DOCTYPE html>
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="./css/normalize.css")
+    link(rel="stylesheet" href="./css/main.css")
 
-        block title
-            title Frequency
-            link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/css/bootstrap.css")
-            link(rel="stylesheet" href="./css/normalize.css")
-            link(rel="stylesheet" href="./css/main.css")
-            link(rel="stylesheet" href="./css/index.css")
-    body
-        header
-            include nav.pug
+    block title
+      title Frequency
+  body
+    header
+      include nav.pug
 
-            block banner 
-            .banner
-                img(src="./img/banner-1.png" alt="banner")
-                .banner__overlay
-                .banner__content
-                    h1.banner__content-h1 SỰ TỰ TIN
-                    h1.banner__content-h1 NẰM TRÊN CỔ TAY CỦA BẠN
-                    h2.banner__content-h2 HÃY TẠO NÊN TRUYỀN THỐNG CỦA RIÊNG MÌNH
+      block banner 
 
-        block content
-            .main
-                .container.gx-0.poster
-                    .poster__title
-                        .poster__title-hashtag
-                            p.poster__title-hashtag-content Ai nói bạn không thể lựa chọn gia đình?
-                            p.poster__title-hashtag-content Hãy để chúng tôi là câu trả lời
-                            a(href="#").poster__title-hashtag-link #FREQUENCY
-                        .poster__title-collection
-                            a(href="#") Collection 
-                                span 2021
-                                svg(width='12.34' height='20' viewbox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg')
-                                    path(d='M12.8597 10.7772L3.81284 19.678C3.37652 20.1073 2.66913 20.1073 2.23286 19.678L1.17769 18.6399C0.742118 18.2114 0.74128 17.5168 1.17583 17.0873L8.34563 9.99998L1.17583 2.91274C0.74128 2.48319 0.742118 1.78864 1.17769 1.36009L2.23286 0.321959C2.66918 -0.10732 3.37657 -0.10732 3.81284 0.321959L12.8597 9.22276C13.296 9.65199 13.296 10.348 12.8597 10.7772Z' fill='white')
-                    img(src="./img/banner-2.png" alt="banner")
+    block content
 
-                .container
-                    .row
-                        .col-6.g-0
-                            img(src="./img/banner-watch-men.png" alt="banner")
-                        .col-6.g-0.description
-                            .description-main
-                                p.description__main-title Đồng Hồ Nam
-                                h1.description__main-h1 TÌM KIẾM MỘT CHIẾC ĐỒNG HỒ THÔNG MINH
-                                p.description__main-content Những chiếc đồng hồ được thiết kế từ những người thợ giỏi. Chúng phù hợp với cá tính, phong cách riêng của chính bạn
-                                button.description__main-btn 
-                                    a(href="#").description__main-btn--link XEM ĐỒNG HỒ
-
-                    .row
-                        .col-3
-                            include ./card.pug
-                        .col-3
-                            mixins link(rel="./img/watch-demo-2.png", href="")
-                        .col-3
-                            include ./card.pug
-                        .col-3
-                            include ./card.pug
-
-        link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/js/bootstrap.js")
+    link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/js/bootstrap.js")
 

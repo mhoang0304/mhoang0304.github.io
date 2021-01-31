@@ -141,3 +141,114 @@
     font-weight: 500;
     color: white;
 }
+
+/* Watch Demo */
+.watch {
+    max-width: 270px;
+    text-align: center;
+    margin: 53px 0;
+}
+
+.watch__style {
+    font-size: 1.4rem;
+    color: var(--gray-color);
+    line-height: 1.9rem;
+}
+
+.watch__name {
+    margin: 3px 0 14px;
+}
+
+.watch__name,
+.watch__price {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+.watch__style,
+.watch__name, 
+.watch__price {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* End Watch Demo */
+
+/* Post */
+.post {
+    display: flex;
+    justify-content: center;
+    background-color: #242527;
+    padding: 38px 0 59px;
+    color: white;
+}
+
+.post__main {
+    max-width: 300px;
+    padding: 0;
+    text-align: center;
+}
+
+.post__main:nth-child(2) {
+    margin: 0 60px;
+}
+
+.post__main-title {
+    margin: 33px 0 20px;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.7rem;
+}
+
+.post__main-content {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-bottom: 32px;
+}
+
+.post__main-link {
+    color: white;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    position: relative;
+}
+
+.post__main-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: all 0.2s ease-out;
+}
+
+.post__main-link:hover::after {
+    width: 100%;
+}
+
+.post__main-link:hover {
+    color: white;
+}
+/* End Post */
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) { 
+
+}
+
+@media (min-width: 992px) { 
+
+}
+
+@media (min-width: 1200px) { 
+
+}
+
+@media (min-width: 1400px) { 
+
+}
