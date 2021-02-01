@@ -16,6 +16,7 @@
     --green-color: #3CB46E;
     --green-hover: #37a866;
     --gray-color: #6A6C6E;
+    --gray-icon:#495057;
 }
 
 * {
@@ -56,7 +57,7 @@ img {
     margin: auto;
     z-index: 1;
     max-width: 1440px;
-    height: 100px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -65,65 +66,77 @@ img {
     align-items: center;
 }
 
-.nav__logo {
-    font-size: 2.6rem;
-    display: flex;
+.nav__moblie-btn {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.nav__main-logo {
+    position: absolute;
+    left: calc(50% - 60px);
+    font-size: 2.1rem;
     color: white;
 }
 
-.nav__logo:hover {
+.nav__main-logo:hover {
     color: white;
 }
 
-.nav__menu {
+.nav__main-menu {
     position: absolute;
     left: calc(50% - 257.5px);
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
+    display: none;
 }
 
-.nav__menu-item {
+.nav__main-menu-item {
     margin-right: 36px;
 }
 
-.nav__menu-item:nth-child(5) {
+.nav__main-menu-item:nth-child(5) {
     margin: 0;
 }
 
-.nav__menu-item a {
+.nav__main-menu-item a {
     color: white;
     font-size: 1.6rem;
     font-family: verdana;
 }
 
-.nav__menu-item:hover a {
+.nav__main-menu-item:hover a {
     color: var(--green-hover);
     transition: all 0.4s ease;
 }
 
-.nav__button {
+.nav__main-button {
     display: flex;
     align-items: center;
     margin-left: auto;
+    margin-right: 8px;
 }
 
-.nav__button-icon {
+.nav__main-button-icon {
     cursor: pointer;
 }
 
-.nav__button-icon:nth-child(1) {
-    margin-right: 15px;
+.nav__main-button-login,
+.nav__main-button-register {
+    display: none;
 }
 
-.nav__button-login button {
+.nav__main-button-icon:nth-child(1) {
+    margin-right: 15px;
+    display: none;
+}
+
+.nav__main-button-login button {
     background: none;
     padding: 0 8px 0 21px;
     transition: all 0.2s linear;
 }
 
-.nav__button-register button {
+.nav__main-button-register button {
     width: 81px;
     height: 32px;
     border-radius: 4px;
@@ -131,38 +144,124 @@ img {
     transition: all 0.2s linear;
 }
 
-.nav__button-register:hover button {
+.nav__main-button-register:hover button {
     color: #d4d4d4;
     background-color: var(--green-hover);
 }
 
-.nav__button-login:hover button {
+.nav__main-button-login:hover button {
     color: #d4d4d4;
 }
 
-.nav__button-login button,
-.nav__button-register button {
+.nav__main-button-login button,
+.nav__main-button-register button {
     border: none;
     outline: none;
     font-size: 1.6rem;
     color: white;
 }
+
+/* Navigation Mobile */
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.nav__moblie {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 260px;
+    background-color: #fff;
+    padding: 40px 20px;
+    background-color: #212121;
+    display: none;
+}
+
+.nav__moblie-close {
+    font-size: 1.8rem;
+    color: var(--gray-icon);
+    text-align: end;
+}
+
+.nav__mobile-menu-item {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav__mobile-menu-item:hover a {
+    color: var(--green-hover);
+    transition: all 0.4s ease;
+}
+
+.nav__mobile-menu-item a {
+    color: white;
+}
 /* End Navigation */
 
 @media (min-width: 576px) {
+    .nav__moblie-btn {
+        font-size: 2.4rem;
+    }
 
+    .nav {
+        height: 70px;
+    }
+
+    .nav__main-logo {
+        left: calc(50% - 74.5px);
+        font-size: 2.6rem;
+    }
+
+    .nav__main-button-icon:nth-child(1) {
+        display: block;
+    }
 }
 
 @media (min-width: 768px) { 
+    .nav {
+        height: 100px;
+    }
 
+    .nav__main-button-login,
+    .nav__main-button-register {
+        display: block;
+    }
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+    .nav__moblie-btn {
+        display: none;
+    }
 
+    .nav__main-logo {
+        left: auto;
+        margin-left: 8px;
+    }
+
+    .nav__main-menu {
+        display: flex;
+    }
+
+    
 }
 
 @media (min-width: 1200px) { 
+    .nav__main-button {
+        margin-right: 0;
+    }
 
+    .nav__main-logo {
+        margin-left: 0px;
+    }
 }
 
 @media (min-width: 1400px) { 

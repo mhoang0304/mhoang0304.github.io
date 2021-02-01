@@ -3,6 +3,7 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="./library/fontawesome/fontawesome-free-5.15.2-web/css/all.min.css")
     link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/css/bootstrap.css")
     link(rel="stylesheet" href="./css/normalize.css")
     link(rel="stylesheet" href="./css/main.css")
@@ -17,5 +18,12 @@ html(lang="en")
 
     block content
 
-    link(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/js/bootstrap.js")
+    block footer
+
+    script(src="./library/jquery-3.5.1.min.js")
+    script(rel="stylesheet" href="./library/bootstrap-5.0.0-beta1-dist/js/bootstrap.js")
+    script(src="./js/main.js")
+
+    block javascript
+
 
