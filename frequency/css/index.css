@@ -15,29 +15,26 @@
 
 .banner__content {
     position: absolute;
-    top: 401px;
-    left: 138px;
+    top: 43%;
+    left: 1%;
     color: white;
 }
 
 .banner__content-h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
     font-family: verdana;
     font-weight: bold;
-    font-size: 4.2rem;
-    line-height: 5.1rem;
-    margin: 0;
 }
 
 .banner__content-h1:nth-child(2) {
-    margin: 11px 0 33px 46px;
+    margin: 6px 0 14px 23px;
 }
 
 .banner__content-h2 {
+    font-size: 1.2rem;
     font-family: verdana;
     font-weight: bold;
-    font-size: 2rem;
-    line-height: 2.4rem;
-    margin: 0 0 0 104px;
 }
 
 .poster {
@@ -234,21 +231,71 @@
 /* End Post */
 
 @media (min-width: 576px) {
+    .banner__content {
+        top: 48%;
+        left: 8%;
+    }
 
+    .banner__content-h1 {
+        font-size: 2.5rem;
+        line-height: 2.9rem;
+    }
+
+    .banner__content-h1:nth-child(2) {
+        margin: 6px 0 9px 34px;
+    }
+
+    .banner__content-h2 {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        margin: 0 0 0 61px;
+    }
 }
 
 @media (min-width: 768px) { 
+    .banner__content-h1 {
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+    }
 
+    .banner__content-h1:nth-child(2) {
+        margin: 6px 0 19px 46px;
+    }
+
+    .banner__content-h2 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin: 0 0 0 96px;
+    }
 }
 
 @media (min-width: 992px) { 
+    .banner__content-h1 {
+        font-size: 4.2rem;
+        line-height: 5.1rem;
+    }
 
+    .banner__content-h1:nth-child(2) {
+        margin: 11px 0 33px 46px;
+    }
+
+    .banner__content-h2 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin: 0 0 0 104px;
+    }
 }
 
 @media (min-width: 1200px) { 
-
+    .banner__content {
+        top: 327px;
+        left: 57px;
+    }
 }
 
 @media (min-width: 1400px) { 
-
+    .banner__content {
+        top: 401px;
+        left: 138px;
+    }
 }

@@ -116,17 +116,18 @@ img {
     margin-right: 8px;
 }
 
-.nav__main-button-icon {
+.nav__main-button-search {
+    margin-right: 15px;
+    display: none;
+    cursor: pointer;
+}
+
+.nav__main-button-bag {
     cursor: pointer;
 }
 
 .nav__main-button-login,
 .nav__main-button-register {
-    display: none;
-}
-
-.nav__main-button-icon:nth-child(1) {
-    margin-right: 15px;
     display: none;
 }
 
@@ -164,31 +165,51 @@ img {
 /* Navigation Mobile */
 .nav__overlay {
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.3);
     display: none;
+    animation: fadeIn linear 0.4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .nav__moblie {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     bottom: 0;
     min-width: 260px;
-    background-color: #fff;
-    padding: 40px 20px;
+    padding: 8px 12px;
     background-color: #212121;
-    display: none;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
 .nav__moblie-close {
     font-size: 1.8rem;
     color: var(--gray-icon);
     text-align: end;
+}
+
+.nav__moblie-close--link {
+    cursor: pointer;
+}
+
+.nav__moblie-menu {
+    margin-top: 8px;
 }
 
 .nav__mobile-menu-item {
@@ -221,7 +242,7 @@ img {
         font-size: 2.6rem;
     }
 
-    .nav__main-button-icon:nth-child(1) {
+    .nav__main-button-search {
         display: block;
     }
 }
