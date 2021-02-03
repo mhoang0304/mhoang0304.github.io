@@ -1,7 +1,7 @@
 extends ./template-part/layout.pug
 
 block title
-  title Frequency
+  title Frequency - Trang Chủ
   link(rel="stylesheet" href="./css/index.css")
 
 block banner
@@ -15,24 +15,26 @@ block banner
 
 block content
   .main
-    .container.gx-0.poster
-      .poster__title
-        .poster__title-hashtag
-          p.poster__title-hashtag-content Ai nói bạn không thể lựa chọn gia đình?
-          p.poster__title-hashtag-content Hãy để chúng tôi là câu trả lời
-          a(href="#").poster__title-hashtag-link #FREQUENCY
-        .poster__title-collection
-          a(href="#") Collection
-            span 2021
-            svg(width='12.34' height='20' viewbox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg')
-              path(d='M12.8597 10.7772L3.81284 19.678C3.37652 20.1073 2.66913 20.1073 2.23286 19.678L1.17769 18.6399C0.742118 18.2114 0.74128 17.5168 1.17583 17.0873L8.34563 9.99998L1.17583 2.91274C0.74128 2.48319 0.742118 1.78864 1.17769 1.36009L2.23286 0.321959C2.66918 -0.10732 3.37657 -0.10732 3.81284 0.321959L12.8597 9.22276C13.296 9.65199 13.296 10.348 12.8597 10.7772Z' fill='white')
-      img(src="./img/banner-2.jpg" alt="banner")
+    .container-fluid.container-xl.poster
+      .row.d-flex.flex-column-reverse.flex-md-row
+        .col-12.col-md-6.col-lg-5.col-xl-4.d-sm-flex.pe-md-0.flex-md-column.gx-xl-0
+          .poster__hashtag
+            p.poster__hashtag-title Ai nói bạn không thể lựa chọn gia đình?
+            p.poster__hashtag-title Hãy để chúng tôi là câu trả lời
+            a(href="#").poster__hashtag-title-link #FREQUENCY
+          .d-flex.justify-content-center.align-items-sm-center.poster__collection
+            a(href="#").poster__collection-link Collection
+              span 2021
+              svg(width='12.34' height='20' viewbox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M12.8597 10.7772L3.81284 19.678C3.37652 20.1073 2.66913 20.1073 2.23286 19.678L1.17769 18.6399C0.742118 18.2114 0.74128 17.5168 1.17583 17.0873L8.34563 9.99998L1.17583 2.91274C0.74128 2.48319 0.742118 1.78864 1.17769 1.36009L2.23286 0.321959C2.66918 -0.10732 3.37657 -0.10732 3.81284 0.321959L12.8597 9.22276C13.296 9.65199 13.296 10.348 12.8597 10.7772Z' fill='white')
+        .col-12.col-md-6.col-lg-7.col-xl-8.gx-xl-0.ps-md-0
+          img(src="./img/banner-2.jpg" alt="banner")
 
     .container
       .row
-        .col-6.g-0
+        .col-6.gx-0
           img(src="./img/banner-watch-men.jpg" alt="banner")
-        .col-6.g-0.description
+        .col-6.gx-0.description
           .description-main
             p.description__main-title Đồng Hồ Nam
             h1.description__main-h1 TÌM KIẾM MỘT CHIẾC ĐỒNG HỒ THÔNG MINH
