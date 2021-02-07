@@ -118,6 +118,29 @@ block content
             | mọi nơi trong tích tắc
           a(href="#").post__main-link XEM THÊM
 
+    .container-fluid.gx-0.slide-main
+      #carouselExampleCaptions.carousel.slide(data-bs-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0')
+          li(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1')
+          li(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='./img/slide-1.jpg' alt='...')
+            .carousel-caption.d-none.d-sm-block
+              h1.slide-main__title CHARMING COLLECTION
+              p.slide-main__content Bộ sưu tập đồng hồ cho các cặp đôi.
+          .carousel-item
+            img.d-block.w-100(src='./img/slide-2.jpg' alt='...')
+            .carousel-caption.d-none.d-sm-block.slide-main__title
+              h1.slide-main__title YEAR END SALE
+              p.slide-main__content Áp dụng cho toàn bộ sản phẩm nhân dịp cuối năm.
+          .carousel-item
+            img.d-block.w-100(src='./img/slide-3.jpg' alt='...')
+            .carousel-caption.d-none.d-sm-block.slide-main__title
+              h1.slide-main__title VŨ & #FREQUENCY
+              p.slide-main__content Sự kết hợp đồng hồ góc cạnh cùng với ca sĩ indie Thái Vũ.
+
 block javascript
   script(src="./js/index.js")
 
