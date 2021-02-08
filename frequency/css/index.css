@@ -310,6 +310,36 @@
     padding: 8px 0 12px;
 }
 
+/* Service */
+.service {
+    max-width: 1440px;
+    margin: 42px auto 34px;
+}
+
+.service__title {
+    max-width: 196px;
+    display: flex;
+    align-items: center;
+}
+
+.service__title-content {
+    max-width: 125px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 8px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+.line {
+    width: 938px;
+    height: 1px;
+    margin: auto;
+    background-color: black;
+}
+
+
 @media (min-width: 576px) {
     .banner__content {
         top: 48%;
