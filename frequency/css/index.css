@@ -313,7 +313,7 @@
 /* Service */
 .service {
     max-width: 1440px;
-    margin: 42px auto 34px;
+    margin: 42px auto 70px;
 }
 
 .service__title {
@@ -335,7 +335,7 @@
 .line {
     width: 938px;
     height: 1px;
-    margin: auto;
+    margin: 34px auto 0;
     background-color: black;
 }
 
