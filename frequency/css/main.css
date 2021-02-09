@@ -286,6 +286,7 @@ img {
     background-repeat: no-repeat;
     color: white;
     position: relative;
+    z-index: 1;
 }
 
 .footer::before {
@@ -295,6 +296,7 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: -1;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -302,7 +304,7 @@ img {
     padding: 121px 0 75px;
 }
 
-.footer__main {
+.footer-main__content {
     max-width: 300px;
 }
 
