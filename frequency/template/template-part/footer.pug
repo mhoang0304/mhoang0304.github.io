@@ -1,23 +1,47 @@
 footer.footer
     .container.footer-main
-        .row.footer--padding 
+        .row 
             .col-4
                 .footer-main__content
-                    h1 THÔNG TIN LIÊN HỆ
-                    ul 
-                        li Địa chỉ: 123 Nguyễn An Ninh, Tương Mai, Hoàng Mai, Hà Nội.
-                        li Phone: (012) 800 000 789
-                        li Fax: (012) 800 888 789
+                    h1.footer-main__content-title THÔNG TIN LIÊN HỆ
+                    ul.footer-main__content-menu
+                        li.footer-main__content-menu-item Địa chỉ: 123 Nguyễn An Ninh, Tương Mai, Hoàng Mai, Hà Nội.
+                        li.footer-main__content-menu-item Phone: (012) 800 000 789
+                        li.footer-main__content-menu-item Fax: (012) 800 888 789
                         li Email: mhoang0304@gmail.com  
             .col-4
                 .footer-main__content
-                    h1 CỬA HÀNG
-                    ul 
-                        li Store 1: 38 Hàm Long, Hoàn Kiếm, Hà Nội.
-                        li Store 2: 9 B7 Phạm Ngọc Thạch, Đống Đa, Hà Nội.
+                    h1.footer-main__content-title CỬA HÀNG
+                    ul.footer-main__content-menu 
+                        li.footer-main__content-menu-item Store 1: 38 Hàm Long, Hoàn Kiếm, Hà Nội.
+                        li.footer-main__content-menu-item Store 2: 9 B7 Phạm Ngọc Thạch, Đống Đa, Hà Nội.
                         li Store 3: 173A Kim Mã, Ba Đình, Hà Nội.
             .col-4
                 .footer-main__content
-                    h1 INSTAGRAM
-                        p Ghé thăm trang Instagram để cùng chia sẻ chiếc đồng hồ của bạn
-    .container.footer-sub
+                    h1.footer-main__content-title INSTAGRAM
+                    p.footer-main__content-sub Ghé thăm trang Instagram để cùng chia sẻ chiếc đồng hồ của bạn
+                .d-flex.justify-content-evenly.footer-main__feed
+                    .footer-main__feedback
+                        img(src="./img/footer-1.jpg" alt="feedback").footer-main__feedback-img
+                        i.fab.fa-instagram.footer-main__feedback-icon
+                    .footer-main__feedback
+                        img(src="./img/footer-2.jpg" alt="feedback").footer-main__feedback-img
+                        i.fab.fa-instagram.footer-main__feedback-icon
+                    .footer-main__feedback
+                        img(src="./img/footer-3.jpg" alt="feedback").footer-main__feedback-img
+                        i.fab.fa-instagram.footer-main__feedback-icon
+                    .footer-main__feedback
+                        img(src="./img/footer-4.jpg" alt="feedback").footer-main__feedback-img
+                        i.fab.fa-instagram.footer-main__feedback-icon
+
+        .row.gx-0.footer-sub
+            .col-6.d-flex.align-items-center
+                .footer-sub__copyright Frequency © 2021
+            .col-6.d-flex.align-items-center.justify-content-end
+                .footer-sub__social
+                    a(href="#").footer-sub__social-link  
+                        i.fab.fa-facebook-f
+                    a(href="#").footer-sub__social-link 
+                        i.fab.fa-youtube
+                    a(href="#").footer-sub__social-link 
+                        i.fab.fa-twitter 

@@ -286,7 +286,7 @@ img {
     background-repeat: no-repeat;
     color: white;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .footer::before {
@@ -306,6 +306,116 @@ img {
 
 .footer-main__content {
     max-width: 300px;
+    margin: 0 auto;
+}
+
+.footer-main__content-title {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    text-align: center;
+    margin-bottom: 59px;
+}
+
+.footer-main__content-menu {
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.footer-main__content-sub {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+
+.footer-main__content-menu-item {
+    margin-bottom: 19px;
+}
+
+.footer-main__feed {
+    margin-top: 25px;
+}
+
+.footer-main__feedback {
+    position: relative;
+    width: 86px;
+    height: 86px;
+}
+
+.footer-main__feedback-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-main__feedback::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.footer-main__feedback-icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.6rem;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+.footer-main__feedback:hover::after,
+.footer-main__feedback:hover .footer-main__feedback-icon {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.footer-sub {
+    background-color: black;
+    height: 42px;
+    position: absolute;
+    bottom: -42px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 106px;
+}
+
+.footer-sub__copyright {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+.footer-sub__social-link {
+    font-size: 2rem;
+    color: var(--gray-icon);
+}
+
+.footer-sub__social-link:nth-child(2) {
+    margin: 0 23px;
+}
+
+.footer-sub__social-link:nth-child(1):hover i {
+    color: #3b5998;
+    transition: color 0.4s ease;
+}
+
+.footer-sub__social-link:nth-child(2):hover i {
+    color: #cc191f;
+    transition: color 0.4s ease;
+}
+
+.footer-sub__social-link:nth-child(3):hover i {
+    color: #1da1f2;
+    transition: color 0.4s ease;
 }
 
 @media (min-width: 576px) {
