@@ -313,7 +313,7 @@
 /* Service */
 .service {
     max-width: 1440px;
-    margin: 42px auto 70px;
+    margin: 35px auto 70px;
 }
 
 .service__title {
@@ -322,20 +322,41 @@
     align-items: center;
 }
 
+.service__title-svg--truck {
+    width: 34px;
+    height: 36px;
+}
+
+.service__title-svg--shield {
+    width: 30px;
+    height: 26px;
+}
+
+.service__title-svg--badge {
+    width: 29px;
+    height: 30px;
+}
+
+.service__title-svg--gift {
+    width: 28px;
+    height: 28px;
+}
+
 .service__title-content {
-    max-width: 125px;
+    min-width: 108px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-left: 8px;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
 }
 
 .line {
-    width: 938px;
+    max-width: 100%;
     height: 1px;
-    margin: 34px auto 0;
+    /* margin: 34px 243px 0; */
+    margin: 34px 22px 0;
     background-color: black;
 }
 
@@ -413,6 +434,34 @@
     .description__main-btn a {
         font-size: 1.6rem;
         line-height: 2.2rem;
+    }
+
+    /* Service */
+    .service__title-svg--truck {
+        width: 63px;
+        height: 64px;
+    }
+    
+    .service__title-svg--shield {
+        width: 39px;
+        height: 46px;
+    }
+    
+    .service__title-svg--badge {
+        width: 44px;
+        height: 46px;
+    }
+    
+    .service__title-svg--gift {
+        width: 46px;
+        height: 46px;
+    }
+
+    .service__title-content {
+        max-width: 125px;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        margin-left: 10px;
     }
 }
 
@@ -501,6 +550,35 @@
     .post__main-content {
         margin-bottom: 32px;
     }
+
+    /* Service */
+    .service {
+        margin: 42px auto 70px;
+    }
+
+    .service__title-svg--truck {
+        width: 54px;
+        height: 64px;
+    }
+    
+    .service__title-svg--shield {
+        width: 34px;
+        height: 40px;
+    }
+    
+    .service__title-svg--badge {
+        width: 41px;
+        height: 42px;
+    }
+    
+    .service__title-svg--gift {
+        width: 43px;
+        height: 40px;
+    }
+
+    .service__title-content {
+        margin-left: 8px;
+    }
 }
 
 @media (min-width: 992px) { 
@@ -574,6 +652,27 @@
         gap: 41px;
         grid-template-areas: 
         "water design soft";
+    }
+
+    /* Service */
+    .service__title-svg--truck {
+        width: 63px;
+        height: 64px;
+    }
+    
+    .service__title-svg--shield {
+        width: 39px;
+        height: 46px;
+    }
+    
+    .service__title-svg--badge {
+        width: 44px;
+        height: 46px;
+    }
+    
+    .service__title-svg--gift {
+        width: 46px;
+        height: 46px;
     }
 }
 
