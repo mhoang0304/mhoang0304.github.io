@@ -230,9 +230,7 @@ img {
 
 /* Subscribe */
 .subscribe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .subscribe__title {
@@ -249,7 +247,8 @@ img {
 
 .subscribe__main {
     display: flex;
-    margin-bottom: 82px;
+    max-width: 311px;
+    margin: 0 auto 82px;
     background-color: #f0f0f0;
     padding: 3px 4px 3px 0;
     border-radius: 4px;
@@ -266,11 +265,16 @@ img {
 
 .subscribe__main-button {
     border: none;
+    width: 86px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     font-size: 1.6rem;
     line-height: 2.2rem;
     color: white;
     background-color: var(--green-color);
-    padding: 7px 14px 8px;
     border-radius: 4px;
 }
 
