@@ -313,7 +313,7 @@
 /* Service */
 .service {
     max-width: 1440px;
-    margin: 35px auto 70px;
+    margin: 35px auto 45px;
 }
 
 .service__title {
@@ -436,6 +436,9 @@
     }
 
     /* Service */
+    .service {
+        margin: 35px auto 70px;
+    }
     .service__title-svg--truck {
         width: 63px;
         height: 64px;
