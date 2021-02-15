@@ -184,7 +184,7 @@ img {
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.3);
-    display: block;
+    display: none;
     animation: fadeIn linear 0.4s;
 }
 
@@ -251,6 +251,7 @@ img {
     width: 425px;
     background-color: white;
     border-radius: 8px;
+    transition: all 0.4s linear;
     display: none;
 }
 
@@ -293,7 +294,7 @@ img {
     height: 38px;
     border-radius: 4px;
     border: solid 1px black;
-    color: #ababab;
+    color: black;
     font-size: 1.4rem;
     padding: 0 0 0 12px;
     margin-bottom: 20px;
@@ -411,7 +412,123 @@ img {
     width: 425px;
     background-color: white;
     border-radius: 8px;
-    display: block;
+    transition: all 0.4s linear;
+    display: none;
+}
+
+.register__close {
+    text-align: right;
+}
+
+.register__close-button {
+    font-size: 1.8rem;
+    padding: 7px 12px 0 0;
+    cursor: pointer;
+}
+
+.register__form {
+    padding: 0 45px 25px;
+    margin-top: 22px;
+}
+
+.register__form-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.register__form-status--register {
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+}
+
+.register__form-status--login {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.register__form-input {
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    border: solid 1px black;
+    color: black;
+    font-size: 1.4rem;
+    padding: 0 0 0 12px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.register__form-input--align {
+    margin-bottom: 18px;
+}
+
+.register__form-radio {
+    display: flex;
+    margin-bottom: 37px;
+}
+
+.register__form-radio--circle {
+    display: flex;
+    align-items: center;
+}
+
+.register__form-radio--align {
+    margin-left: 28px;
+}
+
+.register__form-radio-male,
+.register__form-radio-female {
+    width: 20px;
+    height: 20px;
+}
+
+.register__form-radio-label {
+    padding-left: 5px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+.register__form-policy {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 2px;
+    margin-top: -4px;
+    vertical-align: middle;
+}
+
+.register__form-title {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+}
+
+.register__form-title--link {
+    color: #15BB4F;
+}
+
+.register__form-title--link:hover {
+    color: var(--green-hover);
+}
+
+.register__form-btn {
+    background-color: #15BB4F;
+    color: white;
+    margin-top: 14px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 41px;
+    font-size: 1.6rem;
+    line-height: 22px;
+    border-radius: 4px;
+}
+
+.register__form-btn:hover {
+    background-color: var(--green-hover);
 }
 
 /* Subscribe */
