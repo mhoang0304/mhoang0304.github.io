@@ -108,13 +108,22 @@ block content
                 .col-9
                     .watch__filter
                         span.watch__filter-title Sắp xếp:
-                        span.watch__filter-btn 
+                        span.watch__filter-btn#filter 
                             | Phù Hợp Nhất
                             i.fas.fa-chevron-up.watch__filter-btn--icon
-                            .watch__filter-options
-                                a(href="#") Phù Hợp Nhất
-                                a(href="#") Giá Tăng Dần
-                                a(href="#") Giá Giảm Dần
+                            .watch__filter-options#filter-options
+                                a.watch__filter-options-link(href="#") Phù Hợp Nhất
+                                a.watch__filter-options-link(href="#") Giá Tăng Dần
+                                a.watch__filter-options-link(href="#") Giá Giảm Dần
+                    
+                    .row
+                        .col-4
+                            .watch__product
+                                img(src="./img/watch-m1.jpg", alt="STEFAN")
+                                p WEIMAR - 40MM
+                                p STEFAN
+                                p 8.099.000 ₫
+
 
 
 

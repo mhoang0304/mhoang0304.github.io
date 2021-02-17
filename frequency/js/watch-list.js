@@ -6,5 +6,7 @@ $(document).ready(function () {
         $(this).toggleClass("icon--rotate");
     });
 
-
+    $("#filter").click(function () {
+        $("#filter-options").toggleClass("watch__filter-options--show");
+    });
 });
