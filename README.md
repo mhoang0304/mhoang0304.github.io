@@ -4,7 +4,7 @@
 [turtle](https://mhoang0304.github.io/turtle/)  
 [minimo](https://mhoang0304.github.io/minimo/)
 ### 2. Caculator JavaScript:
-[calculator](https://mhoang0304.github.io/Calculator/)
+[calculator](https://mhoang0304.github.io/Calculator/)  
 Sử dụng Javascript DOM  
 Tránh phép toán vô nghĩa ban đầu, trùng lặp phép toán  
 Thay đổi giao diện sáng tối
