@@ -21,83 +21,102 @@ block content
 
         .container.watch
             .row 
-                .col-3.watch__option
-                    h1.watch__option-title DANH MỤC SẢN PHẨM
-                    h2.watch__option-select
-                        | Đồng Hồ Nam 
-                        i.fas.fa-angle-up
-                    ul.watch__option-list 
-                        li 
-                            span.watch__option-list-items WEIMAR
-                        li
-                            span.watch__option-list-items DETROIT
-                        li
-                            span.watch__option-list-items JACKSON
-                        li
-                            span.watch__option-list-items KASHMIR
-                        li
-                            span.watch__option-list-items MYKONOS
-                        li
-                            span.watch__option-list-items COLOSSEUM
-                    h2.watch__option-select 
-                        | Dây Đồng Hồ 
-                        i.fas.fa-angle-up
-                    ul.watch__option-list 
-                        li
-                            span.watch__option-list-items Dây da Genuine
-                        li
-                            span.watch__option-list-items Dây kim loại
-                        li
-                            span.watch__option-list-items Dây thép không gỉ
-                        li
-                            span.watch__option-list-items Dây cao su
-                    h2.watch__option-select 
-                        | Phụ Kiện
-                        i.fas.fa-angle-up
-                    ul.watch__option-list 
-                        li
-                            span.watch__option-list-items Nhẫn nam
-                        li
-                            span.watch__option-list-items Vòng tay nam
-                    h2.watch__option-select Kíck Thước Mặt 
-                    .watch__option-size
-                        .watch__option-size--number
-                            | 32x38mm
-                        .watch__option-size--number
-                            | 40mm
-                        .watch__option-size--number
-                            | 42mm
-                    h2.watch__option-select  Màu Sắc
-                    .watch__option-color
-                        input(type="checkbox" id="silver")
-                        label(for="silver") Silver
-                    .watch__option-color
-                        input(type="checkbox" id="rosegold")
-                        label(for="rosegold") Rosegold
-                    .watch__option-color
-                        input(type="checkbox" id="black")
-                        label(for="black") Black
-                    .watch__option-color
-                        input(type="checkbox" id="white")
-                        label(for="white") White
-                    .watch__option-color
-                        input(type="checkbox" id="navy")
-                        label(for="navy") Navy
-                    .watch__option-color
-                        input(type="checkbox" id="grey")
-                        label(for="grey") Grey
-                    .watch__option-color
-                        input(type="checkbox" id="brown")
-                        label(for="brown") Brown
-                    .watch__option-color
-                        input(type="checkbox" id="coffee")
-                        label(for="coffee") Coffee
-                    .watch__option-color
-                        input(type="checkbox" id="sand")
-                        label(for="sand") Sand
-                    .watch__option-color
-                        input(type="checkbox" id="gold")
-                        label(for="gold") Gold
+                .col-3
+                    .watch__option
+                        h1.watch__option-title DANH MỤC SẢN PHẨM
 
+                        h2.watch__option-select.watch__option--btn
+                            | Đồng Hồ Nam 
+                            i.fas.fa-chevron-up
+                        ul.watch__option-list 
+                            li.watch__option-list-items
+                                a(href="#") WEIMAR
+                            li.watch__option-list-items
+                                a(href="#") DETROIT
+                            li.watch__option-list-items
+                                a(href="#") JACKSON
+                            li.watch__option-list-items
+                                a(href="#") KASHMIR
+                            li.watch__option-list-items
+                                a(href="#") MYKONOS
+                            li.watch__option-list-items
+                                a(href="#") COLOSSEUM
+
+                        h2.watch__option-select.watch__option--btn
+                            | Dây Đồng Hồ 
+                            i.fas.fa-chevron-up
+                        ul.watch__option-list  
+                            li.watch__option-list-items
+                                a(href="#") Dây da Genuine
+                            li.watch__option-list-items
+                                a(href="#") Dây kim loại
+                            li.watch__option-list-items
+                                a(href="#") Dây thép không gỉ
+                            li.watch__option-list-items
+                                a(href="#") Dây cao su
+
+                        h2.watch__option-select.watch__option--btn 
+                            | Phụ Kiện
+                            i.fas.fa-chevron-up
+                        ul.watch__option-list 
+                            li.watch__option-list-items
+                                a(href="#") Nhẫn nam
+                            li.watch__option-list-items
+                                a(href="#") Vòng tay nam
+
+                        h2.watch__option-select Kíck Thước Mặt 
+                        .watch__option-size
+                            .watch__option-size--number
+                                | 32x38mm
+                            .watch__option-size--number
+                                | 40mm
+                            .watch__option-size--number.watch__option-size--last
+                                | 42mm
+
+                        h2.watch__option-select.watch__option-select--align Màu Sắc
+                        .watch__option-color
+                            input(type="checkbox" id="silver")
+                            label(for="silver") Silver
+                        .watch__option-color
+                            input(type="checkbox" id="rosegold")
+                            label(for="rosegold") Rosegold
+                        .watch__option-color
+                            input(type="checkbox" id="black")
+                            label(for="black") Black
+                        .watch__option-color
+                            input(type="checkbox" id="white")
+                            label(for="white") White
+                        .watch__option-color
+                            input(type="checkbox" id="navy")
+                            label(for="navy") Navy
+                        .watch__option-color
+                            input(type="checkbox" id="grey")
+                            label(for="grey") Grey
+                        .watch__option-color
+                            input(type="checkbox" id="brown")
+                            label(for="brown") Brown
+                        .watch__option-color
+                            input(type="checkbox" id="coffee")
+                            label(for="coffee") Coffee
+                        .watch__option-color
+                            input(type="checkbox" id="sand")
+                            label(for="sand") Sand
+                        .watch__option-color
+                            input(type="checkbox" id="gold")
+                            label(for="gold") Gold
 
                 .col-9
+                    .watch__filter
+                        span.watch__filter-title Sắp xếp:
+                        span.watch__filter-btn 
+                            | Phù Hợp Nhất
+                            i.fas.fa-chevron-up.watch__filter-btn--icon
+                            .watch__filter-options
+                                a(href="#") Phù Hợp Nhất
+                                a(href="#") Giá Tăng Dần
+                                a(href="#") Giá Giảm Dần
+
+
+
+block javascript
+    script(src="./js/watch-list.js")
