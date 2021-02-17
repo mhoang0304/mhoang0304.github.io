@@ -5,7 +5,7 @@
 [minimo](https://mhoang0304.github.io/minimo/)
 ### 2. Caculator JavaScript:
 [calculator](https://mhoang0304.github.io/Calculator/)  
-Tránh phép toán vô nghĩa ban đầu, trùng lặp phép toán
+Tránh phép toán vô nghĩa ban đầu, trùng lặp phép toán  
 Thay đổi giao diện sáng tối
 ### 3. Game Flappy Bird:
 [Flappy Bird](https://mhoang0304.github.io/flappy-bird/)  
