@@ -165,7 +165,7 @@
     margin: 15px 0 15px;
     cursor: pointer;
     border-radius: 2px;
-    transition: all 0.4s ;
+    transition: all 0.4s linear;
 }
 
 .watch:hover {

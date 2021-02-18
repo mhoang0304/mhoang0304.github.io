@@ -9,4 +9,8 @@ $(document).ready(function () {
     $("#filter").click(function () {
         $("#filter-options").toggleClass("watch__filter-options--show");
     });
+
+    $(".heart").click(function () {
+        $(this).toggleClass("fas").toggleClass("far");
+    });
 });
