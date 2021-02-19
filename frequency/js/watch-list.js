@@ -10,6 +10,18 @@ $(document).ready(function () {
         $("#filter-options").toggleClass("watch__filter-options--show");
     });
 
+    $(".watch__filter-options-link").click(function () {
+        let option = $(this).text();
+        $("#filter-content").text(option);
+
+        $(".watch__filter-options-link").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".watch__option-size-number").click(function () {
+        $(this).toggleClass("watch__option-size--chose");
+    });
+
     $(".heart").click(function () {
         $(this).toggleClass("fas").toggleClass("far");
     });
