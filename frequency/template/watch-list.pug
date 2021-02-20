@@ -77,37 +77,68 @@ block content
                             .watch__option-size-number.watch__option-size--last
                                 | 32x38mm
 
+                        //- Checkbox
                         h2.watch__option-select.watch__option-select--align Màu Sắc
-                        .watch__option-color
-                            input(type="checkbox" id="silver")
-                            label(for="silver") Silver
-                        .watch__option-color
-                            input(type="checkbox" id="rosegold")
-                            label(for="rosegold") Rosegold
-                        .watch__option-color
-                            input(type="checkbox" id="black")
-                            label(for="black") Black
-                        .watch__option-color
-                            input(type="checkbox" id="white")
-                            label(for="white") White
-                        .watch__option-color
-                            input(type="checkbox" id="navy")
-                            label(for="navy") Navy
-                        .watch__option-color
-                            input(type="checkbox" id="grey")
-                            label(for="grey") Grey
-                        .watch__option-color
-                            input(type="checkbox" id="brown")
-                            label(for="brown") Brown
-                        .watch__option-color
-                            input(type="checkbox" id="coffee")
-                            label(for="coffee") Coffee
-                        .watch__option-color
-                            input(type="checkbox" id="sand")
-                            label(for="sand") Sand
-                        .watch__option-color
-                            input(type="checkbox" id="gold")
-                            label(for="gold") Gold
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="silver")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="silver") Silver
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="rosegold")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="rosegold") Rosegold
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="black")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="black") Black
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="white")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="white") White
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="navy")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="navy") Navy
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="grey")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="grey") Grey
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="brown")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="brown") Brown
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="coffee")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="coffee") Coffee
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="sand")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="sand") Sand
+                        .watch__option-item
+                            .watch__option-item-color
+                                input(type="checkbox" id="gold")
+                                .watch__option-checkbox
+                                    i.fas.fa-check
+                                    label(for="gold") Gold
 
                 .col-12.col-lg-9
                     .watch__filter
@@ -121,10 +152,10 @@ block content
                                 .watch__filter-options-link Giá Giảm Dần
 
                     .row
-                        - var items = [{img: "./img/watch-m1.jpg", style: "WEIMAR - 40MM", name: "STEFAN", price: "8.099.000 ₫"}, {img: "./img/watch-m2.jpg", style: "COLOSSEUM - 42MM", name: "MACE", price: "8.099.000 ₫"}, {img: "./img/watch-m3.jpg", style: "COLOSSEUM - 42MM", name: "GUANDAO", price: "9.299.000 ₫"}]
+                        - var items = [{class: ".ca-1",img: "./img/watch-m1.jpg", style: "WEIMAR - 40MM", name: "STEFAN", price: "8.099.000 ₫"}, {class: "",img: "./img/watch-m2.jpg", style: "COLOSSEUM - 42MM", name: "MACE", price: "8.099.000 ₫"}, {class: "",img: "./img/watch-m3.jpg", style: "COLOSSEUM - 42MM", name: "GUANDAO", price: "9.299.000 ₫"}]
 
                         each card in items
-                            .col-6.col-sm-4.d-flex.justify-content-center
+                            div(class= "col-6 col-sm-4 d-flex justify-content-center " + card.class)
                                 .watch__product
                                     a(href="#").watch__product-img
                                         img(src= card.img alt= card.name)
