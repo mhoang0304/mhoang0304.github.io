@@ -25,4 +25,25 @@ $(document).ready(function () {
     $(".heart").click(function () {
         $(this).toggleClass("fas").toggleClass("far");
     });
+
+    // Isotope
+    $(".watch__main").isotope({
+        itemSlector: ".all"
+    });
+    $(".watch__option-list-items").click(function () {
+        var type = $(this).attr("data-filter");
+
+        $(".watch__main").isotope({
+            filter: type
+        });
+    });
+
+    $(".watch__filter-options-link").click(function () {
+        var type = $(this).attr("data-filter");
+        
+        $(".watch__main").isotope({
+            filter: type
+        });
+    })
+
 });
