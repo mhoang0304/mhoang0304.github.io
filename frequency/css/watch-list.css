@@ -107,9 +107,10 @@
     font-size: 1.6rem;
     line-height: 2.2rem;  
     margin: 8px 0 0 16px;
+    cursor: pointer;
 }
 
-.watch__option-list-items:hover a {
+.watch__option-list-items:hover {
     color: var(--green-bold);
 }
 
@@ -279,7 +280,7 @@
 .watch__product {
     max-width: 270px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
@@ -386,6 +387,38 @@
 
 .watch__product-btn svg {
     margin-right: 12px;
+}
+
+/* Page */
+.page {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 19px;
+    padding-top: 84px;
+}
+
+.page__button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    border-radius: 4px;
+    margin-left: 7px;
+}
+
+.pace--active {
+    background-color: black;
+    color: white;
+}
+
+.page__line {
+    max-width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 69px;
 }
 
 @media (min-width: 576px) { 

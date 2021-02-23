@@ -28,22 +28,62 @@ $(document).ready(function () {
 
     // Isotope
     $(".watch__main").isotope({
-        itemSlector: ".all"
+        itemSlector: ".all",
+        layoutMode: 'fitRows',
+        getSortData: {
+            number: ".number parseInt"
+        }
     });
+
+    // Isotope - filter
     $(".watch__option-list-items").click(function () {
-        var type = $(this).attr("data-filter");
+        let type = $(this).attr("data-filter");
 
         $(".watch__main").isotope({
             filter: type
         });
     });
 
-    $(".watch__filter-options-link").click(function () {
-        var type = $(this).attr("data-filter");
-        
+    // Isotope - sort
+    $("#sort").click(function () {
+        let value = $(this).attr("data-sort");
+
         $(".watch__main").isotope({
-            filter: type
+            sortBy: value,
+            sortAscending: true
         });
-    })
+    });
+
+    // Isotope - sort-reverse
+    $("#sort-reverse").click(function () {
+        let value = $(this).attr("data-sort");
+
+        $(".watch__main").isotope({
+            sortBy: value,
+            sortAscending: false
+        });
+    });
+
+    // Isotope - default
+    $("#default").click(function () {
+        let type = $(this).attr("data-filter");
+            
+        $(".watch__main").isotope({
+            filter: type,
+            sortBy : 'original-order',
+            sortAscending: true
+        });
+    });
+
+    
+    // Isotope - filter--size
+    let flag = true;
+
+    // $(".watch__option-size-number").click(function () {
+    //     let size = $(this).attr("data-size");
+        
+    //     $()
+
+    // });
 
 });

@@ -25,22 +25,17 @@ block content
                     .watch__option
                         h1.watch__option-title DANH MỤC SẢN PHẨM
 
+                        //- Menu Dropdown
                         h2.watch__option-select.watch__option--btn
                             | Đồng Hồ Nam 
                             i.fas.fa-chevron-up
-                        ul.watch__option-list 
-                            li.watch__option-list-items
-                                a(href="#") WEIMAR
-                            li.watch__option-list-items
-                                a(href="#") DETROIT
-                            li.watch__option-list-items
-                                a(href="#") JACKSON
-                            li.watch__option-list-items
-                                a(href="#") KASHMIR
-                            li.watch__option-list-items
-                                a(href="#") MYKONOS
-                            li.watch__option-list-items(data-filter=".colosseum")
-                                a(href="#") COLOSSEUM
+                        ul.watch__option-list
+                            li.watch__option-list-items(data-filter=".colosseum") COLOSSEUM
+                            li.watch__option-list-items(data-filter=".weimar") WEIMAR        
+                            li.watch__option-list-items(data-filter=".detroit") DETROIT        
+                            li.watch__option-list-items(data-filter=".jackson") JACKSON
+                            li.watch__option-list-items(data-filter=".kashmir") KASHMIR
+                            li.watch__option-list-items(data-filter=".mykonos") MYKONOS
 
                         h2.watch__option-select.watch__option--btn
                             | Dây Đồng Hồ 
@@ -66,16 +61,11 @@ block content
 
                         h2.watch__option-select Kíck Thước Mặt 
                         .watch__option-size
-                            .watch__option-size-number
-                                | 38mm
-                            .watch__option-size-number
-                                | 39mm
-                            .watch__option-size-number
-                                | 40mm
-                            .watch__option-size-number
-                                | 42mm
-                            .watch__option-size-number.watch__option-size--last
-                                | 32x38mm
+                            .watch__option-size-number(data-size=".38mm") 38mm 
+                            .watch__option-size-number(data-size=".39mm") 39mm 
+                            .watch__option-size-number(data-size=".40mm") 40mm 
+                            .watch__option-size-number(data-size=".42mm") 42mm 
+                            .watch__option-size-number.watch__option-size--last(data-size=".32mm") 32x38mm  
 
                         //- Checkbox
                         h2.watch__option-select.watch__option-select--align Màu Sắc
@@ -147,22 +137,22 @@ block content
                             span#filter-content Phù Hợp Nhất
                             i.fas.fa-chevron-up.watch__filter-btn--icon
                             .watch__filter-options#filter-options
-                                .watch__filter-options-link.active(data-filter="all") Phù Hợp Nhất
-                                .watch__filter-options-link Giá Tăng Dần
-                                .watch__filter-options-link Giá Giảm Dần
+                                .watch__filter-options-link#default.active(data-filter= ".all") Phù Hợp Nhất
+                                .watch__filter-options-link#sort(data-sort= "number") Giá Tăng Dần
+                                .watch__filter-options-link#sort-reverse(data-sort= "number") Giá Giảm Dần
 
                     .row.watch__main
-                        - var items = [{class: "all",img: "./img/watch-m1.jpg", style: "WEIMAR - 40MM", name: "STEFAN", price: "8.099.000 ₫"}, {class: "all colosseum",img: "./img/watch-m2.jpg", style: "COLOSSEUM - 42MM", name: "MACE", price: "8.099.000 ₫"}, {class: "all colosseum",img: "./img/watch-m3.jpg", style: "COLOSSEUM - 42MM", name: "GUANDAO", price: "9.299.000 ₫"}]
+                        - var items = [{class: "all weimar",img: "./img/watch-m1.jpg", style: "WEIMAR - 40MM", name: "STEFAN", price: "8.099.000 ₫"}, {class: "all colosseum",img: "./img/watch-m2.jpg", style: "COLOSSEUM - 42MM", name: "MACE", price: "8.099.000 ₫"}, {class: "all colosseum",img: "./img/watch-m3.jpg", style: "COLOSSEUM - 42MM", name: "GUANDAO", price: "9.299.000 ₫"}]
 
                         each card in items
-                            div(class= "col-6 col-sm-4 d-flex justify-content-center " + card.class)
+                            div(class= "col-6 col-sm-4 " + card.class)
                                 .watch__product
                                     a(href="#").watch__product-img
                                         img(src= card.img alt= card.name)
                                     a(href="#").watch__product-info
                                         p.watch__product-info-style= card.style
                                         p.watch__product-info-name= card.name
-                                        p.watch__product-info-price= card.price
+                                        p.watch__product-info-price.number= card.price
                                     .watch__product-icon
                                         i.far.fa-heart.heart
                                     a(href="#").watch__product-btn
@@ -170,17 +160,17 @@ block content
                                             path(d='M13.9964 14.6951L12.9949 3.73374C12.9734 3.49039 12.7624 3.30613 12.5156 3.30613H10.4553C10.4267 1.47751 8.8886 0 7 0C5.11139 0 3.57333 1.47751 3.54471 3.30613H1.48441C1.23403 3.30613 1.02657 3.49039 1.00511 3.73374L0.00357698 14.6951C0.00357698 14.709 0 14.7229 0 14.7368C0 15.9849 1.1768 17 2.62545 17H11.3746C12.8232 17 14 15.9849 14 14.7368C14 14.7229 14 14.709 13.9964 14.6951ZM7 0.93865C8.35565 0.93865 9.46091 1.9955 9.48952 3.30613H4.51047C4.53909 1.9955 5.64435 0.93865 7 0.93865ZM11.3746 16.0613H2.62545C1.71691 16.0613 0.980072 15.4773 0.965764 14.7577L1.92437 4.24826H3.54113V5.67362C3.54113 5.93436 3.75575 6.14294 4.02402 6.14294C4.29228 6.14294 4.5069 5.93436 4.5069 5.67362V4.24826H9.48952V5.67362C9.48952 5.93436 9.70414 6.14294 9.97241 6.14294C10.2407 6.14294 10.4553 5.93436 10.4553 5.67362V4.24826H12.072L13.0342 14.7577C13.0199 15.4773 12.2795 16.0613 11.3746 16.0613Z' fill='white')
                                         | CHỌN MUA
                     
-                        - var items = [{class: "all colosseum", img: "./img/watch-m4.jpg", style: "COLOSSEUM - 42MM", name: "SLING", price: "7.099.000 ₫"}, {class: "all", img: "./img/watch-m5.jpg", style: "WEIMAR - 40MM", name: "WERNER", price: "11.099.000 ₫"}, {class: "all", img: "./img/watch-m6.jpg", style: "WEIMAR - 40MM", name: "OTTO", price: "12.099.000 ₫"}]
+                        - var items = [{class: "all colosseum", img: "./img/watch-m4.jpg", style: "COLOSSEUM - 42MM", name: "SLING", price: "7.099.000 ₫"}, {class: "all weimar", img: "./img/watch-m5.jpg", style: "WEIMAR - 40MM", name: "WERNER", price: "11.099.000 ₫"}, {class: "all weimar", img: "./img/watch-m6.jpg", style: "WEIMAR - 40MM", name: "OTTO", price: "12.099.000 ₫"}]
 
                         each card in items
-                            div(class= "col-6 col-sm-4 d-flex justify-content-center " + card.class)
+                            div(class= "col-6 col-sm-4 " + card.class)
                                 .watch__product
                                     a(href="#").watch__product-img
                                         img(src= card.img alt= card.name)
                                     a(href="#").watch__product-info
                                         p.watch__product-info-style= card.style
                                         p.watch__product-info-name= card.name
-                                        p.watch__product-info-price= card.price
+                                        p.watch__product-info-price.number= card.price
                                     .watch__product-icon
                                         i.far.fa-heart.heart
                                     a(href="#").watch__product-btn
@@ -188,18 +178,17 @@ block content
                                             path(d='M13.9964 14.6951L12.9949 3.73374C12.9734 3.49039 12.7624 3.30613 12.5156 3.30613H10.4553C10.4267 1.47751 8.8886 0 7 0C5.11139 0 3.57333 1.47751 3.54471 3.30613H1.48441C1.23403 3.30613 1.02657 3.49039 1.00511 3.73374L0.00357698 14.6951C0.00357698 14.709 0 14.7229 0 14.7368C0 15.9849 1.1768 17 2.62545 17H11.3746C12.8232 17 14 15.9849 14 14.7368C14 14.7229 14 14.709 13.9964 14.6951ZM7 0.93865C8.35565 0.93865 9.46091 1.9955 9.48952 3.30613H4.51047C4.53909 1.9955 5.64435 0.93865 7 0.93865ZM11.3746 16.0613H2.62545C1.71691 16.0613 0.980072 15.4773 0.965764 14.7577L1.92437 4.24826H3.54113V5.67362C3.54113 5.93436 3.75575 6.14294 4.02402 6.14294C4.29228 6.14294 4.5069 5.93436 4.5069 5.67362V4.24826H9.48952V5.67362C9.48952 5.93436 9.70414 6.14294 9.97241 6.14294C10.2407 6.14294 10.4553 5.93436 10.4553 5.67362V4.24826H12.072L13.0342 14.7577C13.0199 15.4773 12.2795 16.0613 11.3746 16.0613Z' fill='white')
                                         | CHỌN MUA
                     
-                    
-                        - var items = [{class: "all", img: "./img/watch-m7.jpg", style: "MYKONOS - 32MM", name: "MAXIMUS", price: "8.999.000 ₫"}, {class: "all", img: "./img/watch-m8.jpg", style: "WEIMAR - 40MM", name: "PAUL", price: "7.599.000 ₫"}, {class: "all colosseum", img: "./img/watch-m9.jpg", style: "COLOSSEUM - 42MM", name: "STERLING", price: "10.099.000 ₫"}]
+                        - var items = [{class: "all mykonos", img: "./img/watch-m7.jpg", style: "MYKONOS - 32MM", name: "MAXIMUS", price: "8.999.000 ₫"}, {class: "all jackson", img: "./img/watch-m8.jpg", style: "JACKSON - 40MM", name: "PAUL", price: "7.599.000 ₫"}, {class: "all detroit", img: "./img/watch-m9.jpg", style: "DETROIT - 42MM", name: "STERLING", price: "10.099.000 ₫"}]
 
                         each card in items
-                            div(class= "col-6 col-sm-4 d-flex justify-content-center " + card.class)
+                            div(class= "col-6 col-sm-4 " + card.class)
                                 .watch__product
                                     a(href="#").watch__product-img
                                         img(src= card.img alt= card.name)
                                     a(href="#").watch__product-info
                                         p.watch__product-info-style= card.style
                                         p.watch__product-info-name= card.name
-                                        p.watch__product-info-price= card.price
+                                        p.watch__product-info-price.number= card.price
                                     .watch__product-icon
                                         i.far.fa-heart.heart
                                     a(href="#").watch__product-btn
@@ -207,17 +196,17 @@ block content
                                             path(d='M13.9964 14.6951L12.9949 3.73374C12.9734 3.49039 12.7624 3.30613 12.5156 3.30613H10.4553C10.4267 1.47751 8.8886 0 7 0C5.11139 0 3.57333 1.47751 3.54471 3.30613H1.48441C1.23403 3.30613 1.02657 3.49039 1.00511 3.73374L0.00357698 14.6951C0.00357698 14.709 0 14.7229 0 14.7368C0 15.9849 1.1768 17 2.62545 17H11.3746C12.8232 17 14 15.9849 14 14.7368C14 14.7229 14 14.709 13.9964 14.6951ZM7 0.93865C8.35565 0.93865 9.46091 1.9955 9.48952 3.30613H4.51047C4.53909 1.9955 5.64435 0.93865 7 0.93865ZM11.3746 16.0613H2.62545C1.71691 16.0613 0.980072 15.4773 0.965764 14.7577L1.92437 4.24826H3.54113V5.67362C3.54113 5.93436 3.75575 6.14294 4.02402 6.14294C4.29228 6.14294 4.5069 5.93436 4.5069 5.67362V4.24826H9.48952V5.67362C9.48952 5.93436 9.70414 6.14294 9.97241 6.14294C10.2407 6.14294 10.4553 5.93436 10.4553 5.67362V4.24826H12.072L13.0342 14.7577C13.0199 15.4773 12.2795 16.0613 11.3746 16.0613Z' fill='white')
                                         | CHỌN MUA
 
-                        - var items = [{class: "all", img: "./img/watch-m10.jpg", style: "WEIMAR - 40MM", name: "HERBERT", price: "7.499.000 ₫"}, {class: "all colosseum", img: "./img/watch-m11.jpg", style: "COLOSSEUM - 42MM", name: "CANNON", price: "10.299.000 ₫"}, {class: "all", img: "./img/watch-m12.jpg", style: "WEIMAR - 40MM", name: "JURGEN", price: "8.899.000 ₫"}]
+                        - var items = [{class: "all kashmir", img: "./img/watch-m10.jpg", style: "KASHMIR - 40MM", name: "HERBERT", price: "7.499.000 ₫"}, {class: "all colosseum", img: "./img/watch-m11.jpg", style: "COLOSSEUM - 42MM", name: "CANNON", price: "10.299.000 ₫"}, {class: "all kashmir", img: "./img/watch-m12.jpg", style: "KASHMIR - 40MM", name: "JURGEN", price: "8.899.000 ₫"}]
 
                         each card in items
-                            div(class= "col-6 col-sm-4 d-flex justify-content-center " + card.class)
+                            div(class= "col-6 col-sm-4 " + card.class)
                                 .watch__product
                                     a(href="#").watch__product-img
                                         img(src= card.img alt= card.name)
                                     a(href="#").watch__product-info
                                         p.watch__product-info-style= card.style
                                         p.watch__product-info-name= card.name
-                                        p.watch__product-info-price= card.price
+                                        p.watch__product-info-price.number= card.price
                                     .watch__product-icon
                                         i.far.fa-heart.heart
                                     a(href="#").watch__product-btn
@@ -225,7 +214,17 @@ block content
                                             path(d='M13.9964 14.6951L12.9949 3.73374C12.9734 3.49039 12.7624 3.30613 12.5156 3.30613H10.4553C10.4267 1.47751 8.8886 0 7 0C5.11139 0 3.57333 1.47751 3.54471 3.30613H1.48441C1.23403 3.30613 1.02657 3.49039 1.00511 3.73374L0.00357698 14.6951C0.00357698 14.709 0 14.7229 0 14.7368C0 15.9849 1.1768 17 2.62545 17H11.3746C12.8232 17 14 15.9849 14 14.7368C14 14.7229 14 14.709 13.9964 14.6951ZM7 0.93865C8.35565 0.93865 9.46091 1.9955 9.48952 3.30613H4.51047C4.53909 1.9955 5.64435 0.93865 7 0.93865ZM11.3746 16.0613H2.62545C1.71691 16.0613 0.980072 15.4773 0.965764 14.7577L1.92437 4.24826H3.54113V5.67362C3.54113 5.93436 3.75575 6.14294 4.02402 6.14294C4.29228 6.14294 4.5069 5.93436 4.5069 5.67362V4.24826H9.48952V5.67362C9.48952 5.93436 9.70414 6.14294 9.97241 6.14294C10.2407 6.14294 10.4553 5.93436 10.4553 5.67362V4.24826H12.072L13.0342 14.7577C13.0199 15.4773 12.2795 16.0613 11.3746 16.0613Z' fill='white')
                                         | CHỌN MUA
 
-                                 
+        .container
+            .page
+                a(href="#").page__button.pace--active 1
+                a(href="#").page__button 2
+                a(href="#").page__button 3
+                a(href="#").page__button ... 
+                a(href="#").page__button 
+                    i.fas.fa-chevron-right
+            .page__line
+
+        include .\template-part\subscribe.pug
 
 
 block javascript
