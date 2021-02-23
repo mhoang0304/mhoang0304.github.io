@@ -31,7 +31,7 @@ $(document).ready(function () {
         itemSlector: ".all",
         layoutMode: 'fitRows',
         getSortData: {
-            number: ".number parseInt"
+            number: ".number parseFloat"
         }
     });
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
     // Isotope - sort
     $("#sort").click(function () {
         let value = $(this).attr("data-sort");
-
+        console.log(value);
         $(".watch__main").isotope({
             sortBy: value,
             sortAscending: true
@@ -67,23 +67,59 @@ $(document).ready(function () {
     // Isotope - default
     $("#default").click(function () {
         let type = $(this).attr("data-filter");
-            
+
+        $(".watch__option-size-number").removeClass("watch__option-size--chose");
+
         $(".watch__main").isotope({
             filter: type,
-            sortBy : 'original-order',
+            sortBy: 'original-order',
             sortAscending: true
         });
     });
 
-    
     // Isotope - filter--size
-    let flag = true;
+    $(".watch__option-size-number").click(function () {
+        let str = "";
+        let type;
+        let arr = $(".watch__option-size-number");
 
-    // $(".watch__option-size-number").click(function () {
-    //     let size = $(this).attr("data-size");
-        
-    //     $()
+        arr.each(function () {
+            if ($(this).hasClass("watch__option-size--chose")) {
+                let x = $(this).attr("data-size");
+                str += x + ",";
+            }
+        })
 
-    // });
+        type = str.slice(0, -1);
 
+        $(".watch__main").isotope({
+            filter: type
+        });
+    });
+
+    // Pagination
+    $(".page__number-button").click(function () {
+        $(".page__number-button ").removeClass("page--active");
+        $(this).addClass("page--active");
+    });
+
+    $("#page-prev").click(function () {
+        let prev = $(".page--active").prev();
+
+        if (prev.length == 0) {
+            return
+        } else {
+            $(".page--active").removeClass("page--active").prev().addClass("page--active");
+        }
+    });
+
+    $("#page-next").click(function () {
+        let next = $(".page--active").next();
+
+        if (next.length == 0) {
+            return
+        } else {
+            $(".page--active").removeClass("page--active").next().addClass("page--active");
+        }
+    });
 });
