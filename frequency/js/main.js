@@ -17,7 +17,11 @@ $(document).ready(function () {
 
     // Login
     $("#login").click(function () {
-        $("#login-form").css({ "visibility": "visible", "opacity": "1" });
+        $("#login-form").css({
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "translate(-50%, -50%)"
+        });
         $("#overlay-form").css("display", "block");
     });
 
@@ -27,7 +31,8 @@ $(document).ready(function () {
     });
 
     $("#change-register").click(function () {
-      
+        $("#register-form").css("transform", "translate(-150%, -50%)");
+
         $("#login-form").css({
             "transform": "translate(-150%, -50%)",
             "opacity": "0",
@@ -42,7 +47,11 @@ $(document).ready(function () {
 
     // Register
     $("#register").click(function () {
-        $("#register-form").css({ "visibility": "visible", "opacity": "1" });
+        $("#register-form").css({
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "translate(-50%, -50%)"
+        });
         $("#overlay-form").css("display", "block");
     });
 
@@ -52,9 +61,14 @@ $(document).ready(function () {
     });
 
     $("#change-login").click(function () {
-        $("#register-form").css({ "transform": "translate(-150%, -50%)", "opacity": "0" });
+        $("#register-form").css({
+            "transform": "translate(-150%, -50%)",
+            "opacity": "0",
+            "visibility": "hidden"
+        });
+
         $("#login-form").css({
-            "display": "block",
+            "visibility": "visible",
             "transform": "translate(-50%, -50%)",
             "opacity": "1"
         });
