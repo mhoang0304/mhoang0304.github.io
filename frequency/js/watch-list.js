@@ -103,7 +103,7 @@ $(document).ready(function () {
         $("#like").css({"visibility": "visible", "opacity": "1"});
         setTimeout(function () {
             $("#like").css({"visibility": "hidden", "opacity": "0"});
-        }, 2000);
+        }, 1500);
     });
 
     $(".watch__product-icon .fas").click(function () {
@@ -111,7 +111,7 @@ $(document).ready(function () {
         $("#dislike").css({"visibility": "visible", "opacity": "1"});
         setTimeout(function () {
             $("#dislike").css({"visibility": "hidden", "opacity": "0"});
-        }, 2000);
+        }, 1500);
     });
 
     // Pagination

@@ -17,34 +17,47 @@ $(document).ready(function () {
 
     // Login
     $("#login").click(function () {
-        $("#login-form").css("display", "block");
+        $("#login-form").css({ "visibility": "visible", "opacity": "1" });
         $("#overlay-form").css("display", "block");
     });
 
     $("#login-close").click(function () {
-        $("#login-form").css("display", "none");
+        $("#login-form").css({ "visibility": "hidden", "opacity": "0" });
         $("#overlay-form").css("display", "none");
     });
 
     $("#change-register").click(function () {
-        $("#login-form").css({ "transform": "translate(-150%, -50%)", "opacity" : "0"});
-        $("#register-form").css("display", "block");
+      
+        $("#login-form").css({
+            "transform": "translate(-150%, -50%)",
+            "opacity": "0",
+            "visibility": "hidden"
+        });
+        $("#register-form").css({
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "translate(-50%, -50%)"
+        });
     });
 
     // Register
     $("#register").click(function () {
-        $("#register-form").css("display", "block");
+        $("#register-form").css({ "visibility": "visible", "opacity": "1" });
         $("#overlay-form").css("display", "block");
     });
 
     $("#register-close").click(function () {
-        $("#register-form").css("display", "none");
+        $("#register-form").css({ "visibility": "hidden", "opacity": "0" });
         $("#overlay-form").css("display", "none");
     });
 
     $("#change-login").click(function () {
-        $("#register-form").css({ "transform": "translate(-150%, -50%)", "opacity" : "0"});
-        $("#login-form").css("display", "block");
+        $("#register-form").css({ "transform": "translate(-150%, -50%)", "opacity": "0" });
+        $("#login-form").css({
+            "display": "block",
+            "transform": "translate(-50%, -50%)",
+            "opacity": "1"
+        });
     });
 });
 
