@@ -97,6 +97,23 @@ $(document).ready(function () {
         });
     });
 
+    // Notification
+    $(".watch__product-icon .far").click(function () {
+        console.log("like");
+        $("#like").css({"visibility": "visible", "opacity": "1"});
+        setTimeout(function () {
+            $("#like").css({"visibility": "hidden", "opacity": "0"});
+        }, 2000);
+    });
+
+    $(".watch__product-icon .fas").click(function () {
+        console.log("dislike");
+        $("#dislike").css({"visibility": "visible", "opacity": "1"});
+        setTimeout(function () {
+            $("#dislike").css({"visibility": "hidden", "opacity": "0"});
+        }, 2000);
+    });
+
     // Pagination
     $(".page__number-button").click(function () {
         $(".page__number-button ").removeClass("page--active");
