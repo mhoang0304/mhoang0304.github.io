@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "noto sans";
-    src: url("../font/noto-sans/NotoSans-Regular.ttf"),
-        url('../font/webfontkit-20210131-093341/notosans-regular-webfont.woff2') format('woff2'),
-        url('../font/webfontkit-20210131-093341/notosans-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal; 
+    font-family: "Noto Sans";
+    src: url("../font/NotoSans/NotoSans-Regular.ttf")
+         url("../font/NotoSans/notosans-regular-webfont.woff2") format('woff2'),
+         url("../font/NotoSans/notosans-regular-webfont.woff") format('woff');
 }
 
 @font-face {
-    font-family: verdana;
-    src: url(../font/verdana/verdana.ttf);
+    font-family: "Verdana";
+    src: url("../font/Verdana/verdana.ttf")
+         url("../font/Verdana/verdana-webfont.woff2") format('woff2'),
+         url("../font/Verdana/verdana-webfont.woff") format('woff');
 }
 
 :root {
@@ -24,11 +24,15 @@
 
 * {
     box-sizing: border-box;
-    font-family: "noto sans";
 }
 
 html {
     font-size: 62.5%;
+}
+
+body {
+    font-family: "Noto Sans";
+    color: #212121;
 }
 
 h1, h2, p {
@@ -49,6 +53,44 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* loading */
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading__animation {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: #91D7F2;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+    25% {
+        color: #5196A6;
+    }
+    50% {
+        color: #F2F0EB;
+    }
+    75% {
+        color: #F25041;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Navigation */
@@ -77,6 +119,7 @@ img {
 }
 
 .nav__main-logo {
+    font-family: var(--bs-font-sans-serif);
     position: absolute;
     left: calc(50% - 60px);
     font-size: 2.1rem;
@@ -99,6 +142,10 @@ img {
 
 .nav__main-menu-item:nth-child(5) {
     margin: 0;
+}
+
+.nav__main--location {
+    color: var(--green-color) !important;
 }
 
 .nav__main-menu-item a {

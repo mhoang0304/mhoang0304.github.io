@@ -1,3 +1,9 @@
+$(window).on("load", function () {
+    setTimeout(function (){
+        $(".loading").fadeOut(600);
+    },1000);
+});
+
 $(document).ready(function () {
     // Navigation Mobile
     $(".nav__moblie-btn").click(function () {

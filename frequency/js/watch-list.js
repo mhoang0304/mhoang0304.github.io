@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $(document).ready(function () {
+        $(".nav__main-menu-item:nth-child(2) a").addClass("nav__main--location");
+    });
+
     $(".watch__option-list").slideUp(0);
 
     $(".watch__option--btn").click(function () {
@@ -24,6 +28,22 @@ $(document).ready(function () {
 
     $(".heart").click(function () {
         $(this).toggleClass("fas").toggleClass("far");
+
+    });
+
+    // Notification
+    $(".watch__product-icon .heart").on("click", function () {
+        if ($(this).hasClass("fas")) {
+            $("#like").css({ "visibility": "visible", "opacity": "1" });
+            setTimeout(function () {
+                $("#like").css({ "visibility": "hidden", "opacity": "0" });
+            }, 1200);
+        } else {
+            $("#dislike").css({ "visibility": "visible", "opacity": "1" });
+            setTimeout(function () {
+                $("#dislike").css({ "visibility": "hidden", "opacity": "0" });
+            }, 1200);
+        }
     });
 
     // Isotope
@@ -47,7 +67,7 @@ $(document).ready(function () {
     // Isotope - sort
     $("#sort").click(function () {
         let value = $(this).attr("data-sort");
-        console.log(value);
+
         $(".watch__main").isotope({
             sortBy: value,
             sortAscending: true
@@ -95,23 +115,6 @@ $(document).ready(function () {
         $(".watch__main").isotope({
             filter: type
         });
-    });
-
-    // Notification
-    $(".watch__product-icon .far").click(function () {
-        console.log("like");
-        $("#like").css({"visibility": "visible", "opacity": "1"});
-        setTimeout(function () {
-            $("#like").css({"visibility": "hidden", "opacity": "0"});
-        }, 1500);
-    });
-
-    $(".watch__product-icon .fas").click(function () {
-        console.log("dislike");
-        $("#dislike").css({"visibility": "visible", "opacity": "1"});
-        setTimeout(function () {
-            $("#dislike").css({"visibility": "hidden", "opacity": "0"});
-        }, 1500);
     });
 
     // Pagination
