@@ -155,4 +155,186 @@
     margin: 32px 0 17px;
 }
 
+.watch__main-bracelet {
+    display: flex;
+}
+
+.watch__main-bracelet-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.watch__main-bracelet-detail {
+    display: flex;
+    align-items: center;
+}
+
+.watch__main-bracelet-detail {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+.watch__main-bracelet-title {
+    color: #6A6C6E;
+}
+
+.watch__main-bracelet-info {
+    margin-left: 12px;
+}
+
+.watch__main-bracelet--align {
+    margin-left: 80px;
+}
+
+.watch__main-bracelet-btn {
+    padding: 0;
+    font-size: 1.6rem;
+    background-color: white;
+    width: 88px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 6px;
+}
+
+.watch__main-bracelet-btn:focus {
+    outline: none;
+}
+
+.watch__main-pay {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-top: 65px;
+    display: flex;
+}
+
+.watch__main-pay-btn {
+    position: relative;
+    width: 280px;
+    height: 70px;
+    border: solid 1px black;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.watch__main-pay-btn:focus {
+    outline: none;
+}
+
+.watch__main-pay--black {
+    background-color: white;
+}
+
+.watch__main-pay--black::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -50px;
+    border-top: 68px solid black;
+    border-left: 50px solid transparent;
+    transform: translateX(0%);
+    transition: all 0.4s ease;
+}
+
+.watch__main-pay--white::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -50px;
+    border-top: 68px solid white;
+    border-left: 50px solid transparent;
+    transform: translateX(0%);
+    transition: all 0.4s ease;
+}
+
+.watch__main-pay--black:hover::before,
+.watch__main-pay--white:hover::before {
+    transform: translateX(100%);
+}
+
+.watch__main-pay--black:hover .watch__main-pay-btn--link {
+    color: black;
+}
+
+.watch__main-pay--white {
+    margin-left: 35px;
+    background-color: black;
+}
+
+.watch__main-pay-btn--link {
+    position: absolute;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.watch__main-pay-group {
+    position: absolute;
+}
+
+.watch__main-pay-btn--svg {
+    margin-bottom: 3px;
+}
+
+.watch__main-pay-btn--link-add {
+    margin-left: 10px;
+    color: black;
+}
+
+.watch__main-pay--white:hover .watch__main-pay-btn--link-add {
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.watch__main-pay--white:hover path {
+    fill: white;
+    transition: all 0.2s linear;
+} 
+
+.watch__main-policy {
+    font-size: 1.3rem;
+    display: flex;
+    margin-top: 19px;
+}
+
+.watch__main-policy-transport,
+.watch__main-policy-commitment {
+    display: flex;
+    align-items: center;
+}
+
+.watch__main-policy-commitment {
+    margin-left: 133px;
+}
+
+.watch__main-policy-commitment svg,
+.watch__main-policy-transport svg {
+    margin-right: 12px;
+}
+
+/* detail */
+.detail {
+    margin-top: 105px;
+    margin-bottom: 135px;
+}
+
+.detail__link {
+    margin-right: 23px;
+}
+
+.detail__link:last-child {
+    margin-right: 0;
+}
+
+.detail__link-img {
+    border-radius: 50%;
+    box-shadow: 2px 5px 14px -8px black;
+}
+
+
 

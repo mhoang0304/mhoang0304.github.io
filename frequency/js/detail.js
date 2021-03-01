@@ -1,3 +1,8 @@
+$(window).on("load", function () {
+    $(".loading").fadeOut(600);
+});
+
+
 $(document).ready(function () {
     // video
     $("#video--show").click(function () {
@@ -9,5 +14,11 @@ $(document).ready(function () {
     });
 
     // fancybox
-    
+    $("[data-fancybox='gallery']").fancybox({
+        loop: true,
+        animationEffect: "zoom-in-out",
+        animationDuration: 400,
+        transitionEffect: "circular",
+        transitionDuration: 600
+    });
 });

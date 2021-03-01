@@ -150,9 +150,9 @@ img {
 }
 
 .nav__main-menu-item a {
+    font-family: "Noto Sans";
     color: white;
     font-size: 1.6rem;
-    font-family: verdana;
 }
 
 .nav__main-menu-item:hover a {

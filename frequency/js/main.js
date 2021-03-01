@@ -1,9 +1,3 @@
-$(window).on("load", function () {
-    setTimeout(function (){
-        $(".loading").fadeOut(600);
-    },1000);
-});
-
 $(document).ready(function () {
     // Navigation Mobile
     $(".nav__moblie-btn").click(function () {
@@ -22,7 +16,7 @@ $(document).ready(function () {
     });
 
     // Login
-    $("#login").click(function () {
+    $(".login-btn").click(function () {
         $("#login-form").css({
             "visibility": "visible",
             "opacity": "1",
@@ -52,7 +46,7 @@ $(document).ready(function () {
     });
 
     // Register
-    $("#register").click(function () {
+    $(".register-btn").click(function () {
         $("#register-form").css({
             "visibility": "visible",
             "opacity": "1",
