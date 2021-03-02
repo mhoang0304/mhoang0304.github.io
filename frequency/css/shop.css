@@ -106,7 +106,7 @@
 .watch__option-list-items {
     font-size: 1.6rem;
     line-height: 2.2rem;  
-    margin: 8px 0 0 16px;
+    margin: 8px 0 0 0;
     cursor: pointer;
 }
 
@@ -116,8 +116,7 @@
 
 .watch__option-size {
     display: flex;
-    flex-wrap: wrap;
-    padding-left: 16px;
+    flex-flow: row wrap;
 }
 
 .watch__option-size-number {
@@ -152,7 +151,6 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    padding-left: 16px;
 }
 
 .watch__option-item-color input {

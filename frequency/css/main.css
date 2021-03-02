@@ -105,6 +105,7 @@ img {
     max-width: 1440px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.4s linear;
 }
 
 .nav-main {
@@ -120,10 +121,9 @@ img {
 }
 
 .nav__main-logo {
-    font-family: var(--bs-font-sans-serif);
     position: absolute;
-    left: calc(50% - 60px);
-    font-size: 2.1rem;
+    left: calc(50% - 51.5px);
+    font-size: 1.8rem;
     color: white;
 }
 
@@ -133,7 +133,7 @@ img {
 
 .nav__main-menu {
     position: absolute;
-    left: calc(50% - 257.5px);
+    left: calc(50% - 246px);
     display: none;
 }
 
@@ -598,6 +598,7 @@ img {
     line-height: 1.9rem;
     color: var(--gray-color);
     margin: 12px 0 40px;
+    font-weight: 400;
 }
 
 .subscribe__main {
@@ -776,6 +777,53 @@ img {
     color: #1da1f2;
     transition: color 0.4s ease;
 }
+/* ------- */
+.ins {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+    display: none;
+}
+
+.ins__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ins__main {
+    position: absolute;
+    display: flex;  
+}
+
+.ins__main-comment {
+    width: 335px;
+    background-color: white;
+    padding: 16px;
+}
+
+.ins__main-header {
+    display: flex;
+    align-items: center;
+}
+
+.ins__main-header-avatar {
+    border-radius: 50%;
+}
+
+.ins__main-header-name {
+    font-size: 1.4rem;
+    margin-left: 14px;
+}
 
 @media (min-width: 576px) {
     .nav__moblie-btn {
@@ -787,8 +835,8 @@ img {
     }
 
     .nav__main-logo {
-        left: calc(50% - 74.5px);
-        font-size: 2.6rem;
+        left: calc(50% - 63px);
+        font-size: 2.2rem;
     }
 
     .nav__main-button-search {
@@ -811,7 +859,12 @@ img {
 
 @media (min-width: 768px) { 
     .nav {
-        height: 100px;
+        height: 80px;
+    }
+
+    .nav__main-logo {
+        left: calc(50% - 74.5px);
+        font-size: 2.6rem;
     }
 
     .nav__main-button-login,
@@ -848,6 +901,10 @@ img {
 }
 
 @media (min-width: 992px) {
+    .nav {
+        height: 100px;
+    }
+
     .nav__moblie-btn {
         display: none;
     }

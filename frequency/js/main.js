@@ -73,5 +73,15 @@ $(document).ready(function () {
             "opacity": "1"
         });
     });
+
+    // footer
+    $(".footer__feedback").click(function () {
+        $(".ins").css("display", "flex");
+    });
+
+    $(".ins__overlay").click(function () {
+        $(".ins").css("display", "none");
+    });
+    
 });
 
