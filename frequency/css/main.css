@@ -1,13 +1,13 @@
 @font-face {
     font-family: "Noto Sans";
-    src: url("../font/NotoSans/NotoSans-Regular.ttf")
+    src: url("../font/NotoSans/NotoSans-Regular.ttf"),
          url("../font/NotoSans/notosans-regular-webfont.woff2") format('woff2'),
          url("../font/NotoSans/notosans-regular-webfont.woff") format('woff');
 }
 
 @font-face {
     font-family: "Verdana";
-    src: url("../font/Verdana/verdana.ttf")
+    src: url("../font/Verdana/verdana.ttf"),
          url("../font/Verdana/verdana-webfont.woff2") format('woff2'),
          url("../font/Verdana/verdana-webfont.woff") format('woff');
 }
