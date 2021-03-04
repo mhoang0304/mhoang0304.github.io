@@ -812,6 +812,14 @@
     .service__title-svg--shield {
         width: 39px;
         height: 46px;
+        display: none;
+    }
+
+    .animation-shield .shield {
+        stroke-dasharray: 323;
+        stroke-dashoffset: 323;
+        animation: dash 4s linear;
+        animation-fill-mode: forwards; 
     }
     
     .service__title-svg--badge {

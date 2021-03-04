@@ -23,6 +23,9 @@ $(document).ready(function () {
         if(scroll >= svg) {
             $(".service__title-svg--truck").css("display", "block");
             $(".service__title-svg--truck").addClass("animation-truck");
+
+            $(".service__title-svg--shield").css("display", "block");
+            $(".service__title-svg--shield").addClass("animation-shield");
         }
     });
 });
