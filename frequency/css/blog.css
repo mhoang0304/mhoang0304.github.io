@@ -83,6 +83,10 @@
     margin-bottom: 19px;
 }
 
+.post__title-body {
+    padding: 0 25px 7px;
+}
+
 .post__title-h1 {
     font-family: "Verdana";
     font-weight: bold;
@@ -109,7 +113,7 @@
 
 .post__subtitle-content {
     background-color: #fff;
-    padding: 16px 0 7px;
+    padding: 16px 25px 7px;
 }
 
 .post__subtitle-content h1 {

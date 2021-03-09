@@ -316,6 +316,7 @@
 .watch__product-info-price {
     font-size: 1.6rem;
     line-height: 2.2rem;
+    font-weight: 600;
     padding: 20px 0 22px;
 }
 

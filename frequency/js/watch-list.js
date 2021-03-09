@@ -1,4 +1,5 @@
 $(window).on("load", function () {
+    $("body").css("overflow", "auto");
     $(".loading").fadeOut(600);
 });
 
