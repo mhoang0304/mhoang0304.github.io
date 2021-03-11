@@ -633,10 +633,15 @@ img {
     color: white;
     background-color: var(--green-color);
     border-radius: 4px;
+    transition: all 0.2s linear;
 }
 
 .subscribe__main-button:focus {
     outline: none;
+}
+
+.subscribe__main-button:hover {
+    background-color: var(--green-bold);
 }
 
 /* Footer */
@@ -689,6 +694,14 @@ img {
 
 .footer__content-menu-item {
     margin-bottom: 9px;
+}
+
+.footer__content-menu-item:last-child {
+    margin: 0;
+}
+
+.footer__content-menu-item a {
+    color:  white;
 }
 
 .footer__feed {
