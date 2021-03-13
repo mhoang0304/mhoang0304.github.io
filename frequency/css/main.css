@@ -217,7 +217,7 @@ img {
 /* Navigation Mobile */
 .nav__overlay {
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     left: 0;
     bottom: 0;
@@ -250,7 +250,7 @@ img {
 
 .nav__moblie {
     position: fixed;
-    z-index: 3;
+    z-index: 11;
     top: 0;
     left: 0;
     bottom: 0;
@@ -792,6 +792,16 @@ img {
     transition: color 0.4s ease;
 }
 /* ------- */
+.ins__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
 .ins {
     position: fixed;
     top: 0;
@@ -805,13 +815,8 @@ img {
     display: none;
 }
 
-.ins__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+.ins--show {
+    display: flex;
 }
 
 .ins__main {
@@ -844,6 +849,34 @@ img {
 .ins__main-body {
     font-size: 1.6rem;
     padding: 24px 16px 0 16px;
+    border-bottom: 0.1px solid #efefef;
+}
+
+.ins__main-body-content {
+    text-indent: 15px;
+    padding-bottom: 45px;
+    height: 374px;
+}
+
+.ins__main-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+}
+
+.ins__main-footer-date {
+    font-size: 1.2rem;
+    color: #8e8e8e;
+}
+
+.ins__main-footer-date-link {
+    color: #262626;
+    font-size: 1.4rem;
+    transition: all 0.4s ;
+}
+
+.ins__main-footer-date-link:hover {
+    color: var(--green-bold);
 }
 
 @media (min-width: 576px) {

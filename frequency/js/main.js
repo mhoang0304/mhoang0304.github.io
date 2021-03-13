@@ -76,12 +76,27 @@ $(document).ready(function () {
 
     // footer
     $(".footer__feedback").click(function () {
-        $(".ins").css("display", "flex");
+        $(".ins__overlay").css("display", "block");
     });
 
     $(".ins__overlay").click(function () {
-        $(".ins").css("display", "none");
+        $(".ins").removeClass("ins--show");
     });
-    
+
+    $(".js-footer__feedback-1").click(function () {
+        $(".js-ins-1").addClass("ins--show");
+    });
+
+    $(".js-footer__feedback-2").click(function () {
+        $(".js-ins-2").addClass("ins--show");
+    });
+
+    $(".js-footer__feedback-3").click(function () {
+        $(".js-ins-3").addClass("ins--show");
+    });
+
+    $(".js-footer__feedback-4").click(function () {
+        $(".js-ins-4").addClass("ins--show");
+    });
 });
 

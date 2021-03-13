@@ -23,16 +23,16 @@ footer.footer
                     h1.footer__content-title INSTAGRAM
                     p.footer__content-sub Ghé thăm trang Instagram để cùng chia sẻ khoảnh khắc của bạn.
                 .d-flex.justify-content-between.footer__feed
-                    .footer__feedback
+                    .footer__feedback.js-footer__feedback-1
                         img(src="./img/footer-1.jpg" alt="feedback").footer__feedback-img
                         i.fab.fa-instagram.footer__feedback-icon
-                    .footer__feedback
+                    .footer__feedback.js-footer__feedback-2
                         img(src="./img/footer-2.jpg" alt="feedback").footer__feedback-img
                         i.fab.fa-instagram.footer__feedback-icon
-                    .footer__feedback
+                    .footer__feedback.js-footer__feedback-3
                         img(src="./img/footer-3.jpg" alt="feedback").footer__feedback-img
                         i.fab.fa-instagram.footer__feedback-icon
-                    .footer__feedback
+                    .footer__feedback.js-footer__feedback-4
                         img(src="./img/footer-4.jpg" alt="feedback").footer__feedback-img
                         i.fab.fa-instagram.footer__feedback-icon
 
@@ -47,15 +47,29 @@ footer.footer
                         i.fab.fa-youtube
                     a(href="#").footer-sub__social-link 
                         i.fab.fa-twitter
+    .ins__overlay
 
-    .ins
-        .ins__overlay
-        .ins__main
-            .ins__main-img
-                img(src="./img/footer-img1.jpg" alt="instagram")
-            .ins__main-comment
-                .ins__main-header
-                    img.ins__main-header-avatar(src="./img/avatar.jpg" alt="avatar")
-                    span.ins__main-header-name mhoang0304
-                .ins__main-body
-                    p Có bao giờ các bạn tự đặt câu hỏi tại sao cha mẹ có thể thức khuya dậy sớm như vậy không? Lớn lên tôi mới biết đánh thức cha mẹ không phải tiếng gà cục tác hay là đồng hồ báo thức, mà là gánh nặng, cuộc sống là trách nhiệm...
+    - var instagram = [{class:"js-ins-1",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-2",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-3",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-4",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"}]
+
+    each items in instagram
+        div(class= "ins " + items.class)
+            .ins__main
+                .ins__main-img
+                    img(src=items.img alt="instagram")
+                .ins__main-comment
+                    .ins__main-header
+                        img.ins__main-header-avatar(src="./img/avatar.jpg" alt="avatar")
+                        span.ins__main-header-name mhoang0304
+                    .ins__main-body
+                        .ins__main-body-content
+                            p= items.content
+                    .ins__main-footer
+                        span.ins__main-footer-date= items.date
+                        a.ins__main-footer-date-link(href="https://www.instagram.com/") View on Instagram
+
+    //- .ins__icon
+    //-     i.fas.fa-times
+    //-     i.fas.fa-chevron-right
+    //-     i.fas.fa-chevron-left     
+
+        
