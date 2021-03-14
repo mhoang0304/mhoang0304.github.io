@@ -109,6 +109,12 @@ img {
     transition: all 0.4s linear;
 }
 
+.nav--change-style {
+    position: static;
+    height: 100px;
+    background-color: #202020;
+}
+
 .nav-main {
     display: flex;
     align-items: center;
@@ -792,23 +798,35 @@ img {
     transition: color 0.4s ease;
 }
 /* ------- */
-.ins__overlay {
+.instargram {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
     display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.instargram__btn {
+    font-size: 3.1rem;
+    color: rgba(255, 255, 255);
+    cursor: pointer;
+    margin: 0 250px;
+    user-select: none;
+}
+
+.instargram__close {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 .ins {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
     justify-content: center;
     align-items: center;
     color: #212121;
@@ -877,6 +895,26 @@ img {
 
 .ins__main-footer-date-link:hover {
     color: var(--green-bold);
+}
+
+.ins__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.ins__icon-change {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @media (min-width: 576px) {

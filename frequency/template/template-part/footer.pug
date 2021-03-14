@@ -47,29 +47,35 @@ footer.footer
                         i.fab.fa-youtube
                     a(href="#").footer-sub__social-link 
                         i.fab.fa-twitter
-    .ins__overlay
 
-    - var instagram = [{class:"js-ins-1",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-2",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-3",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"},{class:"js-ins-4",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "8 tháng 4 2020"}]
+    .instargram
+        .instargram__btn.js-instargram__btn-prev
+            i.fas.fa-chevron-left
+        .instargram__main
+            - var instagram = [{class:"js-ins-1",img:"./img/footer-img1.jpg", content:"Không ai mua được thời gian, nó luôn lạnh lùng với tất cả mọi người, với tất cả những sai lầm chúng ta muốn sửa chữa, với tất cả những kỉ niệm đẹp mà ta đã từng trải qua.", date: "31 tháng 07 2020"},{class:"js-ins-2",img:"./img/footer-img2.jpg", content:"Rồi sẽ có một ngày bạn thức dậy và không còn đủ thời gian để làm những điều hàng ngày mình mong muốn. Hãy làm ngay bây giờ.", date: "08 tháng 04 2020"},{class:"js-ins-3",img:"./img/footer-img3.jpg", content:" Có những lúc, không có lần sau, không có cơ hội bắt đầu lại. Có những lúc, bỏ lỡ hiện tại, vĩnh viễn không còn cơ hội nữa", date: "28 tháng 04 2021"},{class:"js-ins-4",img:"./img/footer-img4.jpg", content:"Khi đã trưởng thành, sẽ có đôi lúc, chúng ta nhớ lại thời gian thanh xuân tươi đẹp mà cũng đầy đau buồn ấy, và mỉm cười, thật nhẹ nhàng và thanh thản.", date: "03 tháng 04 2021"}]
 
-    each items in instagram
-        div(class= "ins " + items.class)
-            .ins__main
-                .ins__main-img
-                    img(src=items.img alt="instagram")
-                .ins__main-comment
-                    .ins__main-header
-                        img.ins__main-header-avatar(src="./img/avatar.jpg" alt="avatar")
-                        span.ins__main-header-name mhoang0304
-                    .ins__main-body
-                        .ins__main-body-content
-                            p= items.content
-                    .ins__main-footer
-                        span.ins__main-footer-date= items.date
-                        a.ins__main-footer-date-link(href="https://www.instagram.com/") View on Instagram
+            each items in instagram
+                div(class= "ins " + items.class)
+                    .ins__main
+                        .ins__main-img
+                            img(src=items.img alt="instagram")
+                        .ins__main-comment
+                            .ins__main-header
+                                img.ins__main-header-avatar(src="./img/avatar.jpg" alt="avatar")
+                                span.ins__main-header-name mhoang0304
+                            .ins__main-body
+                                .ins__main-body-content
+                                    p= items.content
+                            .ins__main-footer
+                                span.ins__main-footer-date= items.date
+                                a.ins__main-footer-date-link(href="https://www.instagram.com/" target="_blank") View on Instagram
 
-    //- .ins__icon
-    //-     i.fas.fa-times
-    //-     i.fas.fa-chevron-right
-    //-     i.fas.fa-chevron-left     
+        .instargram__btn.js-instargram__btn-next
+            i.fas.fa-chevron-right
+        .instargram__close
+            i.fas.fa-times
 
-        
+                
+                
+
+

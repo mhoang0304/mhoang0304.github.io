@@ -74,15 +74,17 @@ $(document).ready(function () {
         });
     });
 
-    // footer
+    // footer\
     $(".footer__feedback").click(function () {
-        $(".ins__overlay").css("display", "block");
+        $(".instargram").css("display", "flex");
     });
 
-    $(".ins__overlay").click(function () {
+    $(".instargram__close").click(function () {
         $(".ins").removeClass("ins--show");
+        $(".instargram").css("display", "none");
     });
 
+    // Hiển thị theo từng class
     $(".js-footer__feedback-1").click(function () {
         $(".js-ins-1").addClass("ins--show");
     });
@@ -97,6 +99,30 @@ $(document).ready(function () {
 
     $(".js-footer__feedback-4").click(function () {
         $(".js-ins-4").addClass("ins--show");
+    });
+
+    // Next
+    $(".js-instargram__btn-next").click(function () {
+        let next = $(".ins--show").next();
+
+        if (next.length == 0) {
+            $(".ins").removeClass("ins--show");
+            $(".ins:first-child").addClass("ins--show");
+        } else {
+            $(".ins--show").removeClass("ins--show").next().addClass("ins--show");
+        }
+    });
+
+    // Prev
+    $(".js-instargram__btn-prev").click(function () {
+        let prev = $(".ins--show").prev();
+
+        if(prev.length == 0) {
+            $(".ins").removeClass("ins--show");
+            $(".ins:last-child").addClass("ins--show");
+        } else {
+            $(".ins--show").removeClass("ins--show").prev().addClass("ins--show");
+        }
     });
 });
 
