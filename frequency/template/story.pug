@@ -2,7 +2,23 @@ extends ./template-part/layout.pug
 
 block title
     title Frequency - Story
-    link(rel="stylesheet", href="./css/story.css")
+    link(rel="stylesheet" href="./css/story.css")
 
 block content
-    section 
+    .main
+        section.story#story-1.story-active
+            .story__content ĐOẠN 1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error quisquam ipsum quidem nemo magni et repellendus molestias ipsam cumque exercitationem! Laborum iusto ab eveniet, architecto vel labore repudiandae. Doloribus, distinctio.
+            .story__background
+                img.story__background-img(src="./img/story-1.jpg" alt="story")
+        section.story#story-2
+            .story__content ĐOẠN 2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error quisquam ipsum quidem nemo magni et repellendus molestias ipsam cumque exercitationem! Laborum iusto ab eveniet, architecto vel labore repudiandae. Doloribus, distinctio.
+            .story__background
+                img.story__background-img(src="./img/story-2.jpg" alt="story")
+        section.story#story-3
+            .story__content ĐOẠN 3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error quisquam ipsum quidem nemo magni et repellendus molestias ipsam cumque exercitationem! Laborum iusto ab eveniet, architecto vel labore repudiandae. Doloribus, distinctio.
+            .story__background
+                img.story__background-img(src="./img/story-3.jpg" alt="story")
+
+block javascript
+    script(src="./js/story.js") 
+
