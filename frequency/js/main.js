@@ -117,12 +117,35 @@ $(document).ready(function () {
     $(".js-instargram__btn-prev").click(function () {
         let prev = $(".ins--show").prev();
 
-        if(prev.length == 0) {
+        if (prev.length == 0) {
             $(".ins").removeClass("ins--show");
             $(".ins:last-child").addClass("ins--show");
         } else {
             $(".ins--show").removeClass("ins--show").prev().addClass("ins--show");
         }
+    });
+
+    // localstorage
+    $("#btn-register").click(function () {
+        let user = {
+            name: $("#register-name").val(),
+            username: $("#register-email").val(),
+            password: $("#register-password").val()
+        }
+
+        localStorage.setItem("user", JSON.stringify(user));  
+    })
+
+    $("#btn-login").click(function () {
+        let check = JSON.parse(localStorage.getItem("user"));
+        console.log(check);
+        if ($("#login-username").val() !== check.username) {
+            alert("Sai roi nhe")
+        } else {
+            alert("Dung roi do")
+        }
+        console.log($("#login-username").val());
+        console.log(check.username);
     });
 });
 

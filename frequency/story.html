@@ -60,15 +60,15 @@
             <h1 class="login__form-status--login">Đăng Nhập</h1>
             <h2 class="login__form-status--register" id="change-register">Đăng Ký</h2>
           </div>
-          <input class="login__form-input" type="text" placeholder="Địa chỉ Email" name="email"/>
-          <input class="login__form-input login__form-input--align" type="password" placeholder="Mật khẩu" name="password"/>
+          <input class="login__form-input" id="login-username" type="text" placeholder="Địa chỉ Email" name="email"/>
+          <input class="login__form-input login__form-input--align" id="login-password" type="password" placeholder="Mật khẩu" name="password"/>
           <div class="login__form-password">
             <div class="login__form-password-remember">
               <input class="login__form-password-input" type="checkbox" id="remember" name="remember"/>
               <label class="login__form-password-label" for="remember">Lưu mật khẩu</label>
             </div><a class="login__form-password-forgot" href="#">Quên mật khẩu?</a>
           </div>
-          <input class="login__form-submit" type="submit" value="Đăng nhập"/>
+          <input class="login__form-submit" id="btn-login" type="button" value="Đăng nhập"/>
           <p class="login__form-title">Hoặc đăng nhập qua</p>
           <div class="login__form-social">
             <button class="login__form-social-btn login__form-social-btn--facebook"><i class="fab fa-facebook-f"> </i>Facebook</button>
@@ -83,9 +83,9 @@
             <h1 class="register__form-status--register">Đăng Ký</h1>
             <h2 class="register__form-status--login" id="change-login">Đăng Nhập</h2>
           </div>
-          <input class="register__form-input" type="text" placeholder="Họ tên" name="name"/>
-          <input class="register__form-input" type="text" placeholder="Email" name="email"/>
-          <input class="register__form-input" type="password" placeholder="Mật khẩu từ 6 đến 23 kí tự" name="password"/>
+          <input class="register__form-input" id="register-name" type="text" placeholder="Họ tên" name="name"/>
+          <input class="register__form-input" id="register-email" type="text" placeholder="Email" name="email"/>
+          <input class="register__form-input" id="register-password" type="password" placeholder="Mật khẩu từ 6 đến 23 kí tự" name="password"/>
           <input class="register__form-input register__form-input--align" type="password" placeholder="Nhập lại mật khẩu" name="password"/>
           <div class="register__form-radio"><span class="register__form-radio--circle">
               <input class="register__form-radio-male" type="radio" name="gender" id="male" value="male"/>
@@ -94,7 +94,7 @@
               <label class="register__form-radio-label" for="female">Nữ</label></span></div>
           <input class="register__form-policy" type="checkbox" id="policy"/><span class="register__form-title">
             <label for="policy">Tôi đã đọc và đồng ý theo</label><a class="register__form-title--link" href="#"> điều kiện sử dụng và chính sách của Frequency</a></span>
-          <input class="register__form-btn" type="submit" value="Tạo tài khoản"/>
+          <input class="register__form-btn" id="btn-register" type="button" value="Tạo tài khoản"/>
         </form>
       </div>
     </header>
