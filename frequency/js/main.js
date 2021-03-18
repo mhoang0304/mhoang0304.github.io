@@ -133,17 +133,33 @@ $(document).ready(function () {
             password: $("#register-password").val()
         }
 
-        localStorage.setItem("user", JSON.stringify(user));  
+        localStorage.setItem("user", JSON.stringify(user));
+
+        $("#register-form").css({
+            "visibility": "hidden",
+            "opacity": "0"
+        })
+        $("#overlay-form").css("display", "none");
     })
 
     $("#btn-login").click(function () {
         let check = JSON.parse(localStorage.getItem("user"));
         console.log(check);
         if ($("#login-username").val() !== check.username) {
-            alert("Sai roi nhe")
+            alert("Sai tên tài khoản!");
+        } else if ($("#login-password").val() !== check.password){
+            alert("Sai mật khẩu!");
         } else {
-            alert("Dung roi do")
+            $("#login-form").css({
+                "visibility": "hidden",
+                "opacity": "0"
+            })
+            $("#overlay-form").css("display", "none");
+
+            $(".nav__main-group-button").css("display", "none");
+            $("#account-name").text(check.name);
         }
+
         console.log($("#login-username").val());
         console.log(check.username);
     });
