@@ -7,9 +7,9 @@
 
 @font-face {
     font-family: "Verdana";
-    src: url("../font/Verdana/verdana.ttf"),
-         url("../font/Verdana/verdana-webfont.woff2") format('woff2'),
-         url("../font/Verdana/verdana-webfont.woff") format('woff');
+    src: url("../font/Verdana/verdana.ttf")
+         /* url("../font/Verdana/verdana-webfont.woff2") format('woff2'),
+         url("../font/Verdana/verdana-webfont.woff") format('woff'); */
 }
 
 :root {
