@@ -127,13 +127,17 @@ $(document).ready(function () {
 
     // localstorage
     let storage = JSON.parse(localStorage.getItem("user"));
-    // console.log(storage);
+
     // window.localStorage.removeItem('user');
-    if (storage.status === "login") {
-        $(".nav__main-group-button").css("display", "none");
-        $("#account-name").text(storage.name);
+    if (storage === null) {
+        return
     } else {
-        $(".nav__main-group-button").css("display", "block");
+        if (storage.status === "login") {
+            $(".nav__main-group-button").css("display", "none");
+            $("#account-name").text(storage.name);
+        } else {
+            $(".nav__main-group-button").css("display", "flex");
+        }
     }
 
     $("#btn-register").click(function () {
