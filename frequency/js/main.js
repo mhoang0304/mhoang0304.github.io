@@ -127,11 +127,8 @@ $(document).ready(function () {
 
     // localstorage
     let storage = JSON.parse(localStorage.getItem("user"));
-
-    if (storage.status == undefined) {
-        console.log("out ra ngoai");
-        return
-    } else if (storage.status === "login") {
+    console.log(typeof storage.status);
+    if (storage.status === "login") {
         $(".nav__main-group-button").css("display", "none");
         $("#account-name").text(storage.name);
     }
