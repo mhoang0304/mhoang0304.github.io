@@ -877,7 +877,7 @@
     .animation-gift .gift-1 {
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
-        animation: dash 4s linear;
+        animation: dash 2s linear;
         animation-fill-mode: forwards;
     }
 

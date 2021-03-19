@@ -274,6 +274,12 @@
     color: white;
 }
 
+.watch__filter-moblie {
+    margin: 0 6px 0 auto;
+    cursor: pointer;
+    display: block;
+}
+
 /* ----- */
 .watch__product {
     max-width: 270px;
@@ -549,6 +555,10 @@
     /* watch */
     .watch__option {
         display: block;
+    }
+
+    .watch__filter-moblie {
+        display: none;
     }
 }
 

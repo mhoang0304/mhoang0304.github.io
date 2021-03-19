@@ -316,7 +316,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: 12;
     width: 425px;
     background-color: white;
     border-radius: 8px;
@@ -478,7 +478,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: 12;
     width: 425px;
     background-color: white;
     border-radius: 8px;
