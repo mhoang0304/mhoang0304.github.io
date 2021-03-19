@@ -131,6 +131,9 @@ $(document).ready(function () {
     if (storage.status === "login") {
         $(".nav__main-group-button").css("display", "none");
         $("#account-name").text(storage.name);
+    } else {
+        console.log("out ra ngoai");
+        return 
     }
 
     $("#btn-register").click(function () {
