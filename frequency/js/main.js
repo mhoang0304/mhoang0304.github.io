@@ -163,6 +163,10 @@ $(document).ready(function () {
         console.log($("#login-username").val());
         console.log(check.username);
     });
-    let check = JSON.parse(localStorage.getItem("user"));
+
+    // let check = JSON.parse(localStorage.getItem("user"));
+ 
+    // $(".nav__main-group-button").css("display", "none");
+    // $("#account-name").text(check.name);
 });
 
