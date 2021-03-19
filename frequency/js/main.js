@@ -126,11 +126,19 @@ $(document).ready(function () {
     });
 
     // localstorage
+    let storage = JSON.parse(localStorage.getItem("user"));
+  
+    if (storage.status === "login") {
+        $(".nav__main-group-button").css("display", "none");
+        $("#account-name").text(storage.name);
+    }
+
     $("#btn-register").click(function () {
         let user = {
             name: $("#register-name").val(),
             username: $("#register-email").val(),
-            password: $("#register-password").val()
+            password: $("#register-password").val(),
+            status: "login"
         }
 
         localStorage.setItem("user", JSON.stringify(user));
@@ -147,7 +155,7 @@ $(document).ready(function () {
         console.log(check);
         if ($("#login-username").val() !== check.username) {
             alert("Sai tên tài khoản!");
-        } else if ($("#login-password").val() !== check.password){
+        } else if ($("#login-password").val() !== check.password) {
             alert("Sai mật khẩu!");
         } else {
             $("#login-form").css({
@@ -159,14 +167,6 @@ $(document).ready(function () {
             $(".nav__main-group-button").css("display", "none");
             $("#account-name").text(check.name);
         }
-
-        console.log($("#login-username").val());
-        console.log(check.username);
     });
-
-    // let check = JSON.parse(localStorage.getItem("user"));
- 
-    // $(".nav__main-group-button").css("display", "none");
-    // $("#account-name").text(check.name);
 });
 
