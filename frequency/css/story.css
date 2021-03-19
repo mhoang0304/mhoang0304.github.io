@@ -1,3 +1,7 @@
+body {
+    background-color: #212121;
+}
+
 .main {
     max-width: 1440px;
     margin: auto;
@@ -15,7 +19,7 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    animation: blur-hidden 0.4s linear;
+    animation: blur-hidden 0.5s ease-in-out;
 }
 
 .story__content {
@@ -56,7 +60,7 @@
 .story-active {
     opacity: 1;
     visibility: visible;
-    animation: blur-show 0.4s linear;
+    animation: blur-show 0.5s ease-in-out;
 }
 
 @keyframes blur-show {

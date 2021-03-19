@@ -163,5 +163,6 @@ $(document).ready(function () {
         console.log($("#login-username").val());
         console.log(check.username);
     });
+    let check = JSON.parse(localStorage.getItem("user"));
 });
 
