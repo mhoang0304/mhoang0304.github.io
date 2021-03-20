@@ -128,13 +128,38 @@ $(document).ready(function () {
     // localstorage
     let storage = JSON.parse(localStorage.getItem("user"));
 
+    $("#account-name").click(function() {
+        if($(".nav__main-account-options").css("display") == "block") {
+            $(".nav__main-account-options").css("display","none");
+        } else {
+            $(".nav__main-account-options").css("display","block");
+        }
+    })
+
+    $("#log-out").click(function() {
+        let check = JSON.parse(localStorage.getItem("user"));
+
+        let user = {
+            name: check.name,
+            username: check.username,
+            password: check.password,
+            status: "logout"
+        }
+
+        localStorage.setItem("user", JSON.stringify(user));
+        $("#account-name").text("");
+        $(".nav__main-group-button").css("display", "flex");
+        $(".nav__main-account-options").css("display","none");
+    })
+
     // window.localStorage.removeItem('user');
     if (storage === null) {
-        return
+       
     } else {
-        if (storage.status === "login") {
+        if (storage.status === "login" && storage.name !== "") {
             $(".nav__main-group-button").css("display", "none");
             $("#account-name").text(storage.name);
+            console.log("trong trang thai");
         } else {
             $(".nav__main-group-button").css("display", "flex");
         }
@@ -145,7 +170,7 @@ $(document).ready(function () {
             name: $("#register-name").val(),
             username: $("#register-email").val(),
             password: $("#register-password").val(),
-            status: "login"
+            status: "logout"
         }
 
         localStorage.setItem("user", JSON.stringify(user));
@@ -160,11 +185,23 @@ $(document).ready(function () {
     $("#btn-login").click(function () {
         let check = JSON.parse(localStorage.getItem("user"));
         console.log(check);
-        if ($("#login-username").val() !== check.username) {
+
+        if ($("#login-username").val() === "" || $("#login-password").val() === "") {
+            alert("Yêu cầu nhập Email và password")
+        }
+        else if ($("#login-username").val() !== check.username) {
             alert("Sai tên tài khoản!");
         } else if ($("#login-password").val() !== check.password) {
             alert("Sai mật khẩu!");
         } else {
+            let user = {
+                name: check.name,
+                username: check.username,
+                password: check.password,
+                status: "login"
+            }
+            localStorage.setItem("user", JSON.stringify(user));
+
             $("#login-form").css({
                 "visibility": "hidden",
                 "opacity": "0"

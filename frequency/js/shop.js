@@ -4,8 +4,10 @@ $(window).on("load", function () {
 });
 
 $(document).ready(function () {
-    $(document).ready(function () {
-        $(".nav__main-menu-item:nth-child(2) a").addClass("nav__main--location");
+    $(".nav__main-menu-item:nth-child(2) a").addClass("nav__main--location");
+    $(".nav").css({
+        "position": "relative",
+        "background-color": "#202020"
     });
 
     $(".watch__option-list").slideUp(0);

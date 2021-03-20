@@ -114,6 +114,10 @@
     color: var(--green-bold);
 }
 
+.watch__option-list-items:hover a {
+    color: var(--green-bold);
+}
+
 .watch__option-size {
     display: flex;
     flex-flow: row wrap;

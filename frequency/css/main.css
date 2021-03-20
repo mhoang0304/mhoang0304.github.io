@@ -5,12 +5,12 @@
          url("../font/NotoSans/notosans-regular-webfont.woff") format('woff');
 }
 
-@font-face {
+/* @font-face {
     font-family: "Verdana";
     src: url("../font/Verdana/verdana.ttf"),
          url('../font/Verdana/verdana-webfont.woff2') format('woff2'),
          url('../font/Verdana/verdana-webfont.woff') format('woff');
-}
+} */
 
 :root {
     --green-color: #3CB46E;
@@ -185,6 +185,37 @@ img {
     margin-right: 21px;
 }
 
+.nav__main-account-log {
+    position: relative;
+}
+
+.nav__main-account-options {
+    position: absolute;
+    bottom: -76px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    background-color: #212121;
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 2px;
+    display: none;
+    transition: all 0.4s linear;
+}
+
+.nav__main-account {
+    user-select: none;
+}
+
+.nav__main-account-options p {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.nav__main-account-options p a {
+    color: white;
+}
+
 .nav__main-account-name {
     color: white;
     font-size: 1.6rem;
@@ -317,7 +348,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 12;
-    width: 425px;
+    width: 300px;
     background-color: white;
     border-radius: 8px;
     opacity: 0;
@@ -336,8 +367,8 @@ img {
 }
 
 .login__form {
-    padding: 0 45px 67px;
-    margin-top: 22px;
+    padding: 0 20px 20px;
+    margin-top: 0;
 }
 
 .login__form-status {
@@ -348,13 +379,13 @@ img {
 }
 
 .login__form-status--login {
-    font-size: 2.6rem;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
 }
 
 .login__form-status--register {
-    font-size: 2rem;
-    line-height: 2.7rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
     color: #aaaaaa;
     cursor: pointer;
 }
@@ -479,7 +510,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 12;
-    width: 425px;
+    width: 300px;
     background-color: white;
     border-radius: 8px;
     opacity: 0;
@@ -498,25 +529,25 @@ img {
 }
 
 .register__form {
-    padding: 0 45px 25px;
-    margin-top: 22px;
+    padding: 0 20px 25px;
+    margin-top: 8px;
 }
 
 .register__form-status {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .register__form-status--register {
-    font-size: 2.6rem;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
 }
 
 .register__form-status--login {
-    font-size: 2rem;
-    line-height: 2.7rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
     color: #aaaaaa;
     cursor: pointer;
 }
@@ -826,8 +857,9 @@ img {
     font-size: 3.1rem;
     color: rgba(255, 255, 255);
     cursor: pointer;
-    margin: 0 250px;
+    margin: 0 1px;
     user-select: none;
+    z-index: 1;
 }
 
 .instargram__close {
@@ -857,6 +889,7 @@ img {
 .ins__main-comment {
     width: 335px;
     background-color: white;
+    display: none;
 }
 
 .ins__main-header {
@@ -959,6 +992,50 @@ img {
     .footer-sub__social-link:nth-child(2) {
         margin: 0 23px;
     }
+
+    /* Login */
+    .login {
+        width: 425px;
+    }
+
+    .login__form {
+        padding: 0 45px 67px;
+        margin-top: 22px;
+    }
+
+    .login__form-status--login {
+        font-size: 2.6rem;
+        line-height: 3.5rem;
+    }
+
+    .login__form-status--register {
+        font-size: 2rem;
+        line-height: 2.7rem;
+    }
+
+    /* Register */
+    .register {
+        width: 425px;
+    }
+
+    .register__form {
+        padding: 0 45px 25px;
+        margin-top: 22px;
+    }
+
+    .register__form-status  {
+        margin-bottom: 30px;
+    }
+
+    .register__form-status--register {
+        font-size: 2.6rem;
+        line-height: 3.5rem;
+    }
+
+    .register__form-status--login {
+        font-size: 2rem;
+        line-height: 2.7rem;
+    }
 }
 
 @media (min-width: 768px) { 
@@ -1054,6 +1131,15 @@ img {
         width: 70px;
         height: 70px;
     }
+
+    /* ins */
+    .instargram__btn {
+        margin: 0 55px;
+    }
+
+    .ins__main-comment {
+        display: block;
+    }
 }
 
 @media (min-width: 1200px) { 
@@ -1077,6 +1163,10 @@ img {
 
     .footer-sub {
         padding: 0 65px;
+    }
+
+    .instargram__btn {
+        margin: 0 165px;
     }
 }
 

@@ -37,8 +37,8 @@ $(document).ready(function () {
             $(".service__title-svg--gift").css("display", "block");
             $(".service__title-svg--gift").addClass("animation-gift");
 
-            $(".service__title-content").addClass("animate__animated animate__fadeInDown");
-            $(".service__title-content").css("display", "block");
+            // $(".service__title-content").addClass("animate__animated animate__fadeInDown");
+            // $(".service__title-content").css("display", "block");
         }
     });
 });

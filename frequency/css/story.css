@@ -6,7 +6,8 @@ body {
     max-width: 1440px;
     margin: auto;
     color: white;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
+    padding: 0 10px;
 }
 
 .story {
@@ -27,6 +28,7 @@ body {
     max-width: 600px;
     text-align: center;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.56);
 }
 
 .story__background {
@@ -72,4 +74,26 @@ body {
         opacity: 1;
         visibility: visible;
     }
+}
+
+@media (min-width: 576px) { 
+    .main {
+        font-size: 2.4rem;
+    }
+}
+
+@media (min-width: 768px) { 
+
+}
+
+@media (min-width: 992px) { 
+
+}
+
+@media (min-width: 1200px) { 
+
+}
+
+@media (min-width: 1400px) { 
+
 }

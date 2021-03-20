@@ -376,7 +376,7 @@
     font-size: 1.4rem;
     line-height: 1.8rem;
     font-weight: bold;
-    display: none;
+    /* display: none; */
 }
 
 .service__line {

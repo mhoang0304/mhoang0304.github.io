@@ -4,7 +4,7 @@ body {
 
 .title, .main {
     max-width: 1440px;
-    padding: 0 60px;
+    padding: 0 20px;
     margin: auto;
 }
 
@@ -24,8 +24,8 @@ body {
 
 /* main */
 .main {
-    display: grid;
-    grid-template-columns: 1fr 306px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     gap: 0 24px;
     padding-bottom: 112px;
 }
@@ -222,4 +222,33 @@ input::-webkit-inner-spin-button {
 
 .bill__request:hover {
     background-color: var(--green-hover);
+}
+
+@media (min-width: 576px) { 
+
+}
+
+@media (min-width: 768px) { 
+
+}
+
+@media (min-width: 992px) { 
+
+}
+
+@media (min-width: 1200px) { 
+    .title, .main {
+        padding: 0 60px;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 306px;
+        gap: 0 24px;
+        padding-bottom: 112px;
+    }
+}
+
+@media (min-width: 1400px) { 
+
 }

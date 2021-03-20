@@ -4,6 +4,11 @@ $(window).on("load", function () {
 });
 
 $(document).ready(function () {
+    $(".nav").css({
+        "position": "relative",
+        "background-color": "#202020"
+    });
+
     // video
     $("#video--show").click(function () {
         $(".watch__main-status-video").toggleClass("watch__main-status-video--show");
