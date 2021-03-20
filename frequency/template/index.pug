@@ -23,7 +23,7 @@ block content
             p.poster__hashtag-title Hãy để chúng tôi là câu trả lời 
             a(href="#").poster__hashtag-title-link #FREQUENCY
           .d-flex.justify-content-center.align-items-sm-center.poster__collection
-            a(href="#").poster__collection-link Collection
+            a(href="./shop.html").poster__collection-link Collection
               span 2021
               svg(width='12.34' height='20' viewbox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg')
                 path(d='M12.8597 10.7772L3.81284 19.678C3.37652 20.1073 2.66913 20.1073 2.23286 19.678L1.17769 18.6399C0.742118 18.2114 0.74128 17.5168 1.17583 17.0873L8.34563 9.99998L1.17583 2.91274C0.74128 2.48319 0.742118 1.78864 1.17769 1.36009L2.23286 0.321959C2.66918 -0.10732 3.37657 -0.10732 3.81284 0.321959L12.8597 9.22276C13.296 9.65199 13.296 10.348 12.8597 10.7772Z' fill='white')
@@ -40,7 +40,7 @@ block content
             h1.description__main-h1 TÌM KIẾM MỘT CHIẾC ĐỒNG HỒ THÔNG MINH
             p.description__main-content Những chiếc đồng hồ được thiết kế từ những người thợ giỏi. Chúng phù hợp với cá tính, phong cách riêng của chính bạn
             button.description__main-btn
-              a(href="#") XEM ĐỒNG HỒ
+              a(href="./shop.html") XEM ĐỒNG HỒ
 
       .row
         - var items = [{img: "./img/watch-m1.jpg", style: "WEIMAR - 40MM", name: "STEFAN", price: "8.099.000 ₫"},{img: "./img/watch-m2.jpg", style: "COLOSSEUM - 42MM", name: "MACE", price: "8.099.000 ₫"},{img: "./img/watch-m3.jpg", style: "COLOSSEUM - 42MM", name: "GUANDAO", price: "9.299.000 ₫"},{img: "./img/watch-m4.jpg", style: "COLOSSEUM - 42MM", name: "SLING", price: "7.099.000 ₫"}]
@@ -48,9 +48,9 @@ block content
         each card in items
           .col-6.col-md-3.d-flex.justify-content-center
             .watch
-              a(href="#").watch__img
+              a(href="./detail.html").watch__img
                 img(src= card.img alt= card.name)
-              a(href="#").watch__info
+              a(href="./detail.html").watch__info
                 p.watch__info-style= card.style
                 p.watch__info-name= card.name
                 p.watch__info-price= card.price
@@ -62,7 +62,7 @@ block content
             h1.description__main-h1 TÌM KIẾM MỘT CHIẾC ĐỒNG HỒ THÔNG MINH
             p.description__main-content Những chiếc đồng hồ được thiết kế từ những người thợ giỏi. Chúng phù hợp với cá tính, phong cách riêng của chính bạn
             button.description__main-btn
-              a(href="#") XEM ĐỒNG HỒ
+              a(href="./shop.html") XEM ĐỒNG HỒ
         .col-12.col-md-6.gx-sm-0
           img(src="./img/banner-watch-women.jpg" alt="banner")
 
@@ -72,9 +72,9 @@ block content
         each card in items
           .col-6.col-md-3.d-flex.justify-content-center
             .watch
-              a(href="#").watch__img 
+              a(href="./detail.html").watch__img 
                 img(src= card.img alt= card.name)
-              a(href="#").watch__info
+              a(href="./detail.html").watch__info
                 p.watch__info-style= card.style
                 p.watch__info-name= card.name
                 p.watch__info-price= card.price
