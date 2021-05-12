@@ -1,24 +1,23 @@
 @font-face {
     font-family: "Noto Sans";
     src: url("../font/NotoSans/NotoSans-Regular.ttf"),
-         url("../font/NotoSans/notosans-regular-webfont.woff2") format('woff2'),
-         url("../font/NotoSans/notosans-regular-webfont.woff") format('woff');
+        url("../font/NotoSans/notosans-regular-webfont.woff2") format("woff2"),
+        url("../font/NotoSans/notosans-regular-webfont.woff") format("woff");
 }
 
-/* @font-face {
+@font-face {
     font-family: "Verdana";
-    src: url("../font/Verdana/verdana.ttf"),
-         url('../font/Verdana/verdana-webfont.woff2') format('woff2'),
-         url('../font/Verdana/verdana-webfont.woff') format('woff');
-} */
+    src: url("../font/Verdana/verdana.ttf"), url("../font/Verdana/verdana-webfont.woff2") format("woff2"),
+        url("../font/Verdana/verdana-webfont.woff") format("woff");
+}
 
 :root {
-    --green-color: #3CB46E;
+    --green-color: #3cb46e;
     --green-hover: #37a866;
     --green-bold: #00a550;
-    --gray-color: #6A6C6E;
-    --gray-icon:#495057;
-    --facebook-color: #3B5998;
+    --gray-color: #6a6c6e;
+    --gray-icon: #495057;
+    --facebook-color: #3b5998;
     --pink-color: #ff3945;
 }
 
@@ -36,7 +35,9 @@ body {
     overflow: hidden;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
     margin: 0;
 }
 
@@ -74,7 +75,7 @@ img {
     width: 50px;
     height: 50px;
     border: 5px solid;
-    color: #91D7F2;
+    color: #91d7f2;
     border-radius: 50%;
     border-top-color: transparent;
     animation: loading 1.2s linear infinite;
@@ -82,13 +83,13 @@ img {
 
 @keyframes loading {
     25% {
-        color: #5196A6;
+        color: #5196a6;
     }
     50% {
-        color: #F2F0EB;
+        color: #f2f0eb;
     }
     75% {
-        color: #F25041;
+        color: #f25041;
     }
     100% {
         transform: rotate(360deg);
@@ -500,7 +501,7 @@ img {
 }
 
 .login__form-social-btn--google {
-    background-color: #EA4335;
+    background-color: #ea4335;
 }
 
 /* Register */
@@ -609,7 +610,7 @@ img {
 }
 
 .register__form-title--link {
-    color: #15BB4F;
+    color: #15bb4f;
 }
 
 .register__form-title--link:hover {
@@ -617,7 +618,7 @@ img {
 }
 
 .register__form-btn {
-    background-color: #15BB4F;
+    background-color: #15bb4f;
     color: white;
     margin-top: 14px;
     border: none;
@@ -750,7 +751,7 @@ img {
 }
 
 .footer__content-menu-item a {
-    color:  white;
+    color: white;
 }
 
 .footer__feed {
@@ -883,7 +884,7 @@ img {
 
 .ins__main {
     position: absolute;
-    display: flex;  
+    display: flex;
 }
 
 .ins__main-comment {
@@ -935,7 +936,7 @@ img {
 .ins__main-footer-date-link {
     color: #262626;
     font-size: 1.4rem;
-    transition: all 0.4s ;
+    transition: all 0.4s;
 }
 
 .ins__main-footer-date-link:hover {
@@ -981,7 +982,7 @@ img {
     }
 
     /* Footer */
-    .footer__content { 
+    .footer__content {
         margin: 38px auto 0;
     }
 
@@ -1023,7 +1024,7 @@ img {
         margin-top: 22px;
     }
 
-    .register__form-status  {
+    .register__form-status {
         margin-bottom: 30px;
     }
 
@@ -1038,7 +1039,7 @@ img {
     }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .nav {
         height: 80px;
     }
@@ -1058,7 +1059,7 @@ img {
         padding: 60px 0 67px;
     }
 
-    .footer__content { 
+    .footer__content {
         margin: 0 auto;
     }
 
@@ -1142,7 +1143,7 @@ img {
     }
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
     .nav__main-button {
         margin-right: 0;
     }
@@ -1170,10 +1171,9 @@ img {
     }
 }
 
-@media (min-width: 1400px) { 
+@media (min-width: 1400px) {
     /* Footer */
     .footer-sub {
         padding: 0 106px;
     }
 }
-
