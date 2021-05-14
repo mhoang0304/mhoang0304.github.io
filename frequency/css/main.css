@@ -1,14 +1,36 @@
 @font-face {
     font-family: "Noto Sans";
-    src: url("../font/NotoSans/NotoSans-Regular.ttf"),
-        url("../font/NotoSans/notosans-regular-webfont.woff2") format("woff2"),
-        url("../font/NotoSans/notosans-regular-webfont.woff") format("woff");
+    src: url("../font/NotoSans/NotoSans-Regular.eot");
+    src: url("../font/NotoSans/NotoSans-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../font/NotoSans/NotoSans-Regular.woff2") format("woff2"),
+        url("../font/NotoSans/NotoSans-Regular.woff") format("woff"),
+        url("../font/NotoSans/NotoSans-Regular.ttf") format("truetype"),
+        url("../font/NotoSans/NotoSans-Regular.svg#NotoSans-Regular") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url("../font/NotoSans/NotoSans-SemiBold.eot");
+    src: url("../font/NotoSans/NotoSans-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../font/NotoSans/NotoSans-SemiBold.woff2") format("woff2"),
+        url("../font/NotoSans/NotoSans-SemiBold.woff") format("woff"),
+        url("../font/NotoSans/NotoSans-SemiBold.ttf") format("truetype"),
+        url("../font/NotoSans/NotoSans-SemiBold.svg#NotoSans-SemiBold") format("svg");
+    font-weight: 600;
 }
 
 @font-face {
     font-family: "Verdana";
-    src: url("../font/Verdana/verdana.ttf"), url("../font/Verdana/verdana-webfont.woff2") format("woff2"),
-        url("../font/Verdana/verdana-webfont.woff") format("woff");
+    src: url("../font/Verdana/Verdana-Bold.eot");
+    src: url("../font/Verdana/Verdana-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../font/Verdana/Verdana-Bold.woff2") format("woff2"),
+        url("../font/Verdana/Verdana-Bold.woff") format("woff"),
+        url("../font/Verdana/Verdana-Bold.ttf") format("truetype"),
+        url("../font/Verdana/Verdana-Bold.svg#VerdanaBold") format("svg");
+    font-weight: 700;
+    font-style: bold;
 }
 
 :root {
