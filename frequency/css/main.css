@@ -82,24 +82,29 @@ img {
 /* loading */
 .loading {
     position: fixed;
-    width: 100%;
+    z-index: 9999;
     top: 0;
-    height: 100vh;
-    background-color: black;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+
+    background-color: black;
 }
 
 .loading__animation {
     position: absolute;
+
     width: 50px;
     height: 50px;
     border: 5px solid;
-    color: #91d7f2;
     border-radius: 50%;
     border-top-color: transparent;
+
+    color: #91d7f2;
     animation: loading 1.2s linear infinite;
 }
 
@@ -121,13 +126,15 @@ img {
 /* Navigation */
 .nav {
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    z-index: 2;
+
     max-width: 1440px;
     height: 50px;
+    margin: auto;
+
     background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.4s linear;
 }
