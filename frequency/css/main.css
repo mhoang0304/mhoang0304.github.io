@@ -221,15 +221,19 @@ img {
 
 .nav__main-account-options {
     position: absolute;
-    bottom: -76px;
     right: 0;
     left: 0;
-    text-align: center;
+    bottom: -76px;
+
+    display: none;
+    border-radius: 2px;
+
     background-color: #212121;
     color: white;
+
     font-size: 1.6rem;
-    border-radius: 2px;
-    display: none;
+    text-align: center;
+
     transition: all 0.4s linear;
 }
 
@@ -272,6 +276,7 @@ img {
     width: 81px;
     height: 32px;
     border-radius: 4px;
+
     background-color: var(--green-color);
     transition: all 0.2s linear;
 }
@@ -301,8 +306,9 @@ img {
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+
     display: none;
+    background-color: rgba(0, 0, 0, 0.3);
     animation: fadeIn linear 0.4s;
 }
 
@@ -313,8 +319,9 @@ img {
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+
     display: none;
+    background-color: rgba(0, 0, 0, 0.3);
     animation: fadeIn linear 0.4s;
 }
 
@@ -333,11 +340,13 @@ img {
     top: 0;
     left: 0;
     bottom: 0;
+
     min-width: 260px;
     padding: 8px 12px;
+    opacity: 0;
+
     background-color: #212121;
     transform: translateX(-100%);
-    opacity: 0;
     transition: all 0.4s ease;
 }
 
@@ -374,15 +383,17 @@ img {
 /* Login */
 .login {
     position: fixed;
+    z-index: 12;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 12;
+
     width: 300px;
-    background-color: white;
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
+
+    background-color: white;
     transition: all 0.2s linear;
 }
 
@@ -503,16 +514,18 @@ img {
 }
 
 .login__form-social-btn {
+    border: none;
     width: 198px;
     height: 38px;
     border-radius: 4px;
-    color: white;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    border: none;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    color: white;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
 }
 
 .login__form-social-btn i {
@@ -536,15 +549,17 @@ img {
 /* Register */
 .register {
     position: fixed;
+    z-index: 12;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 12;
+
     width: 300px;
-    background-color: white;
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
+
+    background-color: white;
     transition: all 0.2s linear;
 }
 
